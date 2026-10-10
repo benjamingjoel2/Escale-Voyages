@@ -22,7 +22,7 @@ export async function Footer() {
             <p className="t-italic mb-1 text-xl">{t("guest")}</p>
             <a className="text-sm opacity-65 hover:opacity-100" href={`mailto:${site.email.guest}`}>{site.email.guest}</a>
             <a className="text-sm opacity-65 hover:opacity-100" href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a>
-            <a className="text-sm opacity-65 hover:opacity-100" href={whatsappUrl("Hello Danxomè")} target="_blank" rel="noopener noreferrer">{t("whatsapp")}</a>
+            <a className="text-sm opacity-65 hover:opacity-100" href={whatsappUrl("Hello Escale Voyages")} target="_blank" rel="noopener noreferrer">{t("whatsapp")}</a>
             <Link className="text-sm opacity-65 hover:opacity-100" href="/enquire">{t("scheduleCall")}</Link>
           </div>
           <div className="grid content-start gap-2">
@@ -82,7 +82,7 @@ export async function Footer() {
         <div className="mt-16 grid gap-3 md:mt-20">
           <p className="t-italic max-w-[28ch] text-2xl md:text-3xl">{t("quote")}</p>
           <span className="eyebrow">{t("quoteSource")}</span>
-          <p className="mt-4 text-[12.5px] opacity-70">{t("pronunciation")}</p>
+          <p className="mt-4 text-[12.5px] opacity-70">{t("footerLine")}</p>
         </div>
 
         <div className="mt-10 flex flex-wrap justify-between gap-3 border-t border-line pt-5 text-xs opacity-70">

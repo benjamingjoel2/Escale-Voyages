@@ -1,7 +1,9 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { mediaSrc } from "@/lib/media";
 
 type Tone =
-  | "laterite"
+  | "accent"
   | "lagoon"
   | "savannah"
   | "coast"
@@ -13,6 +15,12 @@ type Tone =
 type Props = {
   /** Filename and dimensions to commission, e.g. "dest-ouidah.jpg · 1600×2000". */
   label: string;
+  /** Media filename. If it exists in public/media it is rendered with next/image. */
+  file?: string;
+  alt?: string;
+  /** Load eagerly with high priority (hero only). */
+  priority?: boolean;
+  sizes?: string;
   tone?: Tone;
   className?: string;
   /** Where to pin the label. */
@@ -21,7 +29,7 @@ type Props = {
 };
 
 const toneClass: Record<Tone, string> = {
-  laterite: "tone-laterite",
+  accent: "tone-accent",
   lagoon: "tone-lagoon",
   savannah: "tone-savannah",
   coast: "tone-coast",
@@ -38,29 +46,46 @@ const positionClass = {
 };
 
 /**
- * Placeholder for media that has not been commissioned yet. Renders a toned
- * gradient with the exact filename and aspect ratio the photographer needs.
- * Swap for next/image or a <video> once the asset exists.
+ * Media frame. Renders the real photograph when one exists in public/media,
+ * otherwise a toned gradient with the exact filename and aspect ratio the
+ * photographer needs. Children render above the image.
  */
 export function MediaSlot({
   label,
-  tone = "laterite",
+  file,
+  alt = "",
+  priority = false,
+  sizes = "100vw",
+  tone = "accent",
   className = "",
   labelPosition = "center",
   children,
 }: Props) {
   const t = useTranslations("Media");
+  const src = file ? mediaSrc(file) : undefined;
+
   return (
     <div
       className={`relative overflow-hidden ${toneClass[tone]} ${className}`}
-      role="img"
-      aria-label={`${t("placeholder")}: ${label}`}
+      role={src ? undefined : "img"}
+      aria-label={src ? undefined : `${t("placeholder")}: ${label}`}
     >
-      <span
-        className={`absolute z-10 max-w-[80%] rounded-[3px] border border-dashed border-white/50 bg-black/25 px-2.5 py-1.5 text-[10.5px] leading-snug text-white ${positionClass[labelPosition]}`}
-      >
-        {label}
-      </span>
+      {src ? (
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          sizes={sizes}
+          priority={priority}
+          className="object-cover"
+        />
+      ) : (
+        <span
+          className={`absolute z-10 max-w-[80%] rounded-[3px] border border-dashed border-white/50 bg-black/25 px-2.5 py-1.5 text-[10.5px] leading-snug text-white ${positionClass[labelPosition]}`}
+        >
+          {label}
+        </span>
+      )}
       {children}
     </div>
   );

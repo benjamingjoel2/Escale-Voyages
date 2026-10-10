@@ -38,7 +38,7 @@ export function Nav({ variant = "overlay" }: Props) {
           href="/"
           className="flex items-baseline gap-3 font-display text-2xl leading-none tracking-[0.01em]"
         >
-          Danxom<span className={overlay ? "text-[#F2C6A4]" : "text-laterite"}>è</span>
+          Escale <span className="italic">Voyages</span>
           <span className="hidden text-[10px] font-sans font-semibold uppercase tracking-[0.14em] opacity-70 sm:inline">
             {t("tagline")}
           </span>
@@ -86,8 +86,8 @@ export function Nav({ variant = "overlay" }: Props) {
               href="/enquire"
               className={`rounded-[2px] px-3.5 py-2 text-[13px] font-medium transition-colors ${
                 overlay
-                  ? "bg-ink-glass hover:bg-laterite"
-                  : "bg-ink text-paper hover:bg-laterite"
+                  ? "bg-ink-glass hover:bg-accent"
+                  : "bg-ink text-paper hover:bg-accent"
               }`}
             >
               {t("enquire")}

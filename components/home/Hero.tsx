@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { HeroMedia } from "./HeroMedia";
+import { mediaSrc } from "@/lib/media";
 
 /**
  * Full-bleed hero. Statement and "Watch film" sit at the top-left of the
@@ -14,7 +15,7 @@ export function Hero() {
       aria-label="Hero"
       className="relative isolate grid min-h-svh grid-rows-[auto_1fr_auto] overflow-hidden text-white"
     >
-      <HeroMedia slotLabel={t("mediaSlot")} />
+      <HeroMedia slotLabel={t("mediaSlot")} posterSrc={mediaSrc("hero-poster.jpg")} />
       <div className="pointer-events-none absolute inset-0 -z-10 bg-black/25" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-[45%] bg-gradient-to-b from-transparent to-black/60" />
 
@@ -37,7 +38,7 @@ export function Hero() {
       <div className="container-wide grid w-full justify-items-start gap-4 pb-8 pt-6 md:pb-10">
         <span className="eyebrow !text-white !opacity-80">{t("eyebrow")}</span>
         <h1 className="font-condensed whitespace-nowrap text-[clamp(72px,18vw,240px)] font-light uppercase leading-[0.9] tracking-[0.005em]">
-          Danxom<span className="text-[#F2C6A4]">è</span>
+          Bénin
         </h1>
         <p className="t-italic text-xl text-white/90 md:text-2xl">{t("tagline")}</p>
         <div className="flex flex-wrap gap-2">

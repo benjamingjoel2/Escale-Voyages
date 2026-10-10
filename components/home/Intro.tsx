@@ -21,7 +21,7 @@ export function Intro() {
             <path
               d="M2 20 C 20 4, 30 26, 48 12 S 76 6, 92 18 S 112 10, 118 14"
               fill="none"
-              stroke="var(--laterite)"
+              stroke="var(--accent)"
               strokeWidth="1.6"
               strokeLinecap="round"
             />

@@ -3,7 +3,7 @@
 /*
   Danxomè design tokens.
   Page grammar follows the approved White Desert-style direction:
-  white ground, dark-blue ink, laterite accent on hover, full-bleed media.
+  white ground, dark-blue ink, orange accent on hover, full-bleed media.
   Content is left-aligned throughout (never centred blocks).
 */
 :root {
@@ -14,10 +14,10 @@
   --paper: #ffffff;
   --grey: #f2f2f2;
   --line: rgba(31, 42, 68, 0.14);
-  --laterite: #c2492c;
-  --laterite-deep: #8f2f1c;
+  --accent: #e4561f;
+  --accent-deep: #b9420f;
   --lagoon: #1d5b66;
-  --sand: #f2e9da;
+  --sand: #f4f1ec;
   --whatsapp: #25d366;
 }
 
@@ -29,8 +29,8 @@
   --color-paper: var(--paper);
   --color-grey: var(--grey);
   --color-line: var(--line);
-  --color-laterite: var(--laterite);
-  --color-laterite-deep: var(--laterite-deep);
+  --color-accent: var(--accent);
+  --color-accent-deep: var(--accent-deep);
   --color-lagoon: var(--lagoon);
   --color-sand: var(--sand);
   --color-whatsapp: var(--whatsapp);
@@ -78,7 +78,7 @@
     text-wrap: balance;
   }
   :focus-visible {
-    outline: 2px solid var(--laterite);
+    outline: 2px solid var(--accent);
     outline-offset: 3px;
   }
   ::selection {
@@ -159,7 +159,7 @@
     border-radius 0.35s var(--ease-out-soft),
     color 0.35s var(--ease-out-soft);
   &:hover {
-    background: var(--laterite);
+    background: var(--accent);
     border-radius: 5px;
     color: var(--paper);
   }
@@ -170,7 +170,7 @@
   border: 0.5px solid rgba(255, 255, 255, 0.3);
   &:hover {
     background: var(--paper);
-    color: var(--laterite);
+    color: var(--accent);
   }
 }
 
@@ -182,13 +182,13 @@
   font-size: 14px;
   &:hover {
     background: var(--paper);
-    color: var(--laterite);
+    color: var(--accent);
     box-shadow: inset 0 0 0 0.5px var(--line);
   }
 }
 
 @utility btn-solid {
-  background: var(--laterite);
+  background: var(--accent);
   color: var(--paper);
   &:hover {
     background: var(--ink);
@@ -215,7 +215,7 @@
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(242, 233, 218, 0.75) 55%,
+    rgba(244, 241, 236, 0.8) 55%,
     var(--paper) 100%
   );
   -webkit-mask-image:
@@ -229,7 +229,7 @@
 }
 
 /* Placeholder media gradients until real photography is commissioned. */
-@utility tone-laterite {
+@utility tone-accent {
   background: linear-gradient(160deg, #7a3a26, #2c2a3c 75%);
 }
 @utility tone-lagoon {

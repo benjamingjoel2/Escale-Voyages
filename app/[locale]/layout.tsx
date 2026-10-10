@@ -54,9 +54,10 @@ export async function generateMetadata({
     description: t("homeDescription"),
     applicationName: site.name,
     keywords: [
-      "Danxomè",
-      "Danxome",
+      "Escale Voyages",
       "Benin",
+      "Benin tour operator",
+      "Benin travel agency",
       "Bénin",
       "Dahomey",
       "Ouidah",

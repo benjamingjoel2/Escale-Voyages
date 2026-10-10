@@ -10,6 +10,9 @@ export function SeasonBanner() {
       <Reveal>
         <MediaSlot
           label={t("mediaSlot")}
+          file="season-banner.jpg"
+          alt="Savannah landscape in Pendjari National Park in the dry season"
+          sizes="(min-width: 1320px) 1224px, 100vw"
           tone="season"
           labelPosition="top-right"
           className="grid min-h-[min(78vh,640px)] content-end rounded-[2px] text-white"
