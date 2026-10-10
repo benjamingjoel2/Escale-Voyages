@@ -13,6 +13,9 @@ export type JourneyType =
   | "coast"
   | "festival";
 
+/** A media file: local in public/media, or a CMS asset URL via `src`. */
+export type MediaRef = { file: string; width: number; height: number; src?: string; alt?: L | string };
+
 export type Departure = {
   /** ISO date, first day of the journey. */
   start: string;
@@ -45,8 +48,8 @@ export type Journey = {
   /** Coordinates of the journey's anchor destination, shown on the card. */
   coords: string;
   tone: "accent" | "lagoon" | "savannah" | "coast" | "night";
-  image: { file: string; width: number; height: number };
-  heroImage: { file: string; width: number; height: number };
+  image: MediaRef;
+  heroImage: MediaRef;
   highlights: L<string[]>;
   itinerary: ItineraryDay[];
   /** Destination slugs in the order visited. */
@@ -55,7 +58,7 @@ export type Journey = {
   excluded: L<string[]>;
   departures: Departure[];
   faq: { q: L; a: L }[];
-  gallery: { file: string; width: number; height: number; alt: L }[];
+  gallery: (MediaRef & { alt: L | string })[];
 };
 
 const INCLUDED_COMMON: L<string[]> = {

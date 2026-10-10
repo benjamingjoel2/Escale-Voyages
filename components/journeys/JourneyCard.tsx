@@ -17,7 +17,8 @@ export function JourneyCard({ journey: j }: { journey: Journey }) {
       <MediaSlot
         label={`${j.image.file} · ${j.image.width}×${j.image.height}`}
         file={j.image.file}
-        alt={j.title[locale]}
+        src={j.image.src}
+        alt={typeof j.image.alt === "object" ? j.image.alt[locale] : j.title[locale]}
         sizes="(min-width: 1280px) 20vw, (min-width: 640px) 50vw, 100vw"
         tone={j.tone}
         labelPosition="top-right"

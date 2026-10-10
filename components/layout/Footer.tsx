@@ -1,18 +1,22 @@
 import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { journeys } from "@/lib/data/journeys";
-import { destinations } from "@/lib/data/destinations";
-import { site, whatsappUrl } from "@/lib/site";
+import { getDestinations, getJourneys, getSiteSettings } from "@/lib/content";
+import { whatsappUrl } from "@/lib/site";
 import { getCurrentYear } from "@/lib/time";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 
 export async function Footer() {
-  const [t, rawLocale, year] = await Promise.all([
+  const [t, rawLocale, year, journeys, destinations, settings] = await Promise.all([
     getTranslations("Footer"),
     getLocale(),
     getCurrentYear(),
+    getJourneys(),
+    getDestinations(),
+    getSiteSettings(),
   ]);
   const locale = rawLocale as "en" | "fr";
+  const closingQuote = settings.closingQuote?.[locale] ?? t("quote");
+  const closingSource = settings.closingQuoteSource?.[locale] ?? t("quoteSource");
 
   return (
     <footer className="bg-grey text-ink">
@@ -20,15 +24,15 @@ export async function Footer() {
         <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 lg:grid-cols-6">
           <div className="grid content-start gap-2">
             <p className="t-italic mb-1 text-xl">{t("guest")}</p>
-            <a className="text-sm opacity-65 hover:opacity-100" href={`mailto:${site.email.guest}`}>{site.email.guest}</a>
-            <a className="text-sm opacity-65 hover:opacity-100" href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a>
+            <a className="text-sm opacity-65 hover:opacity-100" href={`mailto:${settings.guestEmail}`}>{settings.guestEmail}</a>
+            <a className="text-sm opacity-65 hover:opacity-100" href={`tel:${settings.phone.replace(/\s/g, "")}`}>{settings.phone}</a>
             <a className="text-sm opacity-65 hover:opacity-100" href={whatsappUrl("Hello Escale Voyages")} target="_blank" rel="noopener noreferrer">{t("whatsapp")}</a>
             <Link className="text-sm opacity-65 hover:opacity-100" href="/enquire">{t("scheduleCall")}</Link>
           </div>
           <div className="grid content-start gap-2">
             <p className="t-italic mb-1 text-xl">{t("trade")}</p>
-            <a className="text-sm opacity-65 hover:opacity-100" href={`mailto:${site.email.trade}`}>{site.email.trade}</a>
-            <a className="text-sm opacity-65 hover:opacity-100" href={`mailto:${site.email.press}`}>{site.email.press}</a>
+            <a className="text-sm opacity-65 hover:opacity-100" href={`mailto:${settings.tradeEmail}`}>{settings.tradeEmail}</a>
+            <a className="text-sm opacity-65 hover:opacity-100" href={`mailto:${settings.pressEmail}`}>{settings.pressEmail}</a>
           </div>
           <div className="grid content-start gap-2">
             <p className="t-italic mb-1 text-xl">{t("journeys")}</p>
@@ -45,7 +49,7 @@ export async function Footer() {
           </div>
           <div className="grid content-start gap-2">
             <p className="t-italic mb-1 text-xl">{t("destinations")}</p>
-            {destinations.slice(0, 6).map((d) => (
+            {destinations.slice(0, 8).map((d) => (
               <Link
                 key={d.slug}
                 className="text-sm opacity-65 hover:opacity-100"
@@ -66,10 +70,10 @@ export async function Footer() {
           </div>
           <div className="grid content-start gap-2">
             <p className="t-italic mb-1 text-xl">{t("social")}</p>
-            <a className="text-sm opacity-65 hover:opacity-100" href={site.social.instagram} target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a className="text-sm opacity-65 hover:opacity-100" href={site.social.tiktok} target="_blank" rel="noopener noreferrer">TikTok</a>
-            <a className="text-sm opacity-65 hover:opacity-100" href={site.social.youtube} target="_blank" rel="noopener noreferrer">YouTube</a>
-            <a className="text-sm opacity-65 hover:opacity-100" href={site.social.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            {settings.social.instagram ? <a className="text-sm opacity-65 hover:opacity-100" href={settings.social.instagram} target="_blank" rel="noopener noreferrer">Instagram</a> : null}
+            {settings.social.tiktok ? <a className="text-sm opacity-65 hover:opacity-100" href={settings.social.tiktok} target="_blank" rel="noopener noreferrer">TikTok</a> : null}
+            {settings.social.youtube ? <a className="text-sm opacity-65 hover:opacity-100" href={settings.social.youtube} target="_blank" rel="noopener noreferrer">YouTube</a> : null}
+            {settings.social.linkedin ? <a className="text-sm opacity-65 hover:opacity-100" href={settings.social.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a> : null}
           </div>
         </div>
 
@@ -80,8 +84,8 @@ export async function Footer() {
         </div>
 
         <div className="mt-16 grid gap-3 md:mt-20">
-          <p className="t-italic max-w-[28ch] text-2xl md:text-3xl">{t("quote")}</p>
-          <span className="eyebrow">{t("quoteSource")}</span>
+          <p className="t-italic max-w-[28ch] text-2xl md:text-3xl">{closingQuote}</p>
+          <span className="eyebrow">{closingSource}</span>
           <p className="mt-4 text-[12.5px] opacity-70">{t("footerLine")}</p>
         </div>
 

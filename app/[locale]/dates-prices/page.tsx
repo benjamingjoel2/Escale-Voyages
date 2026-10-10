@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { DeparturesTable } from "@/components/journeys/DeparturesTable";
 import { PlanningCta } from "@/components/home/PlanningCta";
 import { allDepartures } from "@/lib/journeys";
+import { getJourneys } from "@/lib/content";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function DatesPricesPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations("DatesPrices");
+  const [t, journeys] = await Promise.all([getTranslations("DatesPrices"), getJourneys()]);
 
   return (
     <>
@@ -29,7 +30,7 @@ export default async function DatesPricesPage({ params }: Props) {
           <p className="t-body mt-5">{t("intro")}</p>
         </section>
         <section className="container-wide pb-16 pt-10 md:pb-28">
-          <DeparturesTable rows={allDepartures()} showJourney />
+          <DeparturesTable rows={allDepartures(journeys)} showJourney />
           <p className="mt-5 text-[12.5px] text-charcoal">{t("note")}</p>
         </section>
         <PlanningCta />

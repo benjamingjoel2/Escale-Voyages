@@ -17,6 +17,8 @@ type Props = {
   label: string;
   /** Media filename. If it exists in public/media it is rendered with next/image. */
   file?: string;
+  /** Explicit image URL (CMS asset). Takes precedence over `file`. */
+  src?: string;
   alt?: string;
   /** Load eagerly with high priority (hero only). */
   priority?: boolean;
@@ -53,6 +55,7 @@ const positionClass = {
 export function MediaSlot({
   label,
   file,
+  src: srcProp,
   alt = "",
   priority = false,
   sizes = "100vw",
@@ -62,7 +65,7 @@ export function MediaSlot({
   children,
 }: Props) {
   const t = useTranslations("Media");
-  const src = file ? mediaSrc(file) : undefined;
+  const src = srcProp ?? (file ? mediaSrc(file) : undefined);
 
   return (
     <div

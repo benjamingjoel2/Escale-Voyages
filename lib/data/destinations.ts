@@ -16,7 +16,7 @@ export type Destination = {
   /** Formatted for display, e.g. "6°22′ N, 2°05′ E". */
   coords: string;
   tone: "accent" | "lagoon" | "savannah" | "coast" | "night" | "indigo";
-  image: { file: string; width: number; height: number };
+  image: { file: string; width: number; height: number; src?: string };
 };
 
 export const REGIONS: Region[] = ["coast", "south", "centre", "north"];

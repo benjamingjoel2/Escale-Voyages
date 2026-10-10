@@ -50,13 +50,23 @@ Slow and few. Hero parallax, staggered reveals on scroll (`Reveal`, CSS-driven, 
 - Performance targets: Lighthouse 90+ on mobile over 4G. `next/image` everywhere, video poster only on mobile and when `saveData` is on, lazy-load below-the-fold media, keep client bundles small.
 - Facts to verify before launch: Cotonou→Natitingou road distance and time (sources range 550–645 km, 6–10 h), Vodun Days 2027 dates (2026 ran 8–10 Jan), yellow-fever entry rule (ministry circular of April 2026 says no longer checked at entry).
 
+## Content (Sanity)
+
+- Schemas live in `sanity/schemaTypes/`: `journey`, `destination`, `story`, `festival`, `siteSettings` (singleton), `enquiry` and `bookingRequest` (written by the Phase 6 forms). Bilingual fields use the `localeString`, `localeText`, `localeStringList`, `localeBlock` objects; both languages are required. Every image is an `imageWithAlt` with required alt text.
+- The embedded Studio is at `/studio` (`app/studio/[[...tool]]`), with its own root layout. Config in `sanity.config.ts`, sidebar in `sanity/structure.ts`.
+- Pages read content through `lib/content.ts` only (`getJourneys`, `getJourney`, `getDestinations`, `getSiteSettings`). Each is `"use cache"` with tags (`journeys`, `journey:<slug>`, `destinations`, `settings`, `content`). With no `NEXT_PUBLIC_SANITY_PROJECT_ID` the layer returns `lib/data` placeholders, so the site always builds.
+- GROQ in `lib/sanity/queries.ts` projects documents into the same TypeScript shapes as `lib/data`, so components do not know where content came from. CMS images arrive as `image.src` (Sanity CDN); `MediaSlot` prefers `src` over the local `file`.
+- `app/api/revalidate` is the Sanity publish webhook (secret in `SANITY_REVALIDATE_SECRET`); it revalidates by tag.
+- `npm run seed` (with `SANITY_API_WRITE_TOKEN`) uploads `public/media` and creates the placeholder journeys, destinations and settings in the dataset. Re-runnable.
+- Env vars are listed in `.env.example`.
+
 ## Phases
 
 1. Plan, brand, design system ✅
 2. Layout shell, nav, footer, i18n ✅
 3. Homepage ✅
 4. Journeys index + detail, dates & prices ✅
-5. Sanity schemas + studio
+5. Sanity schemas + studio ✅ (site runs on placeholder data until a project ID is set)
 6. Booking + payments (mock adapters: FedaPay/KkiaPay for mobile money, Stripe or a pan-African processor for cards; Stripe needs a non-Benin entity)
 7. Remaining pages (destinations, return, festivals, practical, stories, about, enquire, legal)
 8. Performance, SEO (JSON-LD, OG, sitemap, hreflang), accessibility pass

@@ -1,13 +1,13 @@
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { destinations } from "@/lib/data/destinations";
+import type { Destination } from "@/lib/data/destinations";
 
 /**
  * Schematic route map: destinations plotted by real latitude and longitude
  * on a simplified frame of Benin. The commissioned line-art map replaces the
  * frame; the plotted stops stay.
  */
-export function JourneyMap({ stops }: { stops: string[] }) {
+export function JourneyMap({ stops, destinations }: { stops: string[]; destinations: Destination[] }) {
   const t = useTranslations("JourneyDetail");
   const locale = useLocale() as "en" | "fr";
   const points = stops
