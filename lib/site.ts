@@ -2,23 +2,24 @@
  * Site-wide constants. Values marked PLACEHOLDER are replaced before launch.
  */
 export const site = {
-  name: "Danxomè",
-  nameAscii: "Danxome",
-  domain: "danxome.com",
-  url: "https://danxome.com",
+  name: "Escale Voyages",
+  shortName: "Escale",
+  /** PLACEHOLDER: confirm the domain the owner registers. */
+  domain: "escale-voyages.com",
+  url: "https://escale-voyages.com",
   /** PLACEHOLDER: Benin numbers are 10 digits since 2024 and start with 01. */
   whatsappNumber: "2290100000000",
   email: {
-    guest: "hello@danxome.com",
-    trade: "trade@danxome.com",
-    press: "press@danxome.com",
+    guest: "hello@escale-voyages.com",
+    trade: "trade@escale-voyages.com",
+    press: "press@escale-voyages.com",
   },
   phone: "+229 01 00 00 00 00",
   social: {
-    instagram: "https://instagram.com/danxome",
-    tiktok: "https://tiktok.com/@danxome",
-    youtube: "https://youtube.com/@danxome",
-    linkedin: "https://linkedin.com/company/danxome",
+    instagram: "https://instagram.com/escalevoyages",
+    tiktok: "https://tiktok.com/@escalevoyages",
+    youtube: "https://youtube.com/@escalevoyages",
+    linkedin: "https://linkedin.com/company/escale-voyages",
   },
   /** Cotonou, for the header weather readout. */
   weatherCoords: { latitude: 6.3654, longitude: 2.4183 },

@@ -10,12 +10,15 @@ export function FounderQuote() {
       <Reveal>
         <MediaSlot
           label={t("mediaSlot")}
+          file="founder-portrait.jpg"
+          alt="Stilt houses of Ganvié on Lake Nokoué"
+          sizes="(min-width: 1320px) 1224px, 100vw"
           tone="indigo"
           className="min-h-[360px] rounded-[2px] md:min-h-[480px]"
         />
       </Reveal>
       <Reveal className="mt-10 grid max-w-[760px] gap-5 md:mt-14">
-        <span className="font-display text-7xl leading-[0.6] text-laterite" aria-hidden="true">
+        <span className="font-display text-7xl leading-[0.6] text-accent" aria-hidden="true">
           “
         </span>
         <blockquote className="t-italic m-0 text-[24px] leading-[1.2] md:text-[32px] lg:text-[40px]">

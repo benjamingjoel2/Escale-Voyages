@@ -1,8 +1,8 @@
 {
   "Meta": {
-    "siteName": "Danxomè",
-    "homeTitle": "Danxomè · Premium journeys through Benin, the Kingdom of Dahomey",
-    "homeDescription": "Enter the kingdom. Small-group and private journeys through Benin's royal cities, living Vodun, stilt towns, savannah and coast. Also written Danxome."
+    "siteName": "Escale Voyages",
+    "homeTitle": "Escale Voyages · Premium journeys through the whole of Benin",
+    "homeDescription": "The whole of Benin, at your pace. Small-group and private journeys from the Atlantic coast to the Pendjari savannah: royal cities, living Vodun, stilt towns, sacred hills, Tata Somba country and wildlife. Based in Cotonou."
   },
   "Nav": {
     "journeys": "Journeys",
@@ -17,32 +17,32 @@
     "menu": "Menu",
     "close": "Close",
     "language": "Language",
-    "tagline": "Kingdom of Dahomey"
+    "tagline": "Benin"
   },
   "Weather": {
     "city": "Cotonou",
     "unavailable": "Cotonou"
   },
   "Hero": {
-    "statement": "The modern way into Benin's kingdoms, lagoons, forests and coast.",
+    "statement": "Luxury and discovery across the whole of Benin, from the Atlantic to the savannah.",
     "watchFilm": "Watch film",
-    "eyebrow": "Kingdom of Dahomey · Benin",
-    "tagline": "Enter the kingdom",
+    "eyebrow": "West Africa's best-kept secret",
+    "tagline": "The whole of Benin, at your pace",
     "datesPrices": "Dates & prices",
     "enquire": "Enquire now",
     "mediaSlot": "hero-loop.mp4 · 16:9 · ≤8s · ≤2 MB · poster hero-poster.jpg 2400×1350. Mobile shows the poster only."
   },
   "Intro": {
-    "eyebrow": "Danxomè · dan-ho-meh",
-    "statement": "A kingdom did not end here. It went quiet, and it is still here.",
-    "body1": "Benin is where the Kingdom of Dahomey rose, where Vodun was born and is still practised every day, where a whole town stands on stilts in a lagoon, and where the last great lions of West Africa hunt. Most people have never been. We take you in slowly, in comfort, with people who belong here.",
-    "body2": "Small groups, never more than eight. Private guides from Ouidah, Abomey and the Atakora. Every journey is built around one story and told properly.",
-    "cta": "About Danxomè"
+    "eyebrow": "Escale Voyages · Cotonou",
+    "statement": "One small country. Twelve kingdoms, two national parks, a coast with nobody on it.",
+    "body1": "Benin runs 700 kilometres from the Atlantic to the Niger river, and almost nobody has seen all of it. The stilt town of Ganvié, the royal palaces of Abomey, the sacred hills of Dassa, the fortified Tata Somba houses of the Atakora, the lions of Pendjari, the Gèlèdé masks of Kétou. We take you to all of it, slowly, in comfort, with people who belong there.",
+    "body2": "Small groups, never more than eight. Private guides from every region. Every journey is built around one story and told properly.",
+    "cta": "About Escale Voyages"
   },
   "Season": {
     "eyebrow": "Our season",
     "title": "October to March. Dry roads, clear skies, harmattan light.",
-    "body": "Journeys run through the dry season, when the lagoons are calm, the north is passable and the animals of Pendjari gather at the waterholes. January brings Vodun Days to Ouidah. We travel year round on the coast and in the south.",
+    "body": "Journeys run through the dry season, when the lagoons are calm, the north is passable and the animals of Pendjari and the W gather at the waterholes. January brings Vodun Days to Ouidah. We travel year round on the coast and in the south.",
     "mediaSlot": "season-banner.jpg · 21:9 · 2800×1200"
   },
   "Journeys": {
@@ -55,16 +55,22 @@
     "perPerson": "per person"
   },
   "Founder": {
-    "quote": "I grew up being told our history was something to be quiet about. This company exists to tell it out loud, and to let you stand where it happened.",
+    "quote": "Everyone who comes to Benin sees Ouidah and Ganvié. Almost nobody sees Kétou, or the Collines, or the north. We started Escale Voyages so that people would see the whole country, and see it well.",
     "name": "[Founder name]",
-    "role": "Founder, Danxomè · quote placeholder",
+    "role": "Founder, Escale Voyages · quote placeholder",
     "mediaSlot": "founder-portrait.jpg · 3:2 · 2400×1600"
   },
   "Destinations": {
     "eyebrow": "Our destinations",
-    "title": "Seven places, one country",
+    "title": "From the coast to the savannah",
     "learnMore": "Learn more",
-    "note": "Coordinates to the nearest minute, cross-checked against OpenStreetMap before launch."
+    "note": "Coordinates to the nearest minute, cross-checked against OpenStreetMap before launch.",
+    "regions": {
+      "coast": "The coast",
+      "south": "The south",
+      "centre": "The centre",
+      "north": "The north"
+    }
   },
   "Proverb": {
     "text": "Slowly, slowly, the chameleon reaches the top of the tree.",
@@ -74,8 +80,8 @@
   "Route": {
     "code": "COO – NAE",
     "eyebrow": "Cotonou to Pendjari",
-    "title": "To the edge of the savannah",
-    "body": "The road north leaves the lagoon, climbs through the Dahomey Gap and the Collines, and ends at the Atakora range. We break it in Abomey and Natitingou. There is no hurry; the road is the journey.",
+    "title": "The length of the country",
+    "body": "The road north leaves the lagoon, climbs through the Collines and the Dahomey Gap, crosses the Bariba plains and ends at the Atakora range. We break it in Abomey, Dassa and Natitingou. There is no hurry; the road is the journey.",
     "distanceLabel": "Road distance",
     "distanceValue": "≈ 600 km",
     "distanceNote": "to verify",
@@ -139,17 +145,107 @@
     "newsletter": "Newsletter signup",
     "quote": "“Slowly, slowly, the chameleon reaches the top of the tree.”",
     "quoteSource": "Fon proverb",
-    "pronunciation": "Danxomè · dan-ho-meh · the Fon name of the Kingdom of Dahomey",
-    "rights": "Danxomè © {year}. All rights reserved.",
+    "footerLine": "Escale Voyages · Cotonou, Benin · The whole of Benin, at your pace",
+    "rights": "Escale Voyages © {year}. All rights reserved.",
     "terms": "Website terms",
     "bookingTerms": "Booking terms",
     "privacy": "Privacy",
     "cookies": "Cookies",
     "switchTo": "Français"
   },
+  "JourneysPage": {
+    "metaTitle": "Journeys",
+    "metaDescription": "Small-group and private journeys across the whole of Benin: the coast and lagoons, the Kingdoms of Dahomey, the Collines, the Atakora and Tata Somba country, Pendjari and W wildlife, Return heritage itineraries, Vodun Days.",
+    "eyebrow": "Our journeys",
+    "title": "Choose your way in",
+    "intro": "Seven ways into Benin, from a long weekend on the coast to two weeks across the whole country. Small groups of eight at most, or private on your own dates. Prices are per person in FCFA; the euro figure is approximate.",
+    "results": "{count, plural, =0 {No journeys} one {# journey} other {# journeys}}",
+    "emptyTitle": "Nothing matches that combination yet.",
+    "emptyBody": "Every journey also runs privately on request, in any month. Clear the filters, or tell us your dates and we will build around them."
+  },
+  "Filters": {
+    "type": "Experience",
+    "duration": "Duration",
+    "budget": "Budget",
+    "month": "Month",
+    "any": "Any",
+    "clear": "Clear",
+    "types": {
+      "grand": "The whole country",
+      "heritage": "Return & heritage",
+      "kingdoms": "Kingdoms & culture",
+      "wildlife": "Wildlife",
+      "coast": "Lagoons & coast",
+      "festival": "Festivals"
+    },
+    "durations": {
+      "short": "Up to 4 days",
+      "medium": "5 to 7 days",
+      "long": "8 days and more"
+    },
+    "budgets": {
+      "low": "Under 1 000 000 F",
+      "mid": "1 to 2 million F",
+      "high": "Over 2 000 000 F"
+    },
+    "months": {
+      "1": "January", "2": "February", "3": "March", "4": "April", "5": "May", "6": "June",
+      "7": "July", "8": "August", "9": "September", "10": "October", "11": "November", "12": "December"
+    }
+  },
+  "JourneyDetail": {
+    "from": "From",
+    "glanceDuration": "Duration",
+    "glanceGroup": "Group",
+    "glanceSeason": "Season",
+    "glanceType": "Experience",
+    "groupMax": "Up to {count}",
+    "highlights": "Highlights",
+    "itineraryEyebrow": "Day by day",
+    "itineraryTitle": "The journey",
+    "day": "Day {n}",
+    "stay": "Night in {place}",
+    "mapEyebrow": "The route",
+    "mapTitle": "Where you go",
+    "mapAlt": "Schematic map of the route with each stop plotted by its coordinates",
+    "mapSlot": "Commissioned line-art map of Benin replaces this frame",
+    "included": "What's included",
+    "excluded": "Not included",
+    "datesEyebrow": "Dates & prices",
+    "datesTitle": "Departures",
+    "datesIntro": "Scheduled small-group departures. Private departures run on any date from two travellers.",
+    "colJourney": "Journey",
+    "colDates": "Dates",
+    "colDuration": "Duration",
+    "colPrice": "Per person",
+    "colAvailability": "Availability",
+    "spots": "{count, plural, =0 {Sold out} one {# place left} other {# places left}}",
+    "soldOut": "Sold out",
+    "book": "Book",
+    "gallery": "Gallery",
+    "faqEyebrow": "Questions",
+    "faqTitle": "Good to know",
+    "relatedEyebrow": "Keep going",
+    "relatedTitle": "Other journeys",
+    "bookTitle": "Book this journey",
+    "nextDepartures": "Next departures",
+    "privateNote": "Private departures on any date, from two travellers.",
+    "request": "Request this journey",
+    "whatsapp": "Ask on WhatsApp",
+    "whatsappMessage": "Hello Escale Voyages, I'm interested in the journey \"{title}\".",
+    "depositNote": "A 30% deposit confirms your dates, by mobile money in FCFA or by card in euros. Balance due 45 days before departure. Free changes up to 60 days before."
+  },
+  "DatesPrices": {
+    "metaTitle": "Dates & prices",
+    "metaDescription": "All scheduled departures across Escale Voyages' journeys in Benin, with prices per person in FCFA and availability.",
+    "eyebrow": "Dates & prices",
+    "title": "All departures",
+    "intro": "Every scheduled small-group departure this season, soonest first. Prices are per person in FCFA; the euro figure is approximate and the balance is settled in FCFA or euros.",
+    "note": "Dates for Vodun Days follow the official programme and may shift by a day or two. Private departures on any date from two travellers."
+  },
   "WhatsApp": {
     "label": "Chat on WhatsApp",
-    "message": "Hello Danxomè, I'm looking at {page} and would like to know more."
+    "message": "Hello Escale Voyages, I'm looking at {page} and would like to know more."
   },
   "Media": {
     "placeholder": "Placeholder"

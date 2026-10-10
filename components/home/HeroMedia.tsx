@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { useMediaQuery, useSaveData } from "@/lib/hooks/useMediaQuery";
 
@@ -34,12 +35,13 @@ export function HeroMedia({ slotLabel, videoSrc, posterSrc }: Props) {
     <div ref={ref} className="absolute inset-0 -z-20 overflow-hidden">
       <motion.div style={{ y }} className="absolute inset-0 tone-hero">
         {posterSrc ? (
-          // eslint-disable-next-line @next/next/no-img-element -- replaced by next/image when the asset exists
-          <img
+          <Image
             src={posterSrc}
             alt=""
-            className="absolute inset-0 h-full w-full object-cover"
-            fetchPriority="high"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
           />
         ) : null}
         {playVideo ? (

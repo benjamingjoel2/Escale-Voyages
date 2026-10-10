@@ -38,7 +38,7 @@ export function RouteSection() {
                 <text x="208" y="250" opacity=".6">ABOMEY</text>
                 <circle cx="160" cy="140" r="2.5" opacity=".6" />
                 <text x="172" y="144" opacity=".6">NATITINGOU</text>
-                <circle cx="140" cy="60" r="4" fill="var(--laterite)" />
+                <circle cx="140" cy="60" r="4" fill="var(--accent)" />
                 <text x="152" y="64">PENDJARI · BATIA</text>
               </g>
               <text x="16" y="388" fontFamily="var(--font-sans)" fontSize="10" fill="var(--ink)" opacity=".6">

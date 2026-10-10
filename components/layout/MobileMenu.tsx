@@ -55,7 +55,7 @@ export function MobileMenu({ overlay }: { overlay: boolean }) {
       >
         <div className="container-wide flex items-center justify-between py-4">
           <span className="font-display text-2xl">
-            Danxom<span className="text-[#F2C6A4]">è</span>
+            Escale <span className="italic">Voyages</span>
           </span>
           <button
             type="button"

@@ -16,7 +16,7 @@ export function PlanningCta() {
             {t("enquire")}
           </Link>
           <a
-            href={whatsappUrl("Hello Danxomè, I'd like to plan a journey.")}
+            href={whatsappUrl("Hello Escale Voyages, I'd like to plan a journey.")}
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-lg !w-auto px-7"

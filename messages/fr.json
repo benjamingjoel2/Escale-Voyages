@@ -1,8 +1,8 @@
 {
   "Meta": {
-    "siteName": "Danxomè",
-    "homeTitle": "Danxomè · Voyages d'exception au Bénin, royaume du Dahomey",
-    "homeDescription": "Entrez dans le royaume. Voyages privés et en petits groupes à travers les cités royales du Bénin, le Vodun vivant, les villages lacustres, la savane et la côte. S'écrit aussi Danxome."
+    "siteName": "Escale Voyages",
+    "homeTitle": "Escale Voyages · Voyages d'exception dans tout le Bénin",
+    "homeDescription": "Tout le Bénin, à votre rythme. Voyages privés et en petits groupes de la côte atlantique à la savane de la Pendjari : cités royales, Vodun vivant, villages lacustres, collines sacrées, pays des Tata Somba et faune sauvage. Basés à Cotonou."
   },
   "Nav": {
     "journeys": "Voyages",
@@ -17,32 +17,32 @@
     "menu": "Menu",
     "close": "Fermer",
     "language": "Langue",
-    "tagline": "Royaume du Dahomey"
+    "tagline": "Bénin"
   },
   "Weather": {
     "city": "Cotonou",
     "unavailable": "Cotonou"
   },
   "Hero": {
-    "statement": "La manière moderne d'entrer dans les royaumes, lagunes, forêts et côtes du Bénin.",
+    "statement": "Luxe et découverte dans tout le Bénin, de l'Atlantique à la savane.",
     "watchFilm": "Voir le film",
-    "eyebrow": "Royaume du Dahomey · Bénin",
-    "tagline": "Entrez dans le royaume",
+    "eyebrow": "Le secret le mieux gardé d'Afrique de l'Ouest",
+    "tagline": "Tout le Bénin, à votre rythme",
     "datesPrices": "Dates & prix",
     "enquire": "Faire une demande",
     "mediaSlot": "hero-loop.mp4 · 16:9 · ≤8s · ≤2 Mo · affiche hero-poster.jpg 2400×1350. Sur mobile, affiche seule."
   },
   "Intro": {
-    "eyebrow": "Danxomè · dan-ho-mè",
-    "statement": "Un royaume ne s'est pas éteint ici. Il s'est tu, et il est toujours là.",
-    "body1": "Le Bénin, c'est le berceau du royaume du Dahomey, la terre où le Vodun est né et se pratique encore chaque jour, une ville entière sur pilotis au milieu d'une lagune, et les derniers grands lions d'Afrique de l'Ouest. Peu de voyageurs y sont allés. Nous vous y emmenons lentement, confortablement, avec des gens d'ici.",
-    "body2": "Petits groupes, huit personnes au plus. Guides privés de Ouidah, d'Abomey et de l'Atakora. Chaque voyage est construit autour d'une histoire, racontée comme il se doit.",
-    "cta": "À propos de Danxomè"
+    "eyebrow": "Escale Voyages · Cotonou",
+    "statement": "Un petit pays. Douze royaumes, deux parcs nationaux, une côte où il n'y a personne.",
+    "body1": "Le Bénin s'étire sur 700 kilomètres de l'Atlantique au fleuve Niger, et presque personne ne l'a vu en entier. La cité lacustre de Ganvié, les palais royaux d'Abomey, les collines sacrées de Dassa, les maisons-forteresses Tata Somba de l'Atakora, les lions de la Pendjari, les masques Gèlèdé de Kétou. Nous vous y emmenons, partout, lentement, confortablement, avec des gens d'ici.",
+    "body2": "Petits groupes, huit personnes au plus. Guides privés de chaque région. Chaque voyage est construit autour d'une histoire, racontée comme il se doit.",
+    "cta": "À propos d'Escale Voyages"
   },
   "Season": {
     "eyebrow": "Notre saison",
     "title": "D'octobre à mars. Pistes sèches, ciel clair, lumière d'harmattan.",
-    "body": "Les voyages ont lieu pendant la saison sèche, quand les lagunes sont calmes, que le nord est praticable et que les animaux de la Pendjari se rassemblent aux points d'eau. En janvier, les Vodun Days animent Ouidah. Nous voyageons toute l'année sur la côte et dans le sud.",
+    "body": "Les voyages ont lieu pendant la saison sèche, quand les lagunes sont calmes, que le nord est praticable et que les animaux de la Pendjari et du W se rassemblent aux points d'eau. En janvier, les Vodun Days animent Ouidah. Nous voyageons toute l'année sur la côte et dans le sud.",
     "mediaSlot": "season-banner.jpg · 21:9 · 2800×1200"
   },
   "Journeys": {
@@ -55,16 +55,22 @@
     "perPerson": "par personne"
   },
   "Founder": {
-    "quote": "On m'a appris que notre histoire était quelque chose à taire. Cette maison existe pour la dire à voix haute, et pour vous laisser vous tenir là où elle s'est passée.",
+    "quote": "Tous ceux qui viennent au Bénin voient Ouidah et Ganvié. Presque personne ne voit Kétou, ni les Collines, ni le nord. Nous avons créé Escale Voyages pour que l'on voie tout le pays, et qu'on le voie bien.",
     "name": "[Nom du fondateur]",
-    "role": "Fondateur, Danxomè · citation provisoire",
+    "role": "Fondateur, Escale Voyages · citation provisoire",
     "mediaSlot": "founder-portrait.jpg · 3:2 · 2400×1600"
   },
   "Destinations": {
     "eyebrow": "Nos destinations",
-    "title": "Sept lieux, un seul pays",
+    "title": "De la côte à la savane",
     "learnMore": "En savoir plus",
-    "note": "Coordonnées à la minute près, vérifiées sur OpenStreetMap avant le lancement."
+    "note": "Coordonnées à la minute près, vérifiées sur OpenStreetMap avant le lancement.",
+    "regions": {
+      "coast": "La côte",
+      "south": "Le sud",
+      "centre": "Le centre",
+      "north": "Le nord"
+    }
   },
   "Proverb": {
     "text": "Lentement, lentement, le caméléon atteint la cime de l'arbre.",
@@ -74,8 +80,8 @@
   "Route": {
     "code": "COO – NAE",
     "eyebrow": "De Cotonou à la Pendjari",
-    "title": "Jusqu'au bord de la savane",
-    "body": "La route du nord quitte la lagune, traverse la trouée du Dahomey et les Collines, et s'achève sur la chaîne de l'Atakora. Nous la coupons à Abomey et à Natitingou. Rien ne presse ; la route fait partie du voyage.",
+    "title": "Le pays dans sa longueur",
+    "body": "La route du nord quitte la lagune, traverse les Collines et la trouée du Dahomey, longe les plaines bariba et s'achève sur la chaîne de l'Atakora. Nous la coupons à Abomey, Dassa et Natitingou. Rien ne presse ; la route fait partie du voyage.",
     "distanceLabel": "Distance par la route",
     "distanceValue": "≈ 600 km",
     "distanceNote": "à vérifier",
@@ -139,17 +145,107 @@
     "newsletter": "Newsletter",
     "quote": "« Lentement, lentement, le caméléon atteint la cime de l'arbre. »",
     "quoteSource": "Proverbe fon",
-    "pronunciation": "Danxomè · dan-ho-mè · le nom fon du royaume du Dahomey",
-    "rights": "Danxomè © {year}. Tous droits réservés.",
+    "footerLine": "Escale Voyages · Cotonou, Bénin · Tout le Bénin, à votre rythme",
+    "rights": "Escale Voyages © {year}. Tous droits réservés.",
     "terms": "Conditions du site",
     "bookingTerms": "Conditions de réservation",
     "privacy": "Confidentialité",
     "cookies": "Cookies",
     "switchTo": "English"
   },
+  "JourneysPage": {
+    "metaTitle": "Voyages",
+    "metaDescription": "Voyages privés et en petits groupes dans tout le Bénin : la côte et les lagunes, les royaumes du Dahomey, les Collines, l'Atakora et le pays des Tata Somba, la faune de la Pendjari et du W, les itinéraires Retour, les Vodun Days.",
+    "eyebrow": "Nos voyages",
+    "title": "Choisissez votre entrée",
+    "intro": "Sept façons d'entrer au Bénin, d'un long week-end sur la côte à deux semaines à travers tout le pays. Petits groupes de huit au plus, ou en privé à vos dates. Prix par personne en FCFA ; le montant en euros est indicatif.",
+    "results": "{count, plural, =0 {Aucun voyage} one {# voyage} other {# voyages}}",
+    "emptyTitle": "Rien ne correspond encore à cette combinaison.",
+    "emptyBody": "Chaque voyage se fait aussi en privé sur demande, à n'importe quel mois. Effacez les filtres, ou donnez-nous vos dates et nous construirons autour."
+  },
+  "Filters": {
+    "type": "Expérience",
+    "duration": "Durée",
+    "budget": "Budget",
+    "month": "Mois",
+    "any": "Tous",
+    "clear": "Effacer",
+    "types": {
+      "grand": "Tout le pays",
+      "heritage": "Retour & mémoire",
+      "kingdoms": "Royaumes & culture",
+      "wildlife": "Faune",
+      "coast": "Lagunes & côte",
+      "festival": "Festivals"
+    },
+    "durations": {
+      "short": "Jusqu'à 4 jours",
+      "medium": "5 à 7 jours",
+      "long": "8 jours et plus"
+    },
+    "budgets": {
+      "low": "Moins de 1 000 000 F",
+      "mid": "1 à 2 millions F",
+      "high": "Plus de 2 000 000 F"
+    },
+    "months": {
+      "1": "Janvier", "2": "Février", "3": "Mars", "4": "Avril", "5": "Mai", "6": "Juin",
+      "7": "Juillet", "8": "Août", "9": "Septembre", "10": "Octobre", "11": "Novembre", "12": "Décembre"
+    }
+  },
+  "JourneyDetail": {
+    "from": "À partir de",
+    "glanceDuration": "Durée",
+    "glanceGroup": "Groupe",
+    "glanceSeason": "Saison",
+    "glanceType": "Expérience",
+    "groupMax": "{count} au plus",
+    "highlights": "Temps forts",
+    "itineraryEyebrow": "Jour par jour",
+    "itineraryTitle": "Le voyage",
+    "day": "Jour {n}",
+    "stay": "Nuit à {place}",
+    "mapEyebrow": "L'itinéraire",
+    "mapTitle": "Où vous allez",
+    "mapAlt": "Carte schématique de l'itinéraire, chaque étape placée selon ses coordonnées",
+    "mapSlot": "La carte au trait commandée remplacera ce cadre",
+    "included": "Ce qui est inclus",
+    "excluded": "Non inclus",
+    "datesEyebrow": "Dates & prix",
+    "datesTitle": "Départs",
+    "datesIntro": "Départs programmés en petit groupe. Les départs privés se font à toute date à partir de deux voyageurs.",
+    "colJourney": "Voyage",
+    "colDates": "Dates",
+    "colDuration": "Durée",
+    "colPrice": "Par personne",
+    "colAvailability": "Disponibilité",
+    "spots": "{count, plural, =0 {Complet} one {# place restante} other {# places restantes}}",
+    "soldOut": "Complet",
+    "book": "Réserver",
+    "gallery": "Galerie",
+    "faqEyebrow": "Questions",
+    "faqTitle": "Bon à savoir",
+    "relatedEyebrow": "Continuer",
+    "relatedTitle": "Autres voyages",
+    "bookTitle": "Réserver ce voyage",
+    "nextDepartures": "Prochains départs",
+    "privateNote": "Départs privés à toute date, à partir de deux voyageurs.",
+    "request": "Demander ce voyage",
+    "whatsapp": "Poser une question sur WhatsApp",
+    "whatsappMessage": "Bonjour Escale Voyages, je suis intéressé(e) par le voyage « {title} ».",
+    "depositNote": "Un acompte de 30 % confirme vos dates, par mobile money en FCFA ou par carte en euros. Solde dû 45 jours avant le départ. Modifications gratuites jusqu'à 60 jours avant."
+  },
+  "DatesPrices": {
+    "metaTitle": "Dates & prix",
+    "metaDescription": "Tous les départs programmés des voyages Escale Voyages au Bénin, avec les prix par personne en FCFA et les disponibilités.",
+    "eyebrow": "Dates & prix",
+    "title": "Tous les départs",
+    "intro": "Tous les départs programmés en petit groupe cette saison, du plus proche au plus lointain. Prix par personne en FCFA ; le montant en euros est indicatif et le solde se règle en FCFA ou en euros.",
+    "note": "Les dates des Vodun Days suivent le programme officiel et peuvent bouger d'un jour ou deux. Départs privés à toute date à partir de deux voyageurs."
+  },
   "WhatsApp": {
     "label": "Discuter sur WhatsApp",
-    "message": "Bonjour Danxomè, je regarde {page} et j'aimerais en savoir plus."
+    "message": "Bonjour Escale Voyages, je regarde {page} et j'aimerais en savoir plus."
   },
   "Media": {
     "placeholder": "Emplacement"
