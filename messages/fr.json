@@ -1,0 +1,157 @@
+{
+  "Meta": {
+    "siteName": "Danxomè",
+    "homeTitle": "Danxomè · Voyages d'exception au Bénin, royaume du Dahomey",
+    "homeDescription": "Entrez dans le royaume. Voyages privés et en petits groupes à travers les cités royales du Bénin, le Vodun vivant, les villages lacustres, la savane et la côte. S'écrit aussi Danxome."
+  },
+  "Nav": {
+    "journeys": "Voyages",
+    "destinations": "Destinations",
+    "return": "Retour",
+    "stories": "Récits",
+    "about": "À propos",
+    "practical": "Infos pratiques",
+    "festivals": "Festivals",
+    "datesPrices": "Dates & prix",
+    "enquire": "Demande",
+    "menu": "Menu",
+    "close": "Fermer",
+    "language": "Langue",
+    "tagline": "Royaume du Dahomey"
+  },
+  "Weather": {
+    "city": "Cotonou",
+    "unavailable": "Cotonou"
+  },
+  "Hero": {
+    "statement": "La manière moderne d'entrer dans les royaumes, lagunes, forêts et côtes du Bénin.",
+    "watchFilm": "Voir le film",
+    "eyebrow": "Royaume du Dahomey · Bénin",
+    "tagline": "Entrez dans le royaume",
+    "datesPrices": "Dates & prix",
+    "enquire": "Faire une demande",
+    "mediaSlot": "hero-loop.mp4 · 16:9 · ≤8s · ≤2 Mo · affiche hero-poster.jpg 2400×1350. Sur mobile, affiche seule."
+  },
+  "Intro": {
+    "eyebrow": "Danxomè · dan-ho-mè",
+    "statement": "Un royaume ne s'est pas éteint ici. Il s'est tu, et il est toujours là.",
+    "body1": "Le Bénin, c'est le berceau du royaume du Dahomey, la terre où le Vodun est né et se pratique encore chaque jour, une ville entière sur pilotis au milieu d'une lagune, et les derniers grands lions d'Afrique de l'Ouest. Peu de voyageurs y sont allés. Nous vous y emmenons lentement, confortablement, avec des gens d'ici.",
+    "body2": "Petits groupes, huit personnes au plus. Guides privés de Ouidah, d'Abomey et de l'Atakora. Chaque voyage est construit autour d'une histoire, racontée comme il se doit.",
+    "cta": "À propos de Danxomè"
+  },
+  "Season": {
+    "eyebrow": "Notre saison",
+    "title": "D'octobre à mars. Pistes sèches, ciel clair, lumière d'harmattan.",
+    "body": "Les voyages ont lieu pendant la saison sèche, quand les lagunes sont calmes, que le nord est praticable et que les animaux de la Pendjari se rassemblent aux points d'eau. En janvier, les Vodun Days animent Ouidah. Nous voyageons toute l'année sur la côte et dans le sud.",
+    "mediaSlot": "season-banner.jpg · 21:9 · 2800×1200"
+  },
+  "Journeys": {
+    "eyebrow": "Nos voyages",
+    "title": "Choisissez votre entrée",
+    "learnMore": "En savoir plus",
+    "viewAll": "Tous les voyages",
+    "days": "{count, plural, one {# jour} other {# jours}}",
+    "approx": "≈ {amount}",
+    "perPerson": "par personne"
+  },
+  "Founder": {
+    "quote": "On m'a appris que notre histoire était quelque chose à taire. Cette maison existe pour la dire à voix haute, et pour vous laisser vous tenir là où elle s'est passée.",
+    "name": "[Nom du fondateur]",
+    "role": "Fondateur, Danxomè · citation provisoire",
+    "mediaSlot": "founder-portrait.jpg · 3:2 · 2400×1600"
+  },
+  "Destinations": {
+    "eyebrow": "Nos destinations",
+    "title": "Sept lieux, un seul pays",
+    "learnMore": "En savoir plus",
+    "note": "Coordonnées à la minute près, vérifiées sur OpenStreetMap avant le lancement."
+  },
+  "Proverb": {
+    "text": "Lentement, lentement, le caméléon atteint la cime de l'arbre.",
+    "source": "Proverbe fon",
+    "detail": "Emblème du roi Akaba du Dahomey"
+  },
+  "Route": {
+    "code": "COO – NAE",
+    "eyebrow": "De Cotonou à la Pendjari",
+    "title": "Jusqu'au bord de la savane",
+    "body": "La route du nord quitte la lagune, traverse la trouée du Dahomey et les Collines, et s'achève sur la chaîne de l'Atakora. Nous la coupons à Abomey et à Natitingou. Rien ne presse ; la route fait partie du voyage.",
+    "distanceLabel": "Distance par la route",
+    "distanceValue": "≈ 600 km",
+    "distanceNote": "à vérifier",
+    "timeLabel": "Temps de trajet",
+    "timeValue": "≈ 10 h",
+    "timeNote": "sur deux jours",
+    "tempLabel": "Saison sèche, déc. – fév.",
+    "tempValue": "25–35 °C",
+    "tempNote": "Pendjari",
+    "mapSlot": "Carte du Bénin au trait, à commander, SVG",
+    "watchFilm": "Voir le film"
+  },
+  "Return": {
+    "eyebrow": "Retour · Return",
+    "title": "Pour celles et ceux dont l'histoire est passée par cette porte.",
+    "body": "Itinéraires sur les traces des ancêtres, de la Route des Esclaves de Ouidah aux villages que désignent les archives. Aide pour les documents, les résultats ADN et la logistique discrète du retour. Notre voyage signature, conçu avec des voyageurs de la diaspora.",
+    "cta": "Découvrir Retour",
+    "mediaSlot": "return-door.jpg · 21:9 · 2800×1200"
+  },
+  "Planning": {
+    "title": "Commencez à préparer votre voyage",
+    "body": "Dites-nous quand vous pouvez partir et ce que vous cherchez. Une vraie personne vous répond sous un jour ouvré, par e-mail ou WhatsApp.",
+    "enquire": "Faire une demande",
+    "whatsapp": "Écrivez-nous sur WhatsApp"
+  },
+  "HowItWorks": {
+    "title": "Comment ça marche",
+    "open": "Comment ça marche",
+    "close": "Fermer",
+    "steps": {
+      "1": { "title": "Consultation", "body": "Un appel ou une conversation WhatsApp pour comprendre ce que vous attendez du Bénin, vos dates et votre rythme." },
+      "2": { "title": "Confirmation", "body": "Vous confirmez vos dates par un acompte, en FCFA par mobile money ou en euros par carte." },
+      "3": { "title": "Préparation", "body": "Nous construisons le jour par jour, réservons guides et hébergements, et envoyons un seul document d'itinéraire." },
+      "4": { "title": "Documents", "body": "E-visa, recommandations santé et assurance, avec notre liste de contrôle et nos rappels." },
+      "5": { "title": "Accueil", "body": "Nous vous attendons à l'aéroport de Cotonou. Un briefing sur l'argent, les usages et le protocole vodun autour du premier repas." },
+      "6": { "title": "Départ", "body": "Des photos, un récit écrit de votre voyage, et la porte laissée ouverte pour le prochain." }
+    }
+  },
+  "Trust": {
+    "licence": "Agence agréée · Ministère du Tourisme, Bénin",
+    "press": "Emplacement logo presse",
+    "reviews": "Note Tripadvisor",
+    "founded": "Fondée en 2026"
+  },
+  "Footer": {
+    "guest": "Voyageurs",
+    "trade": "Professionnels",
+    "journeys": "Voyages",
+    "destinations": "Destinations",
+    "benin": "Bénin",
+    "social": "Réseaux",
+    "whatsapp": "WhatsApp",
+    "scheduleCall": "Prendre rendez-vous",
+    "viewAll": "Tout voir",
+    "practical": "Infos pratiques",
+    "festivals": "Festivals",
+    "stories": "Récits",
+    "about": "À propos",
+    "datesPrices": "Dates & prix",
+    "enquire": "Faire une demande",
+    "newsletter": "Newsletter",
+    "quote": "« Lentement, lentement, le caméléon atteint la cime de l'arbre. »",
+    "quoteSource": "Proverbe fon",
+    "pronunciation": "Danxomè · dan-ho-mè · le nom fon du royaume du Dahomey",
+    "rights": "Danxomè © {year}. Tous droits réservés.",
+    "terms": "Conditions du site",
+    "bookingTerms": "Conditions de réservation",
+    "privacy": "Confidentialité",
+    "cookies": "Cookies",
+    "switchTo": "English"
+  },
+  "WhatsApp": {
+    "label": "Discuter sur WhatsApp",
+    "message": "Bonjour Danxomè, je regarde {page} et j'aimerais en savoir plus."
+  },
+  "Media": {
+    "placeholder": "Emplacement"
+  }
+}
