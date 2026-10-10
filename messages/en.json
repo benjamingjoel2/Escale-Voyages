@@ -1,0 +1,157 @@
+{
+  "Meta": {
+    "siteName": "Danxomè",
+    "homeTitle": "Danxomè · Premium journeys through Benin, the Kingdom of Dahomey",
+    "homeDescription": "Enter the kingdom. Small-group and private journeys through Benin's royal cities, living Vodun, stilt towns, savannah and coast. Also written Danxome."
+  },
+  "Nav": {
+    "journeys": "Journeys",
+    "destinations": "Destinations",
+    "return": "Return",
+    "stories": "Stories",
+    "about": "About",
+    "practical": "Practical",
+    "festivals": "Festivals",
+    "datesPrices": "Dates & prices",
+    "enquire": "Enquire",
+    "menu": "Menu",
+    "close": "Close",
+    "language": "Language",
+    "tagline": "Kingdom of Dahomey"
+  },
+  "Weather": {
+    "city": "Cotonou",
+    "unavailable": "Cotonou"
+  },
+  "Hero": {
+    "statement": "The modern way into Benin's kingdoms, lagoons, forests and coast.",
+    "watchFilm": "Watch film",
+    "eyebrow": "Kingdom of Dahomey · Benin",
+    "tagline": "Enter the kingdom",
+    "datesPrices": "Dates & prices",
+    "enquire": "Enquire now",
+    "mediaSlot": "hero-loop.mp4 · 16:9 · ≤8s · ≤2 MB · poster hero-poster.jpg 2400×1350. Mobile shows the poster only."
+  },
+  "Intro": {
+    "eyebrow": "Danxomè · dan-ho-meh",
+    "statement": "A kingdom did not end here. It went quiet, and it is still here.",
+    "body1": "Benin is where the Kingdom of Dahomey rose, where Vodun was born and is still practised every day, where a whole town stands on stilts in a lagoon, and where the last great lions of West Africa hunt. Most people have never been. We take you in slowly, in comfort, with people who belong here.",
+    "body2": "Small groups, never more than eight. Private guides from Ouidah, Abomey and the Atakora. Every journey is built around one story and told properly.",
+    "cta": "About Danxomè"
+  },
+  "Season": {
+    "eyebrow": "Our season",
+    "title": "October to March. Dry roads, clear skies, harmattan light.",
+    "body": "Journeys run through the dry season, when the lagoons are calm, the north is passable and the animals of Pendjari gather at the waterholes. January brings Vodun Days to Ouidah. We travel year round on the coast and in the south.",
+    "mediaSlot": "season-banner.jpg · 21:9 · 2800×1200"
+  },
+  "Journeys": {
+    "eyebrow": "Our journeys",
+    "title": "Choose your way in",
+    "learnMore": "Learn more",
+    "viewAll": "View all journeys",
+    "days": "{count, plural, one {# day} other {# days}}",
+    "approx": "≈ {amount}",
+    "perPerson": "per person"
+  },
+  "Founder": {
+    "quote": "I grew up being told our history was something to be quiet about. This company exists to tell it out loud, and to let you stand where it happened.",
+    "name": "[Founder name]",
+    "role": "Founder, Danxomè · quote placeholder",
+    "mediaSlot": "founder-portrait.jpg · 3:2 · 2400×1600"
+  },
+  "Destinations": {
+    "eyebrow": "Our destinations",
+    "title": "Seven places, one country",
+    "learnMore": "Learn more",
+    "note": "Coordinates to the nearest minute, cross-checked against OpenStreetMap before launch."
+  },
+  "Proverb": {
+    "text": "Slowly, slowly, the chameleon reaches the top of the tree.",
+    "source": "Fon proverb",
+    "detail": "Emblem of King Akaba of Dahomey"
+  },
+  "Route": {
+    "code": "COO – NAE",
+    "eyebrow": "Cotonou to Pendjari",
+    "title": "To the edge of the savannah",
+    "body": "The road north leaves the lagoon, climbs through the Dahomey Gap and the Collines, and ends at the Atakora range. We break it in Abomey and Natitingou. There is no hurry; the road is the journey.",
+    "distanceLabel": "Road distance",
+    "distanceValue": "≈ 600 km",
+    "distanceNote": "to verify",
+    "timeLabel": "Travel time",
+    "timeValue": "≈ 10 h",
+    "timeNote": "over two days",
+    "tempLabel": "Dry season, Dec – Feb",
+    "tempValue": "25–35 °C",
+    "tempNote": "Pendjari",
+    "mapSlot": "Commissioned line-art map of Benin, SVG",
+    "watchFilm": "Watch film"
+  },
+  "Return": {
+    "eyebrow": "Return · Retour",
+    "title": "For those whose story passed through this gate.",
+    "body": "Ancestry-led itineraries from Ouidah's Route des Esclaves to the villages the records point to. Help with documents, DNA results, and the quiet logistics of coming back. Our signature journey, built with diaspora travellers.",
+    "cta": "Explore Return",
+    "mediaSlot": "return-door.jpg · 21:9 · 2800×1200"
+  },
+  "Planning": {
+    "title": "Start planning your journey",
+    "body": "Tell us when you can travel and what you are looking for. A real person replies within one working day, by email or WhatsApp.",
+    "enquire": "Enquire now",
+    "whatsapp": "WhatsApp us"
+  },
+  "HowItWorks": {
+    "title": "How it works",
+    "open": "How it works",
+    "close": "Close",
+    "steps": {
+      "1": { "title": "Consultation", "body": "A call or WhatsApp conversation to understand what you want from Benin, your dates and your pace." },
+      "2": { "title": "Confirmation", "body": "You confirm dates with a deposit, in FCFA by mobile money or in euros by card." },
+      "3": { "title": "Planning", "body": "We build the day-by-day, book guides and rooms, and send a single itinerary document." },
+      "4": { "title": "Documents", "body": "E-visa, health recommendations and insurance, with our checklist and reminders." },
+      "5": { "title": "Arrival briefing", "body": "We meet you at Cotonou airport. A briefing on money, etiquette and Vodun protocol over your first meal." },
+      "6": { "title": "Departure", "body": "Photos, a written account of your journey, and the door left open for the next one." }
+    }
+  },
+  "Trust": {
+    "licence": "Licensed tour operator · Ministry of Tourism, Benin",
+    "press": "Press logo slot",
+    "reviews": "Tripadvisor rating",
+    "founded": "Est. 2026"
+  },
+  "Footer": {
+    "guest": "Guest enquiries",
+    "trade": "Trade enquiries",
+    "journeys": "Journeys",
+    "destinations": "Destinations",
+    "benin": "Benin",
+    "social": "Social",
+    "whatsapp": "WhatsApp",
+    "scheduleCall": "Schedule a call",
+    "viewAll": "View all",
+    "practical": "Practical information",
+    "festivals": "Festivals",
+    "stories": "Stories",
+    "about": "About",
+    "datesPrices": "Dates & prices",
+    "enquire": "Enquire now",
+    "newsletter": "Newsletter signup",
+    "quote": "“Slowly, slowly, the chameleon reaches the top of the tree.”",
+    "quoteSource": "Fon proverb",
+    "pronunciation": "Danxomè · dan-ho-meh · the Fon name of the Kingdom of Dahomey",
+    "rights": "Danxomè © {year}. All rights reserved.",
+    "terms": "Website terms",
+    "bookingTerms": "Booking terms",
+    "privacy": "Privacy",
+    "cookies": "Cookies",
+    "switchTo": "Français"
+  },
+  "WhatsApp": {
+    "label": "Chat on WhatsApp",
+    "message": "Hello Danxomè, I'm looking at {page} and would like to know more."
+  },
+  "Media": {
+    "placeholder": "Placeholder"
+  }
+}

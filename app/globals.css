@@ -1,0 +1,278 @@
+@import "tailwindcss";
+
+/*
+  Danxomè design tokens.
+  Page grammar follows the approved White Desert-style direction:
+  white ground, dark-blue ink, laterite accent on hover, full-bleed media.
+  Content is left-aligned throughout (never centred blocks).
+*/
+:root {
+  --ink: #1f2a44;
+  --ink-70: rgba(31, 42, 68, 0.7);
+  --ink-glass: rgba(31, 42, 68, 0.15);
+  --charcoal: #4a5061;
+  --paper: #ffffff;
+  --grey: #f2f2f2;
+  --line: rgba(31, 42, 68, 0.14);
+  --laterite: #c2492c;
+  --laterite-deep: #8f2f1c;
+  --lagoon: #1d5b66;
+  --sand: #f2e9da;
+  --whatsapp: #25d366;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-70: var(--ink-70);
+  --color-ink-glass: var(--ink-glass);
+  --color-charcoal: var(--charcoal);
+  --color-paper: var(--paper);
+  --color-grey: var(--grey);
+  --color-line: var(--line);
+  --color-laterite: var(--laterite);
+  --color-laterite-deep: var(--laterite-deep);
+  --color-lagoon: var(--lagoon);
+  --color-sand: var(--sand);
+  --color-whatsapp: var(--whatsapp);
+
+  --font-sans: var(--font-figtree), system-ui, -apple-system, "Segoe UI",
+    sans-serif;
+  --font-display: var(--font-instrument), Georgia, "Times New Roman", serif;
+  --font-condensed: var(--font-oswald), "Arial Narrow", Impact, sans-serif;
+
+  --ease-out-soft: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  --text-eyebrow: 0.6875rem;
+  --text-eyebrow--letter-spacing: 0.12em;
+  --text-eyebrow--line-height: 1.2;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  body {
+    background: var(--paper);
+    color: var(--charcoal);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+  :focus-visible {
+    outline: 2px solid var(--laterite);
+    outline-offset: 3px;
+  }
+  ::selection {
+    background: var(--sand);
+    color: var(--ink);
+  }
+}
+
+@utility container-wide {
+  margin-inline: auto;
+  max-width: 1320px;
+  padding-inline: clamp(16px, 3.5vw, 48px);
+}
+
+@utility container-prose {
+  margin-inline: auto;
+  max-width: 760px;
+  padding-inline: 16px;
+}
+
+@utility eyebrow {
+  font-size: var(--text-eyebrow);
+  letter-spacing: var(--text-eyebrow--letter-spacing);
+  line-height: var(--text-eyebrow--line-height);
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ink);
+  opacity: 0.6;
+}
+
+@utility t-italic {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+@utility t-h2 {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: clamp(28px, 3.4vw, 46px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+@utility t-body {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--charcoal);
+  max-width: 60ch;
+}
+
+@utility coords {
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  opacity: 0.6;
+  font-variant-numeric: tabular-nums;
+}
+
+@utility btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 40px;
+  padding-inline: 18px;
+  border-radius: 2px;
+  background: var(--ink-glass);
+  color: var(--paper);
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition:
+    background 0.35s var(--ease-out-soft),
+    border-radius 0.35s var(--ease-out-soft),
+    color 0.35s var(--ease-out-soft);
+  &:hover {
+    background: var(--laterite);
+    border-radius: 5px;
+    color: var(--paper);
+  }
+}
+
+@utility btn-ghost {
+  background: transparent;
+  border: 0.5px solid rgba(255, 255, 255, 0.3);
+  &:hover {
+    background: var(--paper);
+    color: var(--laterite);
+  }
+}
+
+@utility btn-lg {
+  height: 56px;
+  width: 100%;
+  background: var(--grey);
+  color: var(--ink);
+  font-size: 14px;
+  &:hover {
+    background: var(--paper);
+    color: var(--laterite);
+    box-shadow: inset 0 0 0 0.5px var(--line);
+  }
+}
+
+@utility btn-solid {
+  background: var(--laterite);
+  color: var(--paper);
+  &:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+}
+
+@utility btn-inline {
+  background: rgba(31, 42, 68, 0.05);
+  color: var(--ink);
+  &:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+}
+
+/* Harmattan haze: the section-transition effect, rendered with gradients so it costs no bytes. */
+@utility haze {
+  position: relative;
+  z-index: 2;
+  height: 160px;
+  margin-top: -160px;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(242, 233, 218, 0.75) 55%,
+    var(--paper) 100%
+  );
+  -webkit-mask-image:
+    radial-gradient(60% 100% at 25% 100%, #000 55%, transparent 100%),
+    radial-gradient(70% 100% at 80% 100%, #000 50%, transparent 100%);
+  mask-image:
+    radial-gradient(60% 100% at 25% 100%, #000 55%, transparent 100%),
+    radial-gradient(70% 100% at 80% 100%, #000 50%, transparent 100%);
+  -webkit-mask-composite: source-over;
+  mask-composite: add;
+}
+
+/* Placeholder media gradients until real photography is commissioned. */
+@utility tone-laterite {
+  background: linear-gradient(160deg, #7a3a26, #2c2a3c 75%);
+}
+@utility tone-lagoon {
+  background: linear-gradient(160deg, #1d5b66, #13262e 75%);
+}
+@utility tone-savannah {
+  background: linear-gradient(160deg, #a8742f, #3e5a3a 75%);
+}
+@utility tone-coast {
+  background: linear-gradient(160deg, #3f7c8a, #1f2a44 75%);
+}
+@utility tone-night {
+  background: linear-gradient(160deg, #5b2a5e, #1a1a2c 75%);
+}
+@utility tone-indigo {
+  background: linear-gradient(170deg, #1f2a44 0%, #2e3d5c 50%, #8f2f1c 100%);
+}
+@utility tone-season {
+  background:
+    radial-gradient(70% 70% at 30% 30%, rgba(242, 198, 164, 0.35), transparent 60%),
+    linear-gradient(170deg, #b06a3b 0%, #5d3222 55%, #1f2a44 100%);
+}
+@utility tone-hero {
+  background:
+    radial-gradient(70% 60% at 70% 20%, rgba(255, 196, 140, 0.25), transparent 60%),
+    radial-gradient(80% 60% at 20% 90%, rgba(29, 91, 102, 0.6), transparent 60%),
+    linear-gradient(180deg, #26212f 0%, #5e3324 45%, #1b3b43 100%);
+}
+
+.hscroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
+
+/* Scroll reveals. Hidden start state only with JS running and motion allowed. */
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal] {
+    transition:
+      opacity 0.9s var(--ease-out-soft),
+      transform 0.9s var(--ease-out-soft);
+  }
+  html.js [data-reveal]:not([data-in]) {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
