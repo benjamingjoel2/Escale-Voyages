@@ -16,7 +16,7 @@ The site duplicates the **White Desert page grammar** (white-desert.com) with Es
 
 Homepage section order: video hero → intro statement → season banner → journey cards (price, season, duration, one-line pitch, coordinates) → founder quote → horizontal-scroll destination cards with region eyebrow and bracketed GPS coordinates → proverb → route code (COO – NAE) → journey map with three stats → Return feature → planning CTA → How it works (6 steps, slide-out panel) → trust row → footer with contact groups, link columns, three large buttons, closing quote, legal.
 
-**Owner preference: content is left-aligned. No centred blocks.** Hero title sits bottom-left. Section headings, quotes and CTAs start at the left edge of the container.
+**Owner preference: content is left-aligned. No centred blocks. The page is wide: `container-wide` is fluid up to 1920px with a 2.5vw gutter, so wide monitors are filled edge to edge like the reference site.** Hero title sits bottom-left. Section headings, quotes and CTAs start at the left edge of the container.
 
 ### Tokens (app/globals.css)
 
