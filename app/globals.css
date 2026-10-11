@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 /*
-  Escale Voyages design tokens. Dark site (owner's choice, October 2026).
+  Escale Voyages design tokens. Black site (owner's choice, October 2026).
   Page grammar follows the approved White Desert-style direction, inverted:
-  near-black blue ground, bone-white ink, orange accent on hover, full-bleed
+  true black ground, off-white ink, orange accent on hover, full-bleed
   media. Content is left-aligned throughout (never centred blocks).
 
   "ink" is always the foreground and "paper" always the ground, so components
@@ -12,18 +12,18 @@
 */
 :root {
   color-scheme: dark;
-  --ink: #eef0f4;
-  --ink-70: rgba(238, 240, 244, 0.7);
-  --ink-glass: rgba(238, 240, 244, 0.14);
-  --ink-05: rgba(238, 240, 244, 0.06);
-  --charcoal: #aeb4c2;
-  --paper: #0e131d;
-  --grey: #171d29;
-  --line: rgba(238, 240, 244, 0.14);
+  --ink: #f2f2f2;
+  --ink-70: rgba(242, 242, 242, 0.7);
+  --ink-glass: rgba(242, 242, 242, 0.14);
+  --ink-05: rgba(242, 242, 242, 0.06);
+  --charcoal: #a9a9ad;
+  --paper: #000000;
+  --grey: #111111;
+  --line: rgba(242, 242, 242, 0.14);
   --accent: #e4561f;
   --accent-deep: #b9420f;
   --lagoon: #3a97a6;
-  --sand: #1a2130;
+  --sand: #0c0c0c;
   --on-glass: #ffffff;
   --on-accent: #ffffff;
   --whatsapp: #25d366;
@@ -225,8 +225,8 @@
   pointer-events: none;
   background: linear-gradient(
     180deg,
-    rgba(14, 19, 29, 0) 0%,
-    rgba(26, 33, 48, 0.8) 55%,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(12, 12, 12, 0.8) 55%,
     var(--paper) 100%
   );
   -webkit-mask-image:

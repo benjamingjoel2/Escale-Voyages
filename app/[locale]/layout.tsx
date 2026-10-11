@@ -40,7 +40,7 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export const viewport: Viewport = { themeColor: "#0e131d" };
+export const viewport: Viewport = { themeColor: "#000000" };
 
 export async function generateMetadata({
   params,
