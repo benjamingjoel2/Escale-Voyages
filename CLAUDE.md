@@ -29,7 +29,7 @@ Homepage section order: video hero → intro statement → season banner → jou
 
 - `MediaSlot` renders the real photo through `next/image` when the file exists in `public/media` (listed in `lib/media.ts`, generated), otherwise a toned gradient with the filename and aspect ratio to commission.
 - Development photography comes from Wikimedia Commons under CC licences; every file is credited in `public/media/CREDITS.md`. Keep that file accurate when files are swapped. These are stand-ins until the owner's photographer delivers; W National Park has no usable image yet.
-- To add or replace media: drop the JPEG in `public/media`, regenerate `lib/media.ts` (width/height map) and update `CREDITS.md`.
+- To add or replace media: drop the JPEG in `public/media`, run `npm run media` (regenerates `lib/media.ts`) and update `CREDITS.md`. Owner-supplied frames (October 2026) now fill the hero, season banner, founder, Return, about and most coast/south slots; see the first table in `CREDITS.md`.
 
 ### Motion
 

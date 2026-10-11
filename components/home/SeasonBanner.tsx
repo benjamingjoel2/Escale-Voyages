@@ -11,7 +11,7 @@ export function SeasonBanner() {
         <MediaSlot
           label={t("mediaSlot")}
           file="season-banner.jpg"
-          alt="Savannah landscape in Pendjari National Park in the dry season"
+          alt="A herd of elephants crossing dry grassland in Pendjari National Park"
           sizes="(min-width: 1320px) 1224px, 100vw"
           tone="season"
           labelPosition="top-right"

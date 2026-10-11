@@ -13,6 +13,7 @@ import type { Lang } from "@/lib/data/journeys";
 import { getDestinations, getJourney, getJourneys } from "@/lib/content";
 import { lowestPrice } from "@/lib/journeys";
 import { formatXof } from "@/lib/currency";
+import { mediaSrc } from "@/lib/media";
 import { site } from "@/lib/site";
 import { routing } from "@/i18n/routing";
 
@@ -95,7 +96,7 @@ export default async function JourneyPage({ params }: Props) {
         <section className="relative">
           <MediaSlot
             label={`${j.heroImage.file} · ${j.heroImage.width}×${j.heroImage.height}`}
-            file={j.heroImage.src ? j.heroImage.file : j.image.file}
+            file={j.heroImage.src || mediaSrc(j.heroImage.file) ? j.heroImage.file : j.image.file}
             src={j.heroImage.src ?? j.image.src}
             alt={altOf(j.heroImage.alt ?? j.image.alt, j.title[lang])}
             priority

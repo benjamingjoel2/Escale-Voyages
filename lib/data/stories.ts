@@ -91,7 +91,7 @@ export const stories: Story[] = [
         "Venir compte. Les droits d'entrée et les emplois des lodges sont ce qui rend la conservation rentable pour les villages en bordure du parc. Notre voyage Vers le nord, la Pendjari passe trois journées complètes à l'intérieur avec des guides formés par le parc, en saison sèche, quand les animaux viennent à l'eau.",
       ],
     },
-    cover: { file: "journey-pendjari.jpg", width: 1600, height: 1067 },
+    cover: { file: "journey-pendjari-hero.jpg", width: 1600, height: 1067 },
     tone: "savannah",
     publishedAt: "2026-07-30",
     readingMinutes: 6,

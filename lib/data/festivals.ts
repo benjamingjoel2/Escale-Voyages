@@ -115,7 +115,7 @@ export const festivals: Festival[] = [
     when: { en: "Around the Mawlid, Nikki (dates follow the lunar calendar)", fr: "Autour du Mawlid, Nikki (dates selon le calendrier lunaire)" },
     datesConfirmed: false,
     destinationSlug: "parakou",
-    image: { file: "dest-parakou.jpg", width: 1600, height: 1000 },
+    image: { file: "festival-gaani.jpg", width: 1600, height: 1000 },
     tone: "savannah",
   },
 ];

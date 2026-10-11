@@ -11,8 +11,8 @@ export function ReturnFeature() {
       <Reveal>
         <MediaSlot
           label={t("mediaSlot")}
-          file="return-door.jpg"
-          alt="The Door of No Return on the beach at Ouidah"
+          file="return-feature.jpg"
+          alt="A mural of two faces with traditional scarification marks, seen from a car window in Cotonou"
           sizes="(min-width: 1320px) 1224px, 100vw"
           tone="indigo"
           labelPosition="top-right"

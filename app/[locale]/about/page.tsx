@@ -35,8 +35,8 @@ export default async function AboutPage({ params }: Props) {
           eyebrow={t("eyebrow")}
           title={t("title")}
           intro={t("intro")}
-          file="dest-cotonou.jpg"
-          alt="Cotonou skyline"
+          file="about-hero.jpg"
+          alt="Friends dancing in the living room of a guesthouse, paintings on the wall"
           label={t("mediaSlot")}
           tone="night"
         />

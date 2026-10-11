@@ -182,7 +182,7 @@ export const journeys: Journey[] = [
       { file: "kings-01.jpg", width: 1600, height: 1067, alt: { en: "Bas-relief on a palace wall in Abomey", fr: "Bas-relief sur un mur de palais à Abomey" } },
       { file: "kings-02.jpg", width: 1067, height: 1600, alt: { en: "Appliqué cloth being sewn", fr: "Tissu appliqué en cours de couture" } },
       { file: "kings-03.jpg", width: 1600, height: 1067, alt: { en: "Dassa hills at sunrise", fr: "Collines de Dassa au lever du soleil" } },
-      { file: "kings-04.jpg", width: 1600, height: 1067, alt: { en: "The Door of No Return, Ouidah", fr: "La Porte du Non-Retour, Ouidah" } },
+      { file: "kings-04.jpg", width: 1500, height: 779, alt: { en: "A traveller before the Door of No Return, Ouidah", fr: "Une voyageuse devant la Porte du Non-Retour, Ouidah" } },
     ],
   },
   {
@@ -253,10 +253,10 @@ export const journeys: Journey[] = [
       ...FAQ_COMMON,
     ],
     gallery: [
-      { file: "return-01.jpg", width: 1600, height: 1067, alt: { en: "The Door of No Return at dawn", fr: "La Porte du Non-Retour à l'aube" } },
+      { file: "return-01.jpg", width: 1500, height: 838, alt: { en: "A mural of two faces with traditional scarification, seen from the car in Cotonou", fr: "Une fresque de deux visages aux scarifications traditionnelles, vue depuis la voiture à Cotonou" } },
       { file: "return-02.jpg", width: 1067, height: 1600, alt: { en: "Zomachi memorial, Ouidah", fr: "Mémorial Zomachi, Ouidah" } },
-      { file: "return-03.jpg", width: 1600, height: 1067, alt: { en: "Afro-Brazilian house, Porto-Novo", fr: "Maison afro-brésilienne, Porto-Novo" } },
-      { file: "return-04.jpg", width: 1600, height: 1067, alt: { en: "Archive pages in the Ouidah museum", fr: "Pages d'archives au musée de Ouidah" } },
+      { file: "return-03.jpg", width: 993, height: 832, alt: { en: "A whitewashed Afro-Brazilian house with a balustraded balcony", fr: "Une maison afro-brésilienne blanchie à la chaux, au balcon à balustres" } },
+      { file: "return-04.jpg", width: 1500, height: 774, alt: { en: "A street mural of a market crowd and Zangbeto figures, Cotonou", fr: "Une fresque murale d'une foule de marché et de Zangbéto, Cotonou" } },
     ],
   },
   {
@@ -389,9 +389,11 @@ export const journeys: Journey[] = [
     ],
     faq: FAQ_COMMON,
     gallery: [
-      { file: "lagoon-01.jpg", width: 1600, height: 1067, alt: { en: "Pirogues at Ganvié at dawn", fr: "Pirogues à Ganvié à l'aube" } },
+      { file: "lagoon-01.jpg", width: 1500, height: 814, alt: { en: "Young paddlers racing a pirogue past the stilt houses of Ganvié", fr: "De jeunes pagayeurs en course devant les maisons sur pilotis de Ganvié" } },
       { file: "lagoon-02.jpg", width: 1067, height: 1600, alt: { en: "Mangroves on the Mono", fr: "Mangrove sur le Mono" } },
-      { file: "lagoon-03.jpg", width: 1600, height: 1067, alt: { en: "Grand-Popo beach", fr: "Plage de Grand-Popo" } },
+      { file: "lagoon-03.jpg", width: 1500, height: 826, alt: { en: "The coconut coast from the air, fishing boats offshore", fr: "La côte aux cocotiers vue du ciel, barques de pêche au large" } },
+      { file: "lagoon-04.jpg", width: 1170, height: 780, alt: { en: "A wooden deck bar over the lagoon, under parasols", fr: "Un bar sur pilotis au-dessus de la lagune, sous les parasols" } },
+      { file: "lagoon-05.jpg", width: 1500, height: 838, alt: { en: "An afternoon by the hotel pool in Cotonou", fr: "Un après-midi à la piscine de l'hôtel, Cotonou" } },
     ],
   },
   {
@@ -456,7 +458,7 @@ export const journeys: Journey[] = [
       ...FAQ_COMMON,
     ],
     gallery: [
-      { file: "vodun-01.jpg", width: 1600, height: 1067, alt: { en: "Ceremony on the beach at Ouidah", fr: "Cérémonie sur la plage de Ouidah" } },
+      { file: "vodun-01.jpg", width: 1500, height: 809, alt: { en: "An Egungun masquerade in embroidered cloth, mask raised to the sky", fr: "Un masque Egungun en tissu brodé, le visage levé vers le ciel" } },
       { file: "vodun-02.jpg", width: 1067, height: 1600, alt: { en: "Zangbeto masquerade", fr: "Mascarade Zangbéto" } },
       { file: "vodun-03.jpg", width: 1600, height: 1067, alt: { en: "Offerings at a temple", fr: "Offrandes dans un temple" } },
     ],
@@ -536,10 +538,10 @@ export const journeys: Journey[] = [
       ...FAQ_COMMON,
     ],
     gallery: [
-      { file: "grand-01.jpg", width: 1600, height: 1067, alt: { en: "Bariba horseman at Parakou", fr: "Cavalier bariba à Parakou" } },
+      { file: "grand-01.jpg", width: 1500, height: 836, alt: { en: "A Sunday crowd on the steps of an old church in the south", fr: "La foule du dimanche sur les marches d'une vieille église du sud" } },
       { file: "grand-02.jpg", width: 1067, height: 1600, alt: { en: "Gèlèdé mask, Kétou", fr: "Masque Gèlèdé, Kétou" } },
-      { file: "grand-03.jpg", width: 1600, height: 1067, alt: { en: "The Niger river in the W park", fr: "Le fleuve Niger dans le parc du W" } },
-      { file: "grand-04.jpg", width: 1600, height: 1067, alt: { en: "Tata Somba at dusk", fr: "Tata Somba au crépuscule" } },
+      { file: "grand-03.jpg", width: 1500, height: 1125, alt: { en: "The pool and terraces of a five-star hotel in Cotonou", fr: "La piscine et les terrasses d'un hôtel cinq étoiles à Cotonou" } },
+      { file: "grand-04.jpg", width: 1500, height: 1000, alt: { en: "A herd of elephants in the dry grass of Pendjari", fr: "Un troupeau d'éléphants dans les herbes sèches de la Pendjari" } },
     ],
   },
   {
