@@ -66,14 +66,6 @@ export function RouteSection() {
               </div>
             ))}
           </dl>
-          <a
-            href="#film"
-            className="relative inline-flex h-[52px] w-max min-w-[230px] items-center justify-between gap-5 overflow-hidden rounded-r-[2px] border border-l-0 border-line pl-[54px] pr-5 text-[13px] font-medium text-ink"
-          >
-            <span className="absolute left-0 top-0 h-full w-[38px] rounded-l-[2px] bg-gradient-to-br from-[#9A4B2E] to-[#2C3A4C]" aria-hidden="true" />
-            <span>{t("watchFilm")}</span>
-            <span aria-hidden="true">▶</span>
-          </a>
         </Reveal>
       </div>
     </section>

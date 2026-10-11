@@ -30,6 +30,9 @@ export async function POST(req: NextRequest) {
     case "destination":
       tags.push("destinations", "journeys");
       break;
+    case "stay":
+      tags.push("stays", "journeys");
+      break;
     case "siteSettings":
       tags.push("settings");
       break;

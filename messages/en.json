@@ -25,7 +25,6 @@
   },
   "Hero": {
     "statement": "Luxury and discovery across the whole of Benin, from the Atlantic to the savannah.",
-    "watchFilm": "Watch film",
     "eyebrow": "West Africa's best-kept secret",
     "tagline": "The whole of Benin, at your pace",
     "datesPrices": "Dates & prices",
@@ -91,8 +90,7 @@
     "tempLabel": "Dry season, Dec – Feb",
     "tempValue": "25–35 °C",
     "tempNote": "Pendjari",
-    "mapSlot": "Commissioned line-art map of Benin, SVG",
-    "watchFilm": "Watch film"
+    "mapSlot": "Commissioned line-art map of Benin, SVG"
   },
   "Return": {
     "eyebrow": "Return · Retour",
@@ -209,6 +207,9 @@
     "mapTitle": "Where you go",
     "mapAlt": "Schematic map of the route with each stop plotted by its coordinates",
     "mapSlot": "Commissioned line-art map of Benin replaces this frame",
+    "staysEyebrow": "Where you stay",
+    "staysTitle": "Nights along the way",
+    "staysIntro": "Chosen for where they are and who runs them. Rooms are confirmed with your dates; we tell you the exact houses when you book.",
     "included": "What's included",
     "excluded": "Not included",
     "datesEyebrow": "Dates & prices",

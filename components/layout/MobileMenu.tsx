@@ -40,7 +40,7 @@ export function MobileMenu({ overlay }: { overlay: boolean }) {
         aria-expanded={open}
         aria-controls={id}
         onClick={() => setOpen(true)}
-        className={`btn h-9 px-3.5 ${overlay ? "" : "bg-ink text-paper"}`}
+        className={`btn h-9 px-3.5 ${overlay ? "" : "bg-ink text-paper hover:text-white"}`}
       >
         {t("menu")}
       </button>
@@ -51,7 +51,7 @@ export function MobileMenu({ overlay }: { overlay: boolean }) {
         aria-modal="true"
         aria-label={t("menu")}
         hidden={!open}
-        className="fixed inset-0 z-50 flex flex-col bg-ink text-paper"
+        className="fixed inset-0 z-50 flex flex-col bg-paper text-ink"
       >
         <div className="container-wide flex w-full items-center justify-between py-4">
           <span className="font-display text-2xl">
@@ -60,7 +60,7 @@ export function MobileMenu({ overlay }: { overlay: boolean }) {
           <button
             type="button"
             onClick={() => setOpen(false)}
-            className="btn h-9 px-3.5 bg-white/10"
+            className="btn h-9 px-3.5 bg-ink/10 text-ink hover:text-white"
           >
             {t("close")}
           </button>
@@ -79,11 +79,11 @@ export function MobileMenu({ overlay }: { overlay: boolean }) {
           ))}
         </ul>
         <div className="container-wide mt-auto grid w-full gap-2 pb-[calc(24px+env(safe-area-inset-bottom,0px))]">
-          <LocaleSwitcher className="w-max text-paper" />
+          <LocaleSwitcher className="w-max text-ink" />
           <Link
             href="/dates-prices"
             onClick={() => setOpen(false)}
-            className="btn btn-lg bg-white/10 text-paper"
+            className="btn btn-lg"
           >
             {t("datesPrices")}
           </Link>

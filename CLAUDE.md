@@ -20,8 +20,8 @@ Homepage section order: video hero → intro statement → season banner → jou
 
 ### Tokens (app/globals.css)
 
-- Ink `#1F2A44` (dark blue, all headings), charcoal `#4A5061` (body), paper `#FFFFFF`, grey `#F2F2F2` (footer, large buttons), accent `#E4561F` (orange, hover only), lagoon `#1D5B66`, sand `#F4F1EC` (haze).
-- Buttons: 40px, 2px radius, translucent ink glass; on hover turn accent and 5px radius. Large footer buttons are 56px grey.
+- **Dark site** (owner decision, October 2026). `ink` is always the foreground and `paper` always the ground, so write components with the tokens, never literal colours: ink `#EEF0F4` (bone white, all headings), charcoal `#AEB4C2` (body), paper `#0E131D` (near-black blue), grey `#171D29` (footer, large buttons), accent `#E4561F` (orange, hover only), lagoon `#3A97A6`, sand `#1A2130` (haze). Text on translucent and orange buttons is `--on-glass` / `--on-accent` (white). `text-white` is only for copy laid over photographs.
+- Buttons: 40px, 2px radius, translucent ink glass; on hover turn accent and 5px radius. Large footer buttons are 56px grey. There is no "Watch film" button (removed on request).
 - Type: Oswald 300 uppercase for the giant hero word and route code (`font-condensed`), Instrument Serif italic for statements and quotes (`font-display`), Figtree for everything else (`font-sans`). Eyebrows are 11px uppercase, 0.12em tracking, 60% ink.
 - Haze (`.haze` utility) is the white mist transition between the hero and the intro. Pure CSS.
 
@@ -43,6 +43,7 @@ Slow and few. Hero parallax, staggered reveals on scroll (`Reveal`, CSS-driven, 
 - `cacheComponents` is on. Anything reading request data (`searchParams`, headers) goes inside `<Suspense>`; cacheable fetches use `"use cache"` + `cacheLife` (see `lib/weather.ts`, `lib/time.ts`). Never call `new Date()` in a prerendered component.
 - Prices are stored in FCFA (XOF). Display with `formatXof` and an approximate conversion via `formatConverted` (`lib/currency.ts`). Converted figures always show "≈".
 - Placeholder data in `lib/data/` until Sanity (Phase 5). Keep the shapes CMS-ready. Journeys carry full detail (itinerary, stops, inclusions, departures, FAQ, gallery). Destinations carry a `region` (coast, south, centre, north) and cover the whole country.
+- Stays (`lib/data/stays.ts`, Sanity `stay`): each journey lists `stays` slugs in order; `StaysSection` renders "Where you stay" on the journey page with the first image as the card and up to four more beneath. Copy never names a hotel; it describes the place.
 - Journey filters (`lib/journeys.ts`) are URL search params: `type`, `duration`, `budget`, `month`. Parse with `parseFilters`; unknown values are ignored.
 - Coordinates: decimal degrees in data, display string to the nearest minute. Verify against OpenStreetMap before launch.
 - WhatsApp: floating button sitewide with a prefilled message per page (`whatsappUrl` in `lib/site.ts`). Number is a placeholder until supplied.
@@ -52,9 +53,9 @@ Slow and few. Hero parallax, staggered reveals on scroll (`Reveal`, CSS-driven, 
 
 ## Content (Sanity)
 
-- Schemas live in `sanity/schemaTypes/`: `journey`, `destination`, `story`, `festival`, `siteSettings` (singleton), `enquiry` and `bookingRequest` (written by the Phase 6 forms). Bilingual fields use the `localeString`, `localeText`, `localeStringList`, `localeBlock` objects; both languages are required. Every image is an `imageWithAlt` with required alt text.
+- Schemas live in `sanity/schemaTypes/`: `journey`, `destination`, `story`, `festival`, `stay`, `siteSettings` (singleton), `enquiry` and `bookingRequest` (written by the Phase 6 forms). Bilingual fields use the `localeString`, `localeText`, `localeStringList`, `localeBlock` objects; both languages are required. Every image is an `imageWithAlt` with required alt text.
 - The embedded Studio is at `/studio` (`app/studio/[[...tool]]`), with its own root layout. Config in `sanity.config.ts`, sidebar in `sanity/structure.ts`.
-- Pages read content through `lib/content.ts` only (`getJourneys`, `getJourney`, `getDestinations`, `getSiteSettings`). Each is `"use cache"` with tags (`journeys`, `journey:<slug>`, `destinations`, `settings`, `content`). With no `NEXT_PUBLIC_SANITY_PROJECT_ID` the layer returns `lib/data` placeholders, so the site always builds.
+- Pages read content through `lib/content.ts` only (`getJourneys`, `getJourney`, `getDestinations`, `getStays`, `getSiteSettings`). Each is `"use cache"` with tags (`journeys`, `journey:<slug>`, `destinations`, `stays`, `settings`, `content`). With no `NEXT_PUBLIC_SANITY_PROJECT_ID` the layer returns `lib/data` placeholders, so the site always builds.
 - GROQ in `lib/sanity/queries.ts` projects documents into the same TypeScript shapes as `lib/data`, so components do not know where content came from. CMS images arrive as `image.src` (Sanity CDN); `MediaSlot` prefers `src` over the local `file`.
 - `app/api/revalidate` is the Sanity publish webhook (secret in `SANITY_REVALIDATE_SECRET`); it revalidates by tag.
 - `npm run seed` (with `SANITY_API_WRITE_TOKEN`) uploads `public/media` and creates the placeholder journeys, destinations and settings in the dataset. Re-runnable.
@@ -80,6 +81,10 @@ Slow and few. Hero parallax, staggered reveals on scroll (`Reveal`, CSS-driven, 
 8. Performance, SEO (JSON-LD, OG, sitemap, hreflang), accessibility pass
 
 After each phase: summarise what was built, what is left, what is needed from the owner.
+
+**Owner rule: merge without asking.** When a change is built, verified and pushed, mark the PR ready and merge it yourself; never ask the owner to merge or wait for them to. Then restart the working branch from `main`.
+
+**Owner rule: after every build, give a preview.** Until the repo is connected to Vercel, that means rebuilding the static snapshot (`scripts/preview-snapshot.mjs` against `next start`) and republishing it to the existing preview link, then putting the link in the reply. Once Vercel is connected, the preview is the PR's deployment URL.
 
 ## Commands
 

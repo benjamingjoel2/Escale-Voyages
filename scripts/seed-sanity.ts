@@ -11,6 +11,7 @@ import { createReadStream, existsSync } from "node:fs";
 import path from "node:path";
 import { journeys } from "../lib/data/journeys";
 import { destinations } from "../lib/data/destinations";
+import { stays } from "../lib/data/stays";
 import { site } from "../lib/site";
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
@@ -61,6 +62,28 @@ async function main() {
     console.log("destination", d.slug);
   }
 
+  for (const [i, s] of stays.entries()) {
+    const images = [];
+    for (const im of s.images) {
+      const alt = typeof im.alt === "object" ? im.alt : s.name;
+      const up = await uploadImage(im.file, alt);
+      if (up) images.push({ ...up, _key: key() });
+    }
+    await client.createOrReplace({
+      _id: `stay-${s.slug}`,
+      _type: "stay",
+      name: s.name,
+      slug: { _type: "slug", current: s.slug },
+      place: s.place,
+      pitch: s.pitch,
+      body: s.body,
+      tone: s.tone,
+      order: (i + 1) * 10,
+      images,
+    });
+    console.log("stay", s.slug);
+  }
+
   for (const [i, j] of journeys.entries()) {
     const image = await uploadImage(j.image.file, j.title);
     await client.createOrReplace({
@@ -77,6 +100,7 @@ async function main() {
       groupMax: j.groupMax,
       highlights: j.highlights,
       stops: j.stops.map((s) => ({ _type: "reference", _key: key(), _ref: `destination-${s}` })),
+      stays: j.stays.map((s) => ({ _type: "reference", _key: key(), _ref: `stay-${s}` })),
       itinerary: j.itinerary.map((d) => ({ _type: "day", _key: key(), ...d })),
       included: j.included,
       excluded: j.excluded,

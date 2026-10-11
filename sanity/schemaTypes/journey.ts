@@ -66,6 +66,13 @@ export const journey = defineType({
       group: "itinerary",
     }),
     defineField({
+      name: "stays",
+      title: "Where you stay (in order)",
+      type: "array",
+      of: [defineArrayMember({ type: "reference", to: [{ type: "stay" }] })],
+      group: "itinerary",
+    }),
+    defineField({
       name: "itinerary",
       title: "Day by day",
       type: "array",
