@@ -97,6 +97,8 @@
 }
 
 @utility container-wide {
+  /* width: 100% so a grid or flex parent cannot shrink-wrap and centre it. */
+  width: 100%;
   margin-inline: auto;
   max-width: 1920px;
   padding-inline: clamp(16px, 2.5vw, 48px);
