@@ -273,6 +273,14 @@
   scrollbar-color: var(--line) transparent;
 }
 
+/* Self-moving strips hide the scrollbar; they still scroll by touch and wheel. */
+.hscroll-auto {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 /* Scroll reveals. Hidden start state only with JS running and motion allowed. */
 @media (prefers-reduced-motion: no-preference) {
   [data-reveal] {
