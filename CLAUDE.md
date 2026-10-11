@@ -60,6 +60,14 @@ Slow and few. Hero parallax, staggered reveals on scroll (`Reveal`, CSS-driven, 
 - `npm run seed` (with `SANITY_API_WRITE_TOKEN`) uploads `public/media` and creates the placeholder journeys, destinations and settings in the dataset. Re-runnable.
 - Env vars are listed in `.env.example`.
 
+## Forms, booking and payments
+
+- Enquiry form (`components/forms/EnquiryForm.tsx`) posts to the `submitEnquiry` server action: zod validation, honeypot, writes an `enquiry` document when `SANITY_API_WRITE_TOKEN` is set (otherwise logs), emails owner and guest through `lib/email.ts` (Resend; logs without `RESEND_API_KEY`).
+- Booking flow (`components/booking/BookingFlow.tsx`, routes `/book`, `/book/[slug]`, `/book/confirmation`): five steps, dates → travellers → extras → contact → review. Prices are recomputed server-side in `lib/bookings.ts` (30% deposit). The `submitBooking` action creates a `bookingRequest`, then either calls the payment provider or records a call request, and redirects to the confirmation page with the reference.
+- Payments (`lib/payments/`): one `PaymentProvider` interface, adapters for mock, FedaPay, KkiaPay and Stripe. `getProvider(method)` picks by env keys and falls back to the mock, which approves instantly and shows a "test mode" notice. Webhooks land at `/api/webhooks/payments?provider=…` and update the booking's payment status in Sanity.
+- Currency: `CurrencyProvider` keeps the visitor's display currency in localStorage; `<Approx xof={…} />` renders the converted figure, FCFA stays primary. Switcher lives in the footer.
+- Festival countdown is a client component on a one-second `useSyncExternalStore` tick; Playwright screenshots of that page need `page.clock.install()`.
+
 ## Phases
 
 1. Plan, brand, design system ✅
@@ -67,8 +75,8 @@ Slow and few. Hero parallax, staggered reveals on scroll (`Reveal`, CSS-driven, 
 3. Homepage ✅
 4. Journeys index + detail, dates & prices ✅
 5. Sanity schemas + studio ✅ (site runs on placeholder data until a project ID is set)
-6. Booking + payments (mock adapters: FedaPay/KkiaPay for mobile money, Stripe or a pan-African processor for cards; Stripe needs a non-Benin entity)
-7. Remaining pages (destinations, return, festivals, practical, stories, about, enquire, legal)
+6. Booking + payments ✅ (mock adapter live; FedaPay, KkiaPay and Stripe adapters stubbed behind env keys; Stripe needs a non-Benin entity)
+7. Remaining pages ✅ (destinations, return, festivals, practical, stories, about, enquire, legal)
 8. Performance, SEO (JSON-LD, OG, sitemap, hreflang), accessibility pass
 
 After each phase: summarise what was built, what is left, what is needed from the owner.

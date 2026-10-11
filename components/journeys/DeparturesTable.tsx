@@ -1,7 +1,8 @@
 import { useFormatter, useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import type { Departure, Journey } from "@/lib/data/journeys";
-import { formatConverted, formatXof } from "@/lib/currency";
+import { formatXof } from "@/lib/currency";
+import { Approx } from "@/components/ui/Currency";
 
 type Row = Departure & { journey?: Journey };
 
@@ -53,9 +54,7 @@ export function DeparturesTable({ rows, showJourney = false }: Props) {
                 <td className="py-4 pr-4">{tj("days", { count: days })}</td>
                 <td className="py-4 pr-4 tabular-nums">
                   <span className="font-medium text-ink">{formatXof(d.priceXof)}</span>
-                  <span className="ml-1.5 text-charcoal">
-                    {tj("approx", { amount: formatConverted(d.priceXof, "EUR", locale) })}
-                  </span>
+                  <Approx xof={d.priceXof} className="ml-1.5 text-charcoal" />
                 </td>
                 <td className="py-4 pr-4">
                   {d.spotsLeft > 0 ? (
@@ -69,7 +68,7 @@ export function DeparturesTable({ rows, showJourney = false }: Props) {
                 <td className="py-3 text-right">
                   {slug ? (
                     <Link
-                      href={{ pathname: "/enquire", query: { journey: slug, date: d.start } }}
+                      href={{ pathname: "/book/[slug]", params: { slug }, query: { date: d.start } }}
                       className="btn btn-inline h-9"
                     >
                       {t("book")}

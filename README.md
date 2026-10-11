@@ -31,6 +31,8 @@ The site runs on placeholder content in `lib/data` until Sanity is configured. T
 | `components/layout/` | Nav, footer, mobile menu, locale switcher, WhatsApp button, smooth scroll, weather. |
 | `components/home/` | Homepage sections in page order. |
 | `components/journeys/` | Journey card, filters, booking panel, route map, departures table. |
+| `components/booking/`, `components/forms/` | Booking flow and enquiry form (client), backed by server actions in `app/actions/`. |
+| `lib/payments/` | Payment abstraction: mock (default), FedaPay, KkiaPay, Stripe adapters. |
 | `components/ui/` | `MediaSlot` (photo or placeholder), `Reveal` (scroll reveal). |
 | `i18n/` | Routing (localised pathnames), navigation helpers, request config. |
 | `messages/` | `en.json`, `fr.json`. Every string lives here. |

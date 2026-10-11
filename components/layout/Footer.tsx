@@ -4,6 +4,7 @@ import { getDestinations, getJourneys, getSiteSettings } from "@/lib/content";
 import { whatsappUrl } from "@/lib/site";
 import { getCurrentYear } from "@/lib/time";
 import { LocaleSwitcher } from "./LocaleSwitcher";
+import { CurrencySwitcher } from "@/components/ui/Currency";
 
 export async function Footer() {
   const [t, rawLocale, year, journeys, destinations, settings] = await Promise.all([
@@ -67,6 +68,7 @@ export async function Footer() {
             <Link className="text-sm opacity-65 hover:opacity-100" href="/stories">{t("stories")}</Link>
             <Link className="text-sm opacity-65 hover:opacity-100" href="/about">{t("about")}</Link>
             <LocaleSwitcher className="mt-1 w-max" />
+            <CurrencySwitcher className="mt-2" />
           </div>
           <div className="grid content-start gap-2">
             <p className="t-italic mb-1 text-xl">{t("social")}</p>
@@ -92,10 +94,10 @@ export async function Footer() {
         <div className="mt-10 flex flex-wrap justify-between gap-3 border-t border-line pt-5 text-xs opacity-70">
           <span>{t("rights", { year })}</span>
           <div className="flex flex-wrap gap-4">
-            <Link href="/legal/terms">{t("terms")}</Link>
-            <Link href="/legal/booking-terms">{t("bookingTerms")}</Link>
-            <Link href="/legal/privacy">{t("privacy")}</Link>
-            <Link href="/legal/cookies">{t("cookies")}</Link>
+            <Link href={{ pathname: "/legal/[page]", params: { page: "terms" } }}>{t("terms")}</Link>
+            <Link href={{ pathname: "/legal/[page]", params: { page: "booking-terms" } }}>{t("bookingTerms")}</Link>
+            <Link href={{ pathname: "/legal/[page]", params: { page: "privacy" } }}>{t("privacy")}</Link>
+            <Link href={{ pathname: "/legal/[page]", params: { page: "cookies" } }}>{t("cookies")}</Link>
           </div>
         </div>
       </div>

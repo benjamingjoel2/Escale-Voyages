@@ -22,16 +22,14 @@ export const routing = defineRouting({
     "/festivals": { en: "/festivals", fr: "/festivals" },
     "/practical": { en: "/practical", fr: "/infos-pratiques" },
     "/stories": { en: "/stories", fr: "/recits" },
+    "/stories/[slug]": { en: "/stories/[slug]", fr: "/recits/[slug]" },
     "/about": { en: "/about", fr: "/a-propos" },
     "/enquire": { en: "/enquire", fr: "/demande" },
     "/dates-prices": { en: "/dates-prices", fr: "/dates-et-prix" },
-    "/legal/terms": { en: "/legal/terms", fr: "/legal/conditions" },
-    "/legal/booking-terms": {
-      en: "/legal/booking-terms",
-      fr: "/legal/conditions-de-reservation",
-    },
-    "/legal/privacy": { en: "/legal/privacy", fr: "/legal/confidentialite" },
-    "/legal/cookies": { en: "/legal/cookies", fr: "/legal/cookies" },
+    "/book": { en: "/book", fr: "/reserver" },
+    "/book/[slug]": { en: "/book/[slug]", fr: "/reserver/[slug]" },
+    "/book/confirmation": { en: "/book/confirmation", fr: "/reserver/confirmation" },
+    "/legal/[page]": { en: "/legal/[page]", fr: "/legal/[page]" },
   },
 });
 

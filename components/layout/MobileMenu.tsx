@@ -53,7 +53,7 @@ export function MobileMenu({ overlay }: { overlay: boolean }) {
         hidden={!open}
         className="fixed inset-0 z-50 flex flex-col bg-ink text-paper"
       >
-        <div className="container-wide flex items-center justify-between py-4">
+        <div className="container-wide flex w-full items-center justify-between py-4">
           <span className="font-display text-2xl">
             Escale <span className="italic">Voyages</span>
           </span>
@@ -65,7 +65,7 @@ export function MobileMenu({ overlay }: { overlay: boolean }) {
             {t("close")}
           </button>
         </div>
-        <ul className="container-wide mt-6 flex flex-col gap-1">
+        <ul className="container-wide mt-6 flex w-full flex-col gap-1">
           {links.map((item) => (
             <li key={item.key}>
               <Link
@@ -78,7 +78,7 @@ export function MobileMenu({ overlay }: { overlay: boolean }) {
             </li>
           ))}
         </ul>
-        <div className="container-wide mt-auto grid gap-2 pb-[calc(24px+env(safe-area-inset-bottom,0px))]">
+        <div className="container-wide mt-auto grid w-full gap-2 pb-[calc(24px+env(safe-area-inset-bottom,0px))]">
           <LocaleSwitcher className="w-max text-paper" />
           <Link
             href="/dates-prices"

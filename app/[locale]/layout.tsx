@@ -7,6 +7,7 @@ import { routing } from "@/i18n/routing";
 import { site } from "@/lib/site";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
+import { CurrencyProvider } from "@/components/ui/Currency";
 import "../globals.css";
 
 const figtree = Figtree({
@@ -106,8 +107,10 @@ export default async function LocaleLayout({ children, params }: Props) {
           }}
         />
         <NextIntlClientProvider>
-          <SmoothScroll>{children}</SmoothScroll>
-          <WhatsAppButton />
+          <CurrencyProvider>
+            <SmoothScroll>{children}</SmoothScroll>
+            <WhatsAppButton />
+          </CurrencyProvider>
         </NextIntlClientProvider>
       </body>
     </html>
