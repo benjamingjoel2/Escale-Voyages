@@ -50,6 +50,8 @@ async function inlineCss(href) {
   }
   return cssCache.get(href);
 }
+const AUTOSCROLL = `(function(){if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;document.querySelectorAll("[data-autoscroll]").forEach(function(el){var speed=+el.dataset.autoscroll||28,last=0,hovered=false,focused=false,visible=false,manualUntil=0,pos=el.scrollLeft,written=Math.round(pos);function width(){var c=el.querySelector("[data-clone]"),f=el.firstElementChild;return c&&f?c.offsetLeft-f.offsetLeft:0}function tick(now){requestAnimationFrame(tick);var dt=last?Math.min(now-last,100)/1000:0;last=now;if(!visible||hovered||focused||now<manualUntil)return;var w=width();if(!w)return;pos+=speed*dt;if(pos>=w)pos-=w;var n=Math.round(pos);if(n!==written){written=n;el.scrollLeft=n}}el.addEventListener("scroll",function(){if(Math.abs(el.scrollLeft-written)>1.5){manualUntil=performance.now()+4000;pos=el.scrollLeft;written=Math.round(pos)}},{passive:true});el.addEventListener("pointerenter",function(){hovered=true});el.addEventListener("pointerleave",function(){hovered=false});el.addEventListener("focusin",function(){focused=true});el.addEventListener("focusout",function(){focused=false});new IntersectionObserver(function(e){visible=e[0].isIntersecting},{threshold:0.1}).observe(el);requestAnimationFrame(tick)})})();`;
+
 const rewriteLinks = (html) => html
   .replace(/href="(\/(?:en|fr)(?:\/[^"#?]*)?)((?:[#?][^"]*)?)"/g, (m, route, rest) => {
     const r = route.replace(/\/$/, "") || route;
@@ -69,6 +71,8 @@ for (const [route, file] of pages) {
   html = html.replace(/<link[^>]+rel="(?:preload|modulepreload)"[^>]*>/g, "");
   html = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, "");
   html = html.replace("</head>", `<style>${styles}</style><base target="_self"></head>`);
+  // The snapshot has no React, so the self-moving strip gets a vanilla copy of components/ui/AutoScroll.tsx.
+  html = html.replace("</body>", `<script>${AUTOSCROLL}</script></body>`);
   html = rewriteLinks(html).replace(/url\(\.\.\/media\//g, "url(assets/").replace(/href="\/favicon\.ico[^"]*"/g, "href=\"favicon.ico\"");
   // make srcset candidates valid after rewrite (same file repeated with different widths is fine)
   fs.writeFileSync(path.join(out, file + ".html"), html);
