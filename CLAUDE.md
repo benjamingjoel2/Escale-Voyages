@@ -82,6 +82,8 @@ Slow and few. Hero parallax, staggered reveals on scroll (`Reveal`, CSS-driven, 
 
 After each phase: summarise what was built, what is left, what is needed from the owner.
 
+**Owner rule: after every build, give a preview.** Until the repo is connected to Vercel, that means rebuilding the static snapshot (`scripts/preview-snapshot.mjs` against `next start`) and republishing it to the existing preview link, then putting the link in the reply. Once Vercel is connected, the preview is the PR's deployment URL.
+
 ## Commands
 
 ```
