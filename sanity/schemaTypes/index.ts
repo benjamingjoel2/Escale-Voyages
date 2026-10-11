@@ -1,5 +1,6 @@
 import { imageWithAlt, localeBlock, localeString, localeStringList, localeText } from "./locale";
 import { destination } from "./destination";
+import { stay } from "./stay";
 import { journey } from "./journey";
 import { story } from "./story";
 import { festival } from "./festival";
@@ -13,6 +14,7 @@ export const schemaTypes = [
   localeBlock,
   imageWithAlt,
   destination,
+  stay,
   journey,
   story,
   festival,

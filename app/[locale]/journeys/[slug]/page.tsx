@@ -9,6 +9,7 @@ import { BookingPanel } from "@/components/journeys/BookingPanel";
 import { JourneyMap } from "@/components/journeys/JourneyMap";
 import { DeparturesTable } from "@/components/journeys/DeparturesTable";
 import { JourneyCard } from "@/components/journeys/JourneyCard";
+import { StaysSection } from "@/components/journeys/StaysSection";
 import type { Lang } from "@/lib/data/journeys";
 import { getDestinations, getJourney, getJourneys } from "@/lib/content";
 import { lowestPrice } from "@/lib/journeys";
@@ -178,6 +179,9 @@ export default async function JourneyPage({ params }: Props) {
               </div>
               <JourneyMap stops={j.stops} destinations={destinations} />
             </Reveal>
+
+            {/* Where you stay */}
+            <StaysSection slugs={j.stays} />
 
             {/* Included / excluded */}
             <Reveal className="grid gap-8 md:grid-cols-2">

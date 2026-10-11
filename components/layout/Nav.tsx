@@ -87,7 +87,7 @@ export function Nav({ variant = "overlay" }: Props) {
               className={`rounded-[2px] px-3.5 py-2 text-[13px] font-medium transition-colors ${
                 overlay
                   ? "bg-ink-glass hover:bg-accent"
-                  : "bg-ink text-paper hover:bg-accent"
+                  : "bg-ink text-paper hover:bg-accent hover:text-white"
               }`}
             >
               {t("enquire")}

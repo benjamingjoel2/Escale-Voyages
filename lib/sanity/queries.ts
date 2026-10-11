@@ -25,6 +25,7 @@ export const journeyFields = `
   highlights,
   "itinerary": coalesce(itinerary[]{ day, title, body, stay }, []),
   "stops": coalesce(stops[]->slug.current, []),
+  "stays": coalesce(stays[]->slug.current, []),
   included, excluded,
   "departures": coalesce(departures[]{ start, end, priceXof, spotsLeft } | order(start asc), []),
   "faq": coalesce(faq[]{ q, a }, []),
@@ -53,6 +54,21 @@ export const destinationsQuery = defineQuery(`
     "coords": coords,
     "tone": coalesce(tone, "accent"),
     ${image("image")}
+  }
+`);
+
+export const staysQuery = defineQuery(`
+  *[_type == "stay" && defined(slug.current)] | order(order asc, name.en asc) {
+    "slug": slug.current,
+    name, place, pitch, body,
+    "tone": coalesce(tone, "accent"),
+    "images": coalesce(images[]{
+      "file": coalesce(asset->originalFilename, "stay.jpg"),
+      "width": coalesce(asset->metadata.dimensions.width, 1600),
+      "height": coalesce(asset->metadata.dimensions.height, 1067),
+      "src": asset->url,
+      alt
+    }, [])
   }
 `);
 

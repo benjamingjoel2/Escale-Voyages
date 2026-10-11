@@ -25,7 +25,6 @@
   },
   "Hero": {
     "statement": "Luxe et découverte dans tout le Bénin, de l'Atlantique à la savane.",
-    "watchFilm": "Voir le film",
     "eyebrow": "Le secret le mieux gardé d'Afrique de l'Ouest",
     "tagline": "Tout le Bénin, à votre rythme",
     "datesPrices": "Dates & prix",
@@ -91,8 +90,7 @@
     "tempLabel": "Saison sèche, déc. – fév.",
     "tempValue": "25–35 °C",
     "tempNote": "Pendjari",
-    "mapSlot": "Carte du Bénin au trait, à commander, SVG",
-    "watchFilm": "Voir le film"
+    "mapSlot": "Carte du Bénin au trait, à commander, SVG"
   },
   "Return": {
     "eyebrow": "Retour · Return",
@@ -209,6 +207,9 @@
     "mapTitle": "Où vous allez",
     "mapAlt": "Carte schématique de l'itinéraire, chaque étape placée selon ses coordonnées",
     "mapSlot": "La carte au trait commandée remplacera ce cadre",
+    "staysEyebrow": "Où vous dormez",
+    "staysTitle": "Les nuits en chemin",
+    "staysIntro": "Choisis pour leur emplacement et pour ceux qui les tiennent. Les chambres sont confirmées avec vos dates ; nous vous indiquons les adresses exactes à la réservation.",
     "included": "Ce qui est inclus",
     "excluded": "Non inclus",
     "datesEyebrow": "Dates & prix",

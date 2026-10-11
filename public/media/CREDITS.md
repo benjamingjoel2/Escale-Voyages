@@ -41,8 +41,17 @@ Frames and stills supplied by Escale Voyages on 11 October 2026 (1500 px wide; h
 | grand-01.jpg | Sunday crowd on the steps of an old church | 6 |
 | grand-03.jpg | Pool and terraces of a five-star hotel, Cotonou | 19 |
 | grand-04.jpg | Elephant herd, Pendjari | 7 |
+| stay-cotonou-marina.jpg | Five-star hotel pool and terraces, Cotonou | 19 |
+| stay-cotonou-lobby.jpg | Hotel lobby with lit art shelving | 18 |
+| stay-cotonou-bar.jpg | Hotel bar under a glass chandelier | 16 |
+| stay-cotonou-tennis.jpg | Tennis court and hotel façade | 17 |
+| stay-cotonou-pool.jpg | Afternoon by the hotel pool | 3 |
+| stay-lagoon-lodge.jpg | Deck bar on stilts over the lagoon | 22 |
+| stay-lagoon-channel.jpg | Pirogue on a palm-lined channel from above | 4 |
+| stay-ouidah-guesthouse.jpg | Two travellers reading under a tree, red-earth courtyard | 12 |
+| stay-ouidah-salon.jpg | Friends dancing in a guesthouse living room | 13 |
 
-Not yet placed: the hotel bar (16), tennis court (17) and lobby (18), which need a "where you stay" section; and three frames under 500 px wide (lagoon jetty at sunset, coconut grove, fishermen hauling nets) that are too small for any slot.
+Not yet placed: three frames under 500 px wide (lagoon jetty at sunset, coconut grove, fishermen hauling nets) that are too small for any slot.
 
 ## Wikimedia Commons stand-ins
 

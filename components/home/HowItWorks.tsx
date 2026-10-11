@@ -42,7 +42,7 @@ export function HowItWorks() {
 
       <div
         hidden={!open}
-        className="fixed inset-0 z-40 bg-ink/40"
+        className="fixed inset-0 z-40 bg-black/60"
         onClick={() => setOpen(false)}
         aria-hidden="true"
       />

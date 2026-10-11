@@ -5,9 +5,11 @@ import {
   journeyBySlugQuery,
   journeysQuery,
   siteSettingsQuery,
+  staysQuery,
 } from "./sanity/queries";
 import { journeys as placeholderJourneys, type Journey } from "./data/journeys";
 import { destinations as placeholderDestinations, type Destination } from "./data/destinations";
+import { stays as placeholderStays, type Stay } from "./data/stays";
 import { site } from "./site";
 
 /**
@@ -71,6 +73,16 @@ export async function getDestinations(): Promise<Destination[]> {
   const rows = await safeFetch(() => sanity.fetch<DestinationRow[]>(destinationsQuery), [], "destinations");
   if (!rows.length) return placeholderDestinations;
   return rows.map((d) => ({ ...d, coords: d.coords ?? toCoords(d.lat, d.lng) }));
+}
+
+export async function getStays(): Promise<Stay[]> {
+  "use cache";
+  cacheLife("days");
+  cacheTag("stays", "content");
+  const sanity = client;
+  if (!sanity) return placeholderStays;
+  const rows = await safeFetch(() => sanity.fetch<Stay[]>(staysQuery), [], "stays");
+  return rows.length ? rows : placeholderStays;
 }
 
 export type SiteSettings = {

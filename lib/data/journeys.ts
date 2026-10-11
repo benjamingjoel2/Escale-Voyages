@@ -54,6 +54,8 @@ export type Journey = {
   itinerary: ItineraryDay[];
   /** Destination slugs in the order visited. */
   stops: string[];
+  /** Stay slugs (lib/data/stays.ts) in the order used. */
+  stays: string[];
   included: L<string[]>;
   excluded: L<string[]>;
   departures: Departure[];
@@ -169,6 +171,7 @@ export const journeys: Journey[] = [
       { day: 7, title: { en: "Ganvié and departure", fr: "Ganvié et départ" }, body: { en: "Dawn pirogue through the stilt town of Ganvié, then transfer to the airport.", fr: "Pirogue à l'aube à travers la cité lacustre de Ganvié, puis transfert à l'aéroport." } },
     ],
     stops: ["porto-novo", "abomey", "ouidah", "ganvie"],
+    stays: ["cotonou-marina", "collines-lodge", "ouidah-guesthouse"],
     included: INCLUDED_COMMON,
     excluded: EXCLUDED_COMMON,
     departures: [
@@ -230,6 +233,7 @@ export const journeys: Journey[] = [
       { day: 5, title: { en: "Dawn at the door", fr: "L'aube à la porte" }, body: { en: "The beach at first light, then breakfast and departure, or onward to another journey.", fr: "La plage aux premières lueurs, puis petit-déjeuner et départ, ou poursuite vers un autre voyage." } },
     ],
     stops: ["ouidah", "porto-novo"],
+    stays: ["ouidah-guesthouse", "cotonou-marina"],
     included: {
       en: [...INCLUDED_COMMON.en, "Pre-trip archival research session (2 hours, online)"],
       fr: [...INCLUDED_COMMON.fr, "Séance de recherche d'archives avant le voyage (2 h, en ligne)"],
@@ -308,6 +312,7 @@ export const journeys: Journey[] = [
       { day: 9, title: { en: "Departure", fr: "Départ" }, body: { en: "Transfer to the airport.", fr: "Transfert à l'aéroport." } },
     ],
     stops: ["abomey", "natitingou", "pendjari"],
+    stays: ["cotonou-marina", "collines-lodge", "tata-somba", "pendjari-lodge"],
     included: {
       en: [...INCLUDED_COMMON.en, "Park fees and three days of game drives in a park vehicle"],
       fr: [...INCLUDED_COMMON.fr, "Droits d'entrée au parc et trois jours de safari en véhicule du parc"],
@@ -378,6 +383,7 @@ export const journeys: Journey[] = [
       { day: 4, title: { en: "Ouidah and departure", fr: "Ouidah et départ" }, body: { en: "The Python Temple and the beach at Ouidah on the way back to the airport.", fr: "Le Temple des Pythons et la plage de Ouidah sur le chemin de l'aéroport." } },
     ],
     stops: ["porto-novo", "ganvie", "grand-popo", "ouidah"],
+    stays: ["cotonou-marina", "lagoon-lodge"],
     included: INCLUDED_COMMON,
     excluded: EXCLUDED_COMMON,
     departures: [
@@ -442,6 +448,7 @@ export const journeys: Journey[] = [
       { day: 6, title: { en: "Departure", fr: "Départ" }, body: { en: "Transfer to the airport.", fr: "Transfert à l'aéroport." } },
     ],
     stops: ["ouidah", "grand-popo"],
+    stays: ["ouidah-guesthouse", "cotonou-marina"],
     included: INCLUDED_COMMON,
     excluded: EXCLUDED_COMMON,
     departures: [
@@ -517,6 +524,7 @@ export const journeys: Journey[] = [
       { day: 14, title: { en: "Ouidah and departure", fr: "Ouidah et départ" }, body: { en: "The Route des Esclaves, the beach, and the airport.", fr: "La Route des Esclaves, la plage et l'aéroport." } },
     ],
     stops: ["cotonou", "ganvie", "porto-novo", "ketou", "abomey", "dassa", "parakou", "parc-w", "koutammakou", "tanougou", "pendjari", "grand-popo", "ouidah"],
+    stays: ["cotonou-marina", "collines-lodge", "tata-somba", "pendjari-lodge", "lagoon-lodge", "ouidah-guesthouse"],
     included: {
       en: [...INCLUDED_COMMON.en, "Park fees and four days of game drives", "Internal flight from the north when scheduled"],
       fr: [...INCLUDED_COMMON.fr, "Droits d'entrée aux parcs et quatre jours de safari", "Vol intérieur depuis le nord lorsqu'il est programmé"],
@@ -587,6 +595,7 @@ export const journeys: Journey[] = [
       { day: 5, title: { en: "Return south", fr: "Retour vers le sud" }, body: { en: "Train or road back to Cotonou and departure.", fr: "Train ou route jusqu'à Cotonou et départ." } },
     ],
     stops: ["ketou", "dassa", "parakou"],
+    stays: ["cotonou-marina", "collines-lodge"],
     included: INCLUDED_COMMON,
     excluded: EXCLUDED_COMMON,
     departures: [

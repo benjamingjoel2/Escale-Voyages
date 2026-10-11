@@ -1,23 +1,31 @@
 @import "tailwindcss";
 
 /*
-  Danxomè design tokens.
-  Page grammar follows the approved White Desert-style direction:
-  white ground, dark-blue ink, orange accent on hover, full-bleed media.
-  Content is left-aligned throughout (never centred blocks).
+  Escale Voyages design tokens. Dark site (owner's choice, October 2026).
+  Page grammar follows the approved White Desert-style direction, inverted:
+  near-black blue ground, bone-white ink, orange accent on hover, full-bleed
+  media. Content is left-aligned throughout (never centred blocks).
+
+  "ink" is always the foreground and "paper" always the ground, so components
+  stay palette-agnostic. "on-glass" and "on-accent" are the text colours on
+  translucent and orange buttons, which stay white in either palette.
 */
 :root {
-  --ink: #1f2a44;
-  --ink-70: rgba(31, 42, 68, 0.7);
-  --ink-glass: rgba(31, 42, 68, 0.15);
-  --charcoal: #4a5061;
-  --paper: #ffffff;
-  --grey: #f2f2f2;
-  --line: rgba(31, 42, 68, 0.14);
+  color-scheme: dark;
+  --ink: #eef0f4;
+  --ink-70: rgba(238, 240, 244, 0.7);
+  --ink-glass: rgba(238, 240, 244, 0.14);
+  --ink-05: rgba(238, 240, 244, 0.06);
+  --charcoal: #aeb4c2;
+  --paper: #0e131d;
+  --grey: #171d29;
+  --line: rgba(238, 240, 244, 0.14);
   --accent: #e4561f;
   --accent-deep: #b9420f;
-  --lagoon: #1d5b66;
-  --sand: #f4f1ec;
+  --lagoon: #3a97a6;
+  --sand: #1a2130;
+  --on-glass: #ffffff;
+  --on-accent: #ffffff;
   --whatsapp: #25d366;
 }
 
@@ -25,6 +33,7 @@
   --color-ink: var(--ink);
   --color-ink-70: var(--ink-70);
   --color-ink-glass: var(--ink-glass);
+  --color-ink-05: var(--ink-05);
   --color-charcoal: var(--charcoal);
   --color-paper: var(--paper);
   --color-grey: var(--grey);
@@ -150,7 +159,7 @@
   padding-inline: 18px;
   border-radius: 2px;
   background: var(--ink-glass);
-  color: var(--paper);
+  color: var(--on-glass);
   font-size: 13px;
   font-weight: 500;
   white-space: nowrap;
@@ -161,7 +170,7 @@
   &:hover {
     background: var(--accent);
     border-radius: 5px;
-    color: var(--paper);
+    color: var(--on-accent);
   }
 }
 
@@ -189,7 +198,7 @@
 
 @utility btn-solid {
   background: var(--accent);
-  color: var(--paper);
+  color: var(--on-accent);
   &:hover {
     background: var(--ink);
     color: var(--paper);
@@ -197,7 +206,7 @@
 }
 
 @utility btn-inline {
-  background: rgba(31, 42, 68, 0.05);
+  background: var(--ink-05);
   color: var(--ink);
   &:hover {
     background: var(--ink);
@@ -214,8 +223,8 @@
   pointer-events: none;
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(244, 241, 236, 0.8) 55%,
+    rgba(14, 19, 29, 0) 0%,
+    rgba(26, 33, 48, 0.8) 55%,
     var(--paper) 100%
   );
   -webkit-mask-image:

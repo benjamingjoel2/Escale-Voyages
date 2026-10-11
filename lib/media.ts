@@ -180,6 +180,42 @@ export const media: Record<string, { width: number; height: number }> = {
     "width": 1500,
     "height": 1000
   },
+  "stay-cotonou-bar.jpg": {
+    "width": 1500,
+    "height": 1125
+  },
+  "stay-cotonou-lobby.jpg": {
+    "width": 1500,
+    "height": 1125
+  },
+  "stay-cotonou-marina.jpg": {
+    "width": 1500,
+    "height": 1125
+  },
+  "stay-cotonou-pool.jpg": {
+    "width": 1500,
+    "height": 838
+  },
+  "stay-cotonou-tennis.jpg": {
+    "width": 1500,
+    "height": 1125
+  },
+  "stay-lagoon-channel.jpg": {
+    "width": 1500,
+    "height": 1058
+  },
+  "stay-lagoon-lodge.jpg": {
+    "width": 1170,
+    "height": 780
+  },
+  "stay-ouidah-guesthouse.jpg": {
+    "width": 1500,
+    "height": 781
+  },
+  "stay-ouidah-salon.jpg": {
+    "width": 1500,
+    "height": 763
+  },
   "vodun-01.jpg": {
     "width": 1500,
     "height": 809
