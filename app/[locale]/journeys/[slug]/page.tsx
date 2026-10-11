@@ -9,15 +9,18 @@ import { BookingPanel } from "@/components/journeys/BookingPanel";
 import { JourneyMap } from "@/components/journeys/JourneyMap";
 import { DeparturesTable } from "@/components/journeys/DeparturesTable";
 import { JourneyCard } from "@/components/journeys/JourneyCard";
-import { journeys, type Lang } from "@/lib/data/journeys";
-import { getJourney, lowestPrice } from "@/lib/journeys";
-import { formatXof, convertFromXof } from "@/lib/currency";
+import type { Lang } from "@/lib/data/journeys";
+import { getDestinations, getJourney, getJourneys } from "@/lib/content";
+import { lowestPrice } from "@/lib/journeys";
+import { formatXof } from "@/lib/currency";
+import { mediaSrc } from "@/lib/media";
 import { site } from "@/lib/site";
 import { routing } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const journeys = await getJourneys();
   return routing.locales.flatMap((locale) =>
     journeys.map((j) => ({ locale, slug: j.slug })),
   );
@@ -25,7 +28,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
-  const j = getJourney(slug);
+  const j = await getJourney(slug);
   if (!j) return {};
   const lang = locale as Lang;
   return {
@@ -35,18 +38,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+const galleryTones = ["accent", "lagoon", "savannah", "coast", "night"] as const;
+
 export default async function JourneyPage({ params }: Props) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  const j = getJourney(slug);
+  const [j, journeys, destinations, t, tj, tf] = await Promise.all([
+    getJourney(slug),
+    getJourneys(),
+    getDestinations(),
+    getTranslations("JourneyDetail"),
+    getTranslations("Journeys"),
+    getTranslations("Filters"),
+  ]);
   if (!j) notFound();
 
   const lang = locale as Lang;
-  const t = await getTranslations("JourneyDetail");
-  const tj = await getTranslations("Journeys");
-  const tf = await getTranslations("Filters");
   const from = lowestPrice(j);
   const related = journeys.filter((x) => x.slug !== j.slug).slice(0, 3);
+  const altOf = (alt: Lang extends never ? never : { en: string; fr: string } | string | undefined, fallback: string) =>
+    typeof alt === "object" ? alt[lang] : (alt ?? fallback);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -85,8 +96,9 @@ export default async function JourneyPage({ params }: Props) {
         <section className="relative">
           <MediaSlot
             label={`${j.heroImage.file} · ${j.heroImage.width}×${j.heroImage.height}`}
-            file={j.image.file}
-            alt={j.title[lang]}
+            file={j.heroImage.src || mediaSrc(j.heroImage.file) ? j.heroImage.file : j.image.file}
+            src={j.heroImage.src ?? j.image.src}
+            alt={altOf(j.heroImage.alt ?? j.image.alt, j.title[lang])}
             priority
             tone={j.tone}
             labelPosition="top-right"
@@ -164,7 +176,7 @@ export default async function JourneyPage({ params }: Props) {
                 <span className="eyebrow">{t("mapEyebrow")}</span>
                 <h2 className="t-h2">{t("mapTitle")}</h2>
               </div>
-              <JourneyMap stops={j.stops} />
+              <JourneyMap stops={j.stops} destinations={destinations} />
             </Reveal>
 
             {/* Included / excluded */}
@@ -202,38 +214,46 @@ export default async function JourneyPage({ params }: Props) {
             </Reveal>
 
             {/* Gallery */}
-            <Reveal className="grid gap-6">
-              <span className="eyebrow">{t("gallery")}</span>
-              <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
-                {j.gallery.map((g, i) => (
-                  <MediaSlot
-                    key={g.file}
-                    label={`${g.file} · ${g.width}×${g.height}`}
-                    tone={(["accent", "lagoon", "savannah", "coast", "night"] as const)[i % 5]}
-                    className={`rounded-[2px] ${g.height > g.width ? "row-span-2 aspect-[2/3]" : "aspect-[3/2]"}`}
-                  />
-                ))}
-              </div>
-            </Reveal>
+            {j.gallery.length ? (
+              <Reveal className="grid gap-6">
+                <span className="eyebrow">{t("gallery")}</span>
+                <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
+                  {j.gallery.map((g, i) => (
+                    <MediaSlot
+                      key={`${g.file}-${i}`}
+                      label={`${g.file} · ${g.width}×${g.height}`}
+                      file={g.file}
+                      src={g.src}
+                      alt={altOf(g.alt, j.title[lang])}
+                      sizes="(min-width: 1024px) 30vw, 50vw"
+                      tone={galleryTones[i % galleryTones.length]}
+                      className={`rounded-[2px] ${g.height > g.width ? "row-span-2 aspect-[2/3]" : "aspect-[3/2]"}`}
+                    />
+                  ))}
+                </div>
+              </Reveal>
+            ) : null}
 
             {/* FAQ */}
-            <Reveal className="grid gap-6">
-              <div className="grid gap-2.5">
-                <span className="eyebrow">{t("faqEyebrow")}</span>
-                <h2 className="t-h2">{t("faqTitle")}</h2>
-              </div>
-              <div className="grid border-t border-line">
-                {j.faq.map((f) => (
-                  <details key={f.q[lang]} className="group border-b border-line">
-                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-[16px] font-medium text-ink marker:content-none">
-                      {f.q[lang]}
-                      <span aria-hidden="true" className="text-xl leading-none transition-transform group-open:rotate-45">+</span>
-                    </summary>
-                    <p className="t-body pb-6">{f.a[lang]}</p>
-                  </details>
-                ))}
-              </div>
-            </Reveal>
+            {j.faq.length ? (
+              <Reveal className="grid gap-6">
+                <div className="grid gap-2.5">
+                  <span className="eyebrow">{t("faqEyebrow")}</span>
+                  <h2 className="t-h2">{t("faqTitle")}</h2>
+                </div>
+                <div className="grid border-t border-line">
+                  {j.faq.map((f) => (
+                    <details key={f.q[lang]} className="group border-b border-line">
+                      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-[16px] font-medium text-ink marker:content-none">
+                        {f.q[lang]}
+                        <span aria-hidden="true" className="text-xl leading-none transition-transform group-open:rotate-45">+</span>
+                      </summary>
+                      <p className="t-body pb-6">{f.a[lang]}</p>
+                    </details>
+                  ))}
+                </div>
+              </Reveal>
+            ) : null}
           </div>
 
           <div className="lg:col-span-4 lg:pt-6">
@@ -255,8 +275,6 @@ export default async function JourneyPage({ params }: Props) {
         </section>
       </main>
       <Footer />
-      {/* Keep EUR figure in the HTML for crawlers reading prices. */}
-      <meta itemProp="priceEUR" content={String(Math.round(convertFromXof(from, "EUR")))} hidden />
     </>
   );
 }

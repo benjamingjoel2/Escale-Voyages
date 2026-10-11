@@ -1,7 +1,8 @@
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import type { Journey } from "@/lib/data/journeys";
-import { formatConverted, formatXof } from "@/lib/currency";
+import { formatXof } from "@/lib/currency";
+import { Approx } from "@/components/ui/Currency";
 import { MediaSlot } from "@/components/ui/MediaSlot";
 
 /** Portrait journey card: season top-left, coordinates, title, price, pitch. */
@@ -17,7 +18,8 @@ export function JourneyCard({ journey: j }: { journey: Journey }) {
       <MediaSlot
         label={`${j.image.file} · ${j.image.width}×${j.image.height}`}
         file={j.image.file}
-        alt={j.title[locale]}
+        src={j.image.src}
+        alt={typeof j.image.alt === "object" ? j.image.alt[locale] : j.title[locale]}
         sizes="(min-width: 1280px) 20vw, (min-width: 640px) 50vw, 100vw"
         tone={j.tone}
         labelPosition="top-right"
@@ -37,8 +39,7 @@ export function JourneyCard({ journey: j }: { journey: Journey }) {
           <p className="mt-1.5 text-sm font-semibold tabular-nums">
             {formatXof(j.priceXof)}
             <span className="ml-1.5 font-normal opacity-80">
-              {t("approx", { amount: formatConverted(j.priceXof, "EUR", locale) })} ·{" "}
-              {t("days", { count: j.days })}
+              <Approx xof={j.priceXof} /> · {t("days", { count: j.days })}
             </span>
           </p>
           <p className="mt-2 max-w-[30ch] text-[13px] leading-[1.45] opacity-90">

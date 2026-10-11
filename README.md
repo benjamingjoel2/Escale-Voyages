@@ -13,6 +13,16 @@ npm run build      # production build
 npm run lint
 ```
 
+## Content
+
+The site runs on placeholder content in `lib/data` until Sanity is configured. To switch on the CMS:
+
+1. Create a project at sanity.io/manage and copy `.env.example` to `.env.local` with the project ID and dataset.
+2. Add the site URL and `http://localhost:3000` under API → CORS origins in Sanity.
+3. Run `SANITY_API_WRITE_TOKEN=<editor token> npm run seed` once to load today's journeys, destinations and photos.
+4. Open `/studio` and sign in.
+5. Add a webhook in Sanity pointing at `/api/revalidate` with the `SANITY_REVALIDATE_SECRET` so published changes appear within seconds.
+
 ## Where things live
 
 | Path | What |
@@ -21,10 +31,14 @@ npm run lint
 | `components/layout/` | Nav, footer, mobile menu, locale switcher, WhatsApp button, smooth scroll, weather. |
 | `components/home/` | Homepage sections in page order. |
 | `components/journeys/` | Journey card, filters, booking panel, route map, departures table. |
+| `components/booking/`, `components/forms/` | Booking flow and enquiry form (client), backed by server actions in `app/actions/`. |
+| `lib/payments/` | Payment abstraction: mock (default), FedaPay, KkiaPay, Stripe adapters. |
 | `components/ui/` | `MediaSlot` (photo or placeholder), `Reveal` (scroll reveal). |
 | `i18n/` | Routing (localised pathnames), navigation helpers, request config. |
 | `messages/` | `en.json`, `fr.json`. Every string lives here. |
-| `lib/` | Site constants, currency, weather, journey filters, placeholder data (`lib/data/`), media manifest. |
+| `lib/` | Site constants, currency, weather, journey filters, content layer (`lib/content.ts`), Sanity client and queries, placeholder data (`lib/data/`), media manifest. |
+| `sanity/` | Schemas and Studio structure. `sanity.config.ts` at the root. |
+| `app/studio/` | Embedded Sanity Studio. |
 | `public/media/` | Development photography with `CREDITS.md`. |
 
 See `CLAUDE.md` for the brand, design system and conventions.

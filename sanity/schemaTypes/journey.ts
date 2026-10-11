@@ -1,0 +1,159 @@
+import { defineArrayMember, defineField, defineType } from "sanity";
+
+export const journey = defineType({
+  name: "journey",
+  title: "Journey",
+  type: "document",
+  groups: [
+    { name: "content", title: "Content", default: true },
+    { name: "itinerary", title: "Itinerary" },
+    { name: "pricing", title: "Dates & prices" },
+    { name: "media", title: "Media" },
+  ],
+  fields: [
+    defineField({ name: "title", title: "Title", type: "localeString", group: "content" }),
+    defineField({
+      name: "slug",
+      title: "URL slug",
+      type: "slug",
+      options: { source: "title.en", maxLength: 60 },
+      validation: (r) => r.required(),
+      group: "content",
+    }),
+    defineField({ name: "pitch", title: "One-line pitch", type: "localeText", group: "content" }),
+    defineField({ name: "summary", title: "Summary", type: "localeText", group: "content" }),
+    defineField({
+      name: "type",
+      title: "Experience type",
+      type: "string",
+      options: {
+        list: [
+          { title: "The whole country", value: "grand" },
+          { title: "Return & heritage", value: "heritage" },
+          { title: "Kingdoms & culture", value: "kingdoms" },
+          { title: "Wildlife", value: "wildlife" },
+          { title: "Lagoons & coast", value: "coast" },
+          { title: "Festivals", value: "festival" },
+        ],
+      },
+      validation: (r) => r.required(),
+      group: "content",
+    }),
+    defineField({ name: "season", title: "Season label", type: "localeString", description: "Shown on the card, e.g. \"Nov – Feb\".", group: "content" }),
+    defineField({
+      name: "months",
+      title: "Departure months",
+      type: "array",
+      of: [{ type: "number" }],
+      options: {
+        list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((m) => ({
+          title: new Date(2026, m - 1, 1).toLocaleString("en", { month: "long" }),
+          value: m,
+        })),
+      },
+      validation: (r) => r.required().min(1),
+      group: "content",
+    }),
+    defineField({ name: "days", title: "Duration (days)", type: "number", validation: (r) => r.required().integer().min(1), group: "content" }),
+    defineField({ name: "groupMax", title: "Maximum group size", type: "number", initialValue: 8, validation: (r) => r.required().integer().min(1), group: "content" }),
+    defineField({ name: "highlights", title: "Highlights", type: "localeStringList", group: "content" }),
+    defineField({
+      name: "stops",
+      title: "Route (destinations in order)",
+      type: "array",
+      of: [defineArrayMember({ type: "reference", to: [{ type: "destination" }] })],
+      validation: (r) => r.required().min(1),
+      group: "itinerary",
+    }),
+    defineField({
+      name: "itinerary",
+      title: "Day by day",
+      type: "array",
+      of: [
+        defineArrayMember({
+          type: "object",
+          name: "day",
+          fields: [
+            defineField({ name: "day", title: "Day", type: "number", validation: (r) => r.required().integer().min(1) }),
+            defineField({ name: "title", title: "Title", type: "localeString" }),
+            defineField({ name: "body", title: "Text", type: "localeText" }),
+            defineField({ name: "stay", title: "Overnight in", type: "localeString" }),
+          ],
+          preview: { select: { day: "day", title: "title.en" }, prepare: ({ day, title }) => ({ title: `Day ${day} · ${title ?? ""}` }) },
+        }),
+      ],
+      validation: (r) => r.required().min(1),
+      group: "itinerary",
+    }),
+    defineField({ name: "included", title: "What's included", type: "localeStringList", group: "itinerary" }),
+    defineField({ name: "excluded", title: "Not included", type: "localeStringList", group: "itinerary" }),
+    defineField({
+      name: "faq",
+      title: "Questions",
+      type: "array",
+      of: [
+        defineArrayMember({
+          type: "object",
+          name: "qa",
+          fields: [
+            defineField({ name: "q", title: "Question", type: "localeString" }),
+            defineField({ name: "a", title: "Answer", type: "localeText" }),
+          ],
+          preview: { select: { title: "q.en" } },
+        }),
+      ],
+      group: "itinerary",
+    }),
+    defineField({
+      name: "priceXof",
+      title: "From price per person (FCFA)",
+      type: "number",
+      validation: (r) => r.required().integer().min(0),
+      group: "pricing",
+    }),
+    defineField({
+      name: "departures",
+      title: "Scheduled departures",
+      type: "array",
+      of: [
+        defineArrayMember({
+          type: "object",
+          name: "departure",
+          fields: [
+            defineField({ name: "start", title: "First day", type: "date", validation: (r) => r.required() }),
+            defineField({ name: "end", title: "Last day", type: "date", validation: (r) => r.required() }),
+            defineField({ name: "priceXof", title: "Price per person (FCFA)", type: "number", validation: (r) => r.required().integer().min(0) }),
+            defineField({ name: "spotsLeft", title: "Places left", type: "number", validation: (r) => r.required().integer().min(0) }),
+          ],
+          preview: {
+            select: { start: "start", end: "end", spots: "spotsLeft" },
+            prepare: ({ start, end, spots }) => ({ title: `${start} → ${end}`, subtitle: `${spots} places left` }),
+          },
+        }),
+      ],
+      group: "pricing",
+    }),
+    defineField({ name: "coords", title: "Card coordinates", type: "string", description: "Display string, e.g. 7°11′ N, 1°59′ E (anchor destination).", group: "media" }),
+    defineField({
+      name: "tone",
+      title: "Placeholder tone",
+      type: "string",
+      options: { list: ["accent", "lagoon", "savannah", "coast", "night"] },
+      initialValue: "accent",
+      group: "media",
+    }),
+    defineField({ name: "image", title: "Card image (3:4)", type: "imageWithAlt", group: "media" }),
+    defineField({ name: "heroImage", title: "Page hero (16:9)", type: "imageWithAlt", group: "media" }),
+    defineField({ name: "gallery", title: "Gallery", type: "array", of: [defineArrayMember({ type: "imageWithAlt" })], group: "media" }),
+    defineField({ name: "order", title: "Sort order", type: "number", initialValue: 50, group: "content" }),
+  ],
+  orderings: [{ title: "Sort order", name: "order", by: [{ field: "order", direction: "asc" }] }],
+  preview: {
+    select: { title: "title.en", days: "days", price: "priceXof", media: "image" },
+    prepare: ({ title, days, price, media }) => ({
+      title,
+      subtitle: `${days} days · ${Number(price ?? 0).toLocaleString("fr-FR")} F`,
+      media,
+    }),
+  },
+});

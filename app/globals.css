@@ -89,8 +89,8 @@
 
 @utility container-wide {
   margin-inline: auto;
-  max-width: 1320px;
-  padding-inline: clamp(16px, 3.5vw, 48px);
+  max-width: 1920px;
+  padding-inline: clamp(16px, 2.5vw, 48px);
 }
 
 @utility container-prose {

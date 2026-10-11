@@ -1,4 +1,4 @@
-import { journeys, type Journey, type JourneyType } from "./data/journeys";
+import type { Journey, JourneyType } from "./data/journeys";
 
 export const JOURNEY_TYPES: JourneyType[] = [
   "grand",
@@ -57,7 +57,7 @@ export function parseFilters(
   };
 }
 
-export function filterJourneys(filters: JourneyFilters): Journey[] {
+export function filterJourneys(journeys: Journey[], filters: JourneyFilters): Journey[] {
   return journeys.filter((j) => {
     if (filters.type && j.type !== filters.type) return false;
     if (filters.duration && durationBand(j.days) !== filters.duration) return false;
@@ -67,12 +67,8 @@ export function filterJourneys(filters: JourneyFilters): Journey[] {
   });
 }
 
-export function getJourney(slug: string): Journey | undefined {
-  return journeys.find((j) => j.slug === slug);
-}
-
 /** Departures across all journeys, soonest first. */
-export function allDepartures() {
+export function allDepartures(journeys: Journey[]) {
   return journeys
     .flatMap((j) => j.departures.map((d) => ({ journey: j, ...d })))
     .sort((a, b) => a.start.localeCompare(b.start));

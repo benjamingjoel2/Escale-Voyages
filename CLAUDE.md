@@ -16,7 +16,7 @@ The site duplicates the **White Desert page grammar** (white-desert.com) with Es
 
 Homepage section order: video hero → intro statement → season banner → journey cards (price, season, duration, one-line pitch, coordinates) → founder quote → horizontal-scroll destination cards with region eyebrow and bracketed GPS coordinates → proverb → route code (COO – NAE) → journey map with three stats → Return feature → planning CTA → How it works (6 steps, slide-out panel) → trust row → footer with contact groups, link columns, three large buttons, closing quote, legal.
 
-**Owner preference: content is left-aligned. No centred blocks.** Hero title sits bottom-left. Section headings, quotes and CTAs start at the left edge of the container.
+**Owner preference: content is left-aligned. No centred blocks. The page is wide: `container-wide` is fluid up to 1920px with a 2.5vw gutter, so wide monitors are filled edge to edge like the reference site.** Hero title sits bottom-left. Section headings, quotes and CTAs start at the left edge of the container.
 
 ### Tokens (app/globals.css)
 
@@ -29,7 +29,7 @@ Homepage section order: video hero → intro statement → season banner → jou
 
 - `MediaSlot` renders the real photo through `next/image` when the file exists in `public/media` (listed in `lib/media.ts`, generated), otherwise a toned gradient with the filename and aspect ratio to commission.
 - Development photography comes from Wikimedia Commons under CC licences; every file is credited in `public/media/CREDITS.md`. Keep that file accurate when files are swapped. These are stand-ins until the owner's photographer delivers; W National Park has no usable image yet.
-- To add or replace media: drop the JPEG in `public/media`, regenerate `lib/media.ts` (width/height map) and update `CREDITS.md`.
+- To add or replace media: drop the JPEG in `public/media`, run `npm run media` (regenerates `lib/media.ts`) and update `CREDITS.md`. Owner-supplied frames (October 2026) now fill the hero, season banner, founder, Return, about and most coast/south slots; see the first table in `CREDITS.md`.
 
 ### Motion
 
@@ -50,15 +50,33 @@ Slow and few. Hero parallax, staggered reveals on scroll (`Reveal`, CSS-driven, 
 - Performance targets: Lighthouse 90+ on mobile over 4G. `next/image` everywhere, video poster only on mobile and when `saveData` is on, lazy-load below-the-fold media, keep client bundles small.
 - Facts to verify before launch: Cotonou→Natitingou road distance and time (sources range 550–645 km, 6–10 h), Vodun Days 2027 dates (2026 ran 8–10 Jan), yellow-fever entry rule (ministry circular of April 2026 says no longer checked at entry).
 
+## Content (Sanity)
+
+- Schemas live in `sanity/schemaTypes/`: `journey`, `destination`, `story`, `festival`, `siteSettings` (singleton), `enquiry` and `bookingRequest` (written by the Phase 6 forms). Bilingual fields use the `localeString`, `localeText`, `localeStringList`, `localeBlock` objects; both languages are required. Every image is an `imageWithAlt` with required alt text.
+- The embedded Studio is at `/studio` (`app/studio/[[...tool]]`), with its own root layout. Config in `sanity.config.ts`, sidebar in `sanity/structure.ts`.
+- Pages read content through `lib/content.ts` only (`getJourneys`, `getJourney`, `getDestinations`, `getSiteSettings`). Each is `"use cache"` with tags (`journeys`, `journey:<slug>`, `destinations`, `settings`, `content`). With no `NEXT_PUBLIC_SANITY_PROJECT_ID` the layer returns `lib/data` placeholders, so the site always builds.
+- GROQ in `lib/sanity/queries.ts` projects documents into the same TypeScript shapes as `lib/data`, so components do not know where content came from. CMS images arrive as `image.src` (Sanity CDN); `MediaSlot` prefers `src` over the local `file`.
+- `app/api/revalidate` is the Sanity publish webhook (secret in `SANITY_REVALIDATE_SECRET`); it revalidates by tag.
+- `npm run seed` (with `SANITY_API_WRITE_TOKEN`) uploads `public/media` and creates the placeholder journeys, destinations and settings in the dataset. Re-runnable.
+- Env vars are listed in `.env.example`.
+
+## Forms, booking and payments
+
+- Enquiry form (`components/forms/EnquiryForm.tsx`) posts to the `submitEnquiry` server action: zod validation, honeypot, writes an `enquiry` document when `SANITY_API_WRITE_TOKEN` is set (otherwise logs), emails owner and guest through `lib/email.ts` (Resend; logs without `RESEND_API_KEY`).
+- Booking flow (`components/booking/BookingFlow.tsx`, routes `/book`, `/book/[slug]`, `/book/confirmation`): five steps, dates → travellers → extras → contact → review. Prices are recomputed server-side in `lib/bookings.ts` (30% deposit). The `submitBooking` action creates a `bookingRequest`, then either calls the payment provider or records a call request, and redirects to the confirmation page with the reference.
+- Payments (`lib/payments/`): one `PaymentProvider` interface, adapters for mock, FedaPay, KkiaPay and Stripe. `getProvider(method)` picks by env keys and falls back to the mock, which approves instantly and shows a "test mode" notice. Webhooks land at `/api/webhooks/payments?provider=…` and update the booking's payment status in Sanity.
+- Currency: `CurrencyProvider` keeps the visitor's display currency in localStorage; `<Approx xof={…} />` renders the converted figure, FCFA stays primary. Switcher lives in the footer.
+- Festival countdown is a client component on a one-second `useSyncExternalStore` tick; Playwright screenshots of that page need `page.clock.install()`.
+
 ## Phases
 
 1. Plan, brand, design system ✅
 2. Layout shell, nav, footer, i18n ✅
 3. Homepage ✅
 4. Journeys index + detail, dates & prices ✅
-5. Sanity schemas + studio
-6. Booking + payments (mock adapters: FedaPay/KkiaPay for mobile money, Stripe or a pan-African processor for cards; Stripe needs a non-Benin entity)
-7. Remaining pages (destinations, return, festivals, practical, stories, about, enquire, legal)
+5. Sanity schemas + studio ✅ (site runs on placeholder data until a project ID is set)
+6. Booking + payments ✅ (mock adapter live; FedaPay, KkiaPay and Stripe adapters stubbed behind env keys; Stripe needs a non-Benin entity)
+7. Remaining pages ✅ (destinations, return, festivals, practical, stories, about, enquire, legal)
 8. Performance, SEO (JSON-LD, OG, sitemap, hreflang), accessibility pass
 
 After each phase: summarise what was built, what is left, what is needed from the owner.

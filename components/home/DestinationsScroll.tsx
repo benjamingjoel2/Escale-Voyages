@@ -1,13 +1,17 @@
-import { useLocale, useTranslations } from "next-intl";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { destinations } from "@/lib/data/destinations";
+import { getDestinations } from "@/lib/content";
 import { MediaSlot } from "@/components/ui/MediaSlot";
 import { Reveal } from "@/components/ui/Reveal";
 
 /** Horizontal scroll of every destination, coast to north, with coordinates. */
-export function DestinationsScroll() {
-  const t = useTranslations("Destinations");
-  const locale = useLocale() as "en" | "fr";
+export async function DestinationsScroll() {
+  const [t, rawLocale, destinations] = await Promise.all([
+    getTranslations("Destinations"),
+    getLocale(),
+    getDestinations(),
+  ]);
+  const locale = rawLocale as "en" | "fr";
 
   return (
     <section id="destinations" className="container-wide py-16 md:py-28">
@@ -31,6 +35,7 @@ export function DestinationsScroll() {
             <MediaSlot
               label={`${d.image.file} · ${d.image.width}×${d.image.height}`}
               file={d.image.file}
+              src={d.image.src}
               alt={d.name[locale]}
               sizes="300px"
               tone={d.tone}

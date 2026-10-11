@@ -1,7 +1,8 @@
 import { useFormatter, useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import type { Journey } from "@/lib/data/journeys";
-import { formatConverted, formatXof } from "@/lib/currency";
+import { formatXof } from "@/lib/currency";
+import { Approx } from "@/components/ui/Currency";
 import { lowestPrice } from "@/lib/journeys";
 import { whatsappUrl } from "@/lib/site";
 
@@ -29,8 +30,7 @@ export function BookingPanel({ journey: j }: { journey: Journey }) {
           {formatXof(from)}
         </p>
         <p className="mt-1 text-[13px] text-charcoal">
-          {tj("approx", { amount: formatConverted(from, "EUR", locale) })} ·{" "}
-          {tj("perPerson")} · {tj("days", { count: j.days })}
+          <Approx xof={from} /> · {tj("perPerson")} · {tj("days", { count: j.days })}
         </p>
 
         <div className="mt-6 border-t border-line pt-5">
@@ -56,7 +56,7 @@ export function BookingPanel({ journey: j }: { journey: Journey }) {
 
         <div className="mt-6 grid gap-2">
           <Link
-            href={{ pathname: "/enquire", query: { journey: j.slug } }}
+            href={{ pathname: "/book/[slug]", params: { slug: j.slug } }}
             className="btn btn-lg btn-solid"
           >
             {t("request")}
@@ -79,7 +79,7 @@ export function BookingPanel({ journey: j }: { journey: Journey }) {
           </p>
         </div>
         <Link
-          href={{ pathname: "/enquire", query: { journey: j.slug } }}
+          href={{ pathname: "/book/[slug]", params: { slug: j.slug } }}
           className="btn btn-solid h-11 px-5"
         >
           {t("request")}

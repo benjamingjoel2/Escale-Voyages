@@ -7,7 +7,7 @@ import { JourneyCard } from "@/components/journeys/JourneyCard";
 import { JourneyFilters } from "@/components/journeys/JourneyFilters";
 import { PlanningCta } from "@/components/home/PlanningCta";
 import { filterJourneys, parseFilters } from "@/lib/journeys";
-import { journeys } from "@/lib/data/journeys";
+import { getJourneys } from "@/lib/content";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -22,9 +22,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 /** Reads the URL filters at request time; streams in after the static shell. */
 async function Results({ searchParams }: { searchParams: Props["searchParams"] }) {
-  const [sp, t] = await Promise.all([searchParams, getTranslations("JourneysPage")]);
+  const [sp, t, journeys] = await Promise.all([
+    searchParams,
+    getTranslations("JourneysPage"),
+    getJourneys(),
+  ]);
   const filters = parseFilters(sp);
-  const results = filterJourneys(filters);
+  const results = filterJourneys(journeys, filters);
 
   return (
     <>
@@ -45,7 +49,8 @@ async function Results({ searchParams }: { searchParams: Props["searchParams"] }
   );
 }
 
-function ResultsFallback() {
+async function ResultsFallback() {
+  const journeys = await getJourneys();
   return (
     <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {journeys.map((j) => (

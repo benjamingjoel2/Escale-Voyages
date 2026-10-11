@@ -1,11 +1,11 @@
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { journeys } from "@/lib/data/journeys";
+import { getJourneys } from "@/lib/content";
 import { JourneyCard } from "@/components/journeys/JourneyCard";
 import { Reveal } from "@/components/ui/Reveal";
 
-export function JourneyCards() {
-  const t = useTranslations("Journeys");
+export async function JourneyCards() {
+  const [t, journeys] = await Promise.all([getTranslations("Journeys"), getJourneys()]);
 
   return (
     <section id="journeys" className="container-wide py-16 md:py-28">
@@ -20,7 +20,7 @@ export function JourneyCards() {
       </Reveal>
 
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-        {journeys.map((j, i) => (
+        {journeys.slice(0, 5).map((j, i) => (
           <Reveal key={j.slug} delay={Math.min(i * 0.06, 0.3)}>
             <JourneyCard journey={j} />
           </Reveal>
