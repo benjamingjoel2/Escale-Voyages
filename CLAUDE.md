@@ -20,10 +20,10 @@ Homepage section order: video hero → intro statement → season banner → jou
 
 ### Tokens (app/globals.css)
 
-- **Dark site** (owner decision, October 2026). `ink` is always the foreground and `paper` always the ground, so write components with the tokens, never literal colours: ink `#EEF0F4` (bone white, all headings), charcoal `#AEB4C2` (body), paper `#0E131D` (near-black blue), grey `#171D29` (footer, large buttons), accent `#E4561F` (orange, hover only), lagoon `#3A97A6`, sand `#1A2130` (haze). Text on translucent and orange buttons is `--on-glass` / `--on-accent` (white). `text-white` is only for copy laid over photographs.
+- **Black site** (owner decision, October 2026). `ink` is always the foreground and `paper` always the ground, so write components with the tokens, never literal colours: ink `#F2F2F2` (off-white, all headings), charcoal `#A9A9AD` (body), paper `#000000` (true black), grey `#111111` (footer, large buttons), accent `#E4561F` (orange, hover only), lagoon `#3A97A6`, sand `#0C0C0C` (haze). Text on translucent and orange buttons is `--on-glass` / `--on-accent` (white). `text-white` is only for copy laid over photographs.
 - Buttons: 40px, 2px radius, translucent ink glass; on hover turn accent and 5px radius. Large footer buttons are 56px grey. There is no "Watch film" button (removed on request).
 - Type: Oswald 300 uppercase for the giant hero word and route code (`font-condensed`), Instrument Serif italic for statements and quotes (`font-display`), Figtree for everything else (`font-sans`). Eyebrows are 11px uppercase, 0.12em tracking, 60% ink.
-- Haze (`.haze` utility) is the white mist transition between the hero and the intro. Pure CSS.
+- Haze (`.haze` utility) is the mist transition between the hero and the intro, fading into the black ground. Pure CSS.
 
 ### Media
 
