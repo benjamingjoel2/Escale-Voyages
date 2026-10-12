@@ -48,7 +48,8 @@ Slow and few. Hero parallax (rAF in `HeroMedia`), staggered reveals on scroll (`
 - Journey filters (`lib/journeys.ts`) are URL search params: `type`, `duration`, `budget`, `month`. Parse with `parseFilters`; unknown values are ignored.
 - Coordinates: decimal degrees in data, display string to the nearest minute. Verify against OpenStreetMap before launch.
 - WhatsApp: floating button sitewide with a prefilled message per page (`whatsappUrl` in `lib/site.ts`). Number is a placeholder until supplied.
-- Accessibility: WCAG AA contrast, visible focus rings (accent), keyboard-reachable menus and panels, alt text required on every image.
+- Accessibility: WCAG AA contrast, visible focus rings (accent), keyboard-reachable menus and panels, alt text required on every image. Re-run `node scratch/axe.mjs`-style checks with `@axe-core/playwright` (installed as a dev dependency) after UI changes; the audit must stay at zero violations.
+- SEO: every indexable page passes its route to `pageAlternates` in `generateMetadata` so canonical and hreflang stay correct; new routes also go into `app/sitemap.ts`. Share images: pass the page's photo through `ogImageFor`; the default is the generated image in `app/[locale]/opengraph-image.tsx`. The canonical origin is `NEXT_PUBLIC_SITE_URL`.
 - Performance targets: Lighthouse 90+ on mobile over 4G. `next/image` everywhere, video poster only on mobile and when `saveData` is on, lazy-load below-the-fold media, keep client bundles small.
 - Facts to verify before launch: Cotonou→Natitingou road distance and time (sources range 550–645 km, 6–10 h), Vodun Days 2027 dates (2026 ran 8–10 Jan), yellow-fever entry rule (ministry circular of April 2026 says no longer checked at entry).
 
@@ -79,7 +80,7 @@ Slow and few. Hero parallax (rAF in `HeroMedia`), staggered reveals on scroll (`
 5. Sanity schemas + studio ✅ (site runs on placeholder data until a project ID is set)
 6. Booking + payments ✅ (mock adapter live; FedaPay, KkiaPay and Stripe adapters stubbed behind env keys; Stripe needs a non-Benin entity)
 7. Remaining pages ✅ (destinations, return, festivals, practical, stories, about, enquire, legal)
-8. Performance, SEO (JSON-LD, OG, sitemap, hreflang), accessibility pass
+8. Performance, SEO, accessibility ✅ (sitemap + robots, per-page canonical and hreflang via `lib/seo.ts`, Open Graph images, TravelAgency/WebSite/Breadcrumb JSON-LD; zero axe violations on 16 pages; fonts trimmed to four files, no animation library, Lenis lazy and desktop-only, client messages limited to `CLIENT_NAMESPACES`)
 
 After each phase: summarise what was built, what is left, what is needed from the owner.
 
