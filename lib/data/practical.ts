@@ -62,13 +62,13 @@ export const practical: PracticalSection[] = [
     paragraphs: {
       en: [
         "The CFA franc is pegged to the euro, so your euro budget is predictable. Cash is still king outside Cotonou. ATMs in the main towns take Visa; Mastercard is patchier. Bring euros in cash to change rather than relying on cards.",
-        "Mobile money (MTN MoMo and Moov Money) is how Benin pays for everything. We can set you up with a local SIM and wallet on day one so you can pay markets, taxis and guides like a resident.",
-        "Tipping is appreciated and not expected. We suggest a daily amount for your guide and driver in the itinerary document, so there is no awkwardness at the end.",
+        "Mobile money (MTN MoMo and Moov Money) is how Benin pays for everything. We can set you up with a local SIM and wallet on day one so you can pay markets, taxis and tips like a resident.",
+        "Tipping is appreciated and not expected. We suggest a daily amount for your driver in the itinerary document, so there is no awkwardness at the end.",
       ],
       fr: [
         "Le franc CFA a une parité fixe avec l'euro, votre budget en euros est donc prévisible. L'espèce reste reine hors de Cotonou. Les distributeurs des grandes villes acceptent Visa ; Mastercard est plus aléatoire. Apportez des euros en espèces à changer plutôt que de compter sur les cartes.",
-        "Le mobile money (MTN MoMo et Moov Money) est le moyen de paiement du Bénin. Nous pouvons vous installer une carte SIM locale et un portefeuille dès le premier jour pour payer marchés, taxis et guides comme un résident.",
-        "Le pourboire est apprécié, pas attendu. Nous indiquons un montant journalier conseillé pour le guide et le chauffeur dans le document d'itinéraire, pour éviter toute gêne à la fin.",
+        "Le mobile money (MTN MoMo et Moov Money) est le moyen de paiement du Bénin. Nous pouvons vous installer une carte SIM locale et un portefeuille dès le premier jour pour payer marchés, taxis et pourboires comme un résident.",
+        "Le pourboire est apprécié, pas attendu. Nous indiquons un montant journalier conseillé pour le chauffeur dans le document d'itinéraire, pour éviter toute gêne à la fin.",
       ],
     },
     verified: "2026-10-01",
@@ -146,12 +146,12 @@ export const practical: PracticalSection[] = [
       en: [
         "Light, loose, long: cotton or linen that covers shoulders and knees for temples, palaces and villages. A scarf for women at ceremonies. Neutral colours for the parks; no camouflage, which is reserved for the army.",
         "Good walking shoes, sandals, a hat, high-factor sun cream, repellent, a refillable bottle, a head torch, and a light rain shell outside the dry season. Binoculars for Pendjari.",
-        "Bring small gifts if you like, but ask your guide before handing anything to children. Photographs of people and ceremonies always need permission; your guide will ask for you.",
+        "Bring small gifts if you like, but ask your host before handing anything to children. Photographs of people and ceremonies always need permission; your host will ask for you.",
       ],
       fr: [
         "Léger, ample, long : du coton ou du lin qui couvre épaules et genoux pour les temples, les palais et les villages. Un foulard pour les femmes lors des cérémonies. Des couleurs neutres dans les parcs ; pas de camouflage, réservé à l'armée.",
         "De bonnes chaussures de marche, des sandales, un chapeau, une crème solaire à indice élevé, un répulsif, une gourde, une lampe frontale et un coupe-pluie léger hors saison sèche. Des jumelles pour la Pendjari.",
-        "Apportez de petits cadeaux si vous le souhaitez, mais demandez à votre guide avant de donner quoi que ce soit aux enfants. Les photos de personnes et de cérémonies exigent toujours une autorisation ; votre guide la demandera pour vous.",
+        "Apportez de petits cadeaux si vous le souhaitez, mais demandez à votre hôte avant de donner quoi que ce soit aux enfants. Les photos de personnes et de cérémonies exigent toujours une autorisation ; votre hôte la demandera pour vous.",
       ],
     },
     verified: "2026-10-01",

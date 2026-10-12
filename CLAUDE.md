@@ -9,6 +9,7 @@ Premium tour agency website for Benin Republic, based in Cotonou. Next.js App Ro
 - **Tagline**: "The whole of Benin, at your pace" / "Tout le Bénin, à votre rythme". Hero eyebrow: "West Africa's best-kept secret". The giant hero word is the destination, **Bénin**, as White Desert's is "Antarctica"; the brand sits in the nav.
 - **Voice**: confident, story-led, respectful of history and of Vodun as a living religion. Never exoticise it, never treat it as spectacle. We visit as guests.
 - **Signature market**: diaspora heritage ("Return"). It sits high on the homepage, straight after the destinations.
+- **No guides.** Escale Voyages has no guides of its own and the copy must never claim them. The agency plans and runs the journey, a driver travels with the group, the Cotonou team is on WhatsApp, and each place is explained by the people who live there (temple elders, families, park rangers, hosts).
 
 ## Design direction (approved)
 

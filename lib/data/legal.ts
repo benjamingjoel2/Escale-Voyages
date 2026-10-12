@@ -77,8 +77,8 @@ export const legalPages: LegalPage[] = [
       {
         heading: { en: "Your responsibilities", fr: "Vos obligations" },
         paragraphs: {
-          en: ["You are responsible for a valid passport, e-visa, vaccinations and travel insurance including medical evacuation, which is a condition of travel. Follow your guide's instructions in parks and at ceremonies."],
-          fr: ["Vous êtes responsable d'un passeport valide, de l'e-visa, des vaccins et d'une assurance voyage incluant le rapatriement médical, condition du voyage. Suivez les consignes de votre guide dans les parcs et lors des cérémonies."],
+          en: ["You are responsible for a valid passport, e-visa, vaccinations and travel insurance including medical evacuation, which is a condition of travel. Follow the instructions of our driver and your hosts in parks and at ceremonies."],
+          fr: ["Vous êtes responsable d'un passeport valide, de l'e-visa, des vaccins et d'une assurance voyage incluant le rapatriement médical, condition du voyage. Suivez les consignes de notre chauffeur et de vos hôtes dans les parcs et lors des cérémonies."],
         },
       },
     ],
@@ -98,8 +98,8 @@ export const legalPages: LegalPage[] = [
       {
         heading: { en: "How we use it", fr: "Comment nous les utilisons" },
         paragraphs: {
-          en: ["To answer you, plan and run your journey, and comply with permit and insurance requirements. We share details only with the hotels, parks, guides and payment providers needed for your trip. We do not sell data. Marketing emails are sent only if you opt in, and every one has an unsubscribe link."],
-          fr: ["Pour vous répondre, préparer et réaliser votre voyage, et respecter les exigences de permis et d'assurance. Nous ne partageons vos données qu'avec les hôtels, parcs, guides et prestataires de paiement nécessaires au voyage. Nous ne vendons pas de données. Les e-mails marketing ne sont envoyés qu'avec votre accord, avec un lien de désinscription dans chacun."],
+          en: ["To answer you, plan and run your journey, and comply with permit and insurance requirements. We share details only with the hotels, parks, drivers and payment providers needed for your trip. We do not sell data. Marketing emails are sent only if you opt in, and every one has an unsubscribe link."],
+          fr: ["Pour vous répondre, préparer et réaliser votre voyage, et respecter les exigences de permis et d'assurance. Nous ne partageons vos données qu'avec les hôtels, parcs, chauffeurs et prestataires de paiement nécessaires au voyage. Nous ne vendons pas de données. Les e-mails marketing ne sont envoyés qu'avec votre accord, avec un lien de désinscription dans chacun."],
         },
       },
       {
