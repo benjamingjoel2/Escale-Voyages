@@ -78,6 +78,8 @@ export function MediaSlot({
           src={src}
           alt={alt}
           fill
+          fetchPriority={priority ? "high" : undefined}
+          quality={priority ? 70 : 75}
           sizes={sizes}
           priority={priority}
           className="object-cover"

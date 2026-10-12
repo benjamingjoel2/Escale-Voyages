@@ -28,7 +28,9 @@ export function DeparturesTable({ rows, showJourney = false }: Props) {
             <th className="eyebrow py-3 pr-4 font-semibold">{t("colDuration")}</th>
             <th className="eyebrow py-3 pr-4 font-semibold">{t("colPrice")}</th>
             <th className="eyebrow py-3 pr-4 font-semibold">{t("colAvailability")}</th>
-            <th className="py-3" />
+            <th className="py-3">
+              <span className="sr-only">{t("book")}</span>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -58,7 +60,7 @@ export function DeparturesTable({ rows, showJourney = false }: Props) {
                 </td>
                 <td className="py-4 pr-4">
                   {d.spotsLeft > 0 ? (
-                    <span className={d.spotsLeft <= 2 ? "text-accent-deep" : ""}>
+                    <span className={d.spotsLeft <= 2 ? "text-accent-bright" : ""}>
                       {t("spots", { count: d.spotsLeft })}
                     </span>
                   ) : (

@@ -6,7 +6,8 @@ import { Approx } from "@/components/ui/Currency";
 import { MediaSlot } from "@/components/ui/MediaSlot";
 
 /** Portrait journey card: season top-left, coordinates, title, price, pitch. */
-export function JourneyCard({ journey: j }: { journey: Journey }) {
+export function JourneyCard({ journey: j, headingLevel = 3 }: { journey: Journey; headingLevel?: 2 | 3 }) {
+  const Heading = headingLevel === 2 ? "h2" : "h3";
   const t = useTranslations("Journeys");
   const locale = useLocale() as "en" | "fr";
 
@@ -33,9 +34,9 @@ export function JourneyCard({ journey: j }: { journey: Journey }) {
         </div>
         <div className="relative">
           <span className="coords !text-white/70">[ {j.coords} ]</span>
-          <h3 className="mt-2 text-[22px] font-medium leading-[1.1] tracking-[-0.01em]">
+          <Heading className="mt-2 text-[22px] font-medium leading-[1.1] tracking-[-0.01em]">
             {j.title[locale]}
-          </h3>
+          </Heading>
           <p className="mt-1.5 text-sm font-semibold tabular-nums">
             {formatXof(j.priceXof)}
             <span className="ml-1.5 font-normal opacity-80">

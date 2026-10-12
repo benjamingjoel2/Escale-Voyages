@@ -6,7 +6,8 @@ export const site = {
   shortName: "Escale",
   /** PLACEHOLDER: confirm the domain the owner registers. */
   domain: "escale-voyages.com",
-  url: "https://escale-voyages.com",
+  /** Canonical origin. Set NEXT_PUBLIC_SITE_URL on the host (Vercel: https://escale-voyages.vercel.app) until the domain is live. */
+  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://escale-voyages.com").replace(/\/$/, ""),
   /** PLACEHOLDER: Benin numbers are 10 digits since 2024 and start with 01. */
   whatsappNumber: "2290100000000",
   email: {

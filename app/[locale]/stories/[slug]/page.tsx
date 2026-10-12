@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { absoluteUrl, breadcrumbLd, ogImageFor, pageAlternates } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { getFormatter, getTranslations, setRequestLocale } from "next-intl/server";
 import { Nav } from "@/components/layout/Nav";
@@ -23,7 +24,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const s = stories.find((x) => x.slug === slug);
   if (!s) return {};
   const lang = locale as "en" | "fr";
-  return { title: s.title[lang], description: s.excerpt[lang], openGraph: { type: "article", publishedTime: s.publishedAt } };
+  return {
+    title: s.title[lang],
+    description: s.excerpt[lang],
+    alternates: pageAlternates(locale, { pathname: "/stories/[slug]", params: { slug } }),
+    openGraph: { type: "article", publishedTime: s.publishedAt, title: s.title[lang], description: s.excerpt[lang], images: ogImageFor(s.cover.file, s.title[lang]) },
+  };
 }
 
 export default async function StoryPage({ params }: Props) {
@@ -56,6 +62,18 @@ export default async function StoryPage({ params }: Props) {
       <Nav variant="overlay" />
       <main id="content" className="flex-1">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              breadcrumbLd([
+                { name: site.name, url: absoluteUrl(lang, "/") },
+                { name: t("metaTitle"), url: absoluteUrl(lang, "/stories") },
+                { name: s.title[lang], url: absoluteUrl(lang, { pathname: "/stories/[slug]", params: { slug: s.slug } }) },
+              ]),
+            ),
+          }}
+        />
         <PageHero
           eyebrow={`${s.category[lang]} · ${t("readTime", { count: s.readingMinutes })}`}
           title={s.title[lang]}

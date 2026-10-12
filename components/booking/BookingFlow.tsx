@@ -54,7 +54,7 @@ export function BookingFlow({ journey, extras, defaultDeparture, paymentsLive }:
       <div className="grid content-start gap-8 lg:col-span-8">
         <ol className="flex flex-wrap gap-x-5 gap-y-2 border-b border-line pb-4">
           {STEPS.map((s, i) => (
-            <li key={s} className={`text-[12px] font-semibold uppercase tracking-[0.12em] ${i === step ? "text-ink" : i < step ? "text-ink/60" : "text-ink/35"}`}>
+            <li key={s} className={`text-[12px] font-semibold uppercase tracking-[0.12em] ${i === step ? "text-ink" : i < step ? "text-ink/80" : "text-ink/60"}`}>
               {String(i + 1).padStart(2, "0")} {t(`step${s[0].toUpperCase()}${s.slice(1)}` as "stepDate")}
             </li>
           ))}
@@ -157,7 +157,7 @@ export function BookingFlow({ journey, extras, defaultDeparture, paymentsLive }:
                   <p className="text-[13.5px]">{t("payIntro")}</p>
                   <label className="inline-flex items-center gap-2 text-[14px] text-ink"><input type="radio" name="pm" checked={method === "momo"} onChange={() => setMethod("momo")} /> {t("payMomo")} · {formatXof(q.deposit)}</label>
                   <label className="inline-flex items-center gap-2 text-[14px] text-ink"><input type="radio" name="pm" checked={method === "card"} onChange={() => setMethod("card")} /> {t("payCard")} · <Approx xof={q.deposit} /></label>
-                  {!paymentsLive ? <p className="text-[12.5px] text-accent-deep">{t("mockNotice")}</p> : null}
+                  {!paymentsLive ? <p className="text-[12.5px] text-accent-bright">{t("mockNotice")}</p> : null}
                 </div>
               ) : null}
               <label className={`flex cursor-pointer items-center gap-3 rounded-[2px] border px-4 py-3 ${mode === "call" ? "border-ink bg-ink/5" : "border-line"}`}><input type="radio" name="md" checked={mode === "call"} onChange={() => setMode("call")} /><span className="text-[15px] font-medium text-ink">{t("requestCall")}</span></label>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageAlternates } from "@/lib/seo";
 import { Suspense } from "react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Nav } from "@/components/layout/Nav";
@@ -17,7 +18,7 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "JourneysPage" });
-  return { title: t("metaTitle"), description: t("metaDescription") };
+  return { title: t("metaTitle"), description: t("metaDescription"), alternates: pageAlternates(locale, "/journeys") };
 }
 
 /** Reads the URL filters at request time; streams in after the static shell. */
@@ -36,7 +37,7 @@ async function Results({ searchParams }: { searchParams: Props["searchParams"] }
       {results.length ? (
         <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {results.map((j) => (
-            <JourneyCard key={j.slug} journey={j} />
+            <JourneyCard key={j.slug} journey={j} headingLevel={2} />
           ))}
         </div>
       ) : (
@@ -54,7 +55,7 @@ async function ResultsFallback() {
   return (
     <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {journeys.map((j) => (
-        <JourneyCard key={j.slug} journey={j} />
+        <JourneyCard key={j.slug} journey={j} headingLevel={2} />
       ))}
     </div>
   );

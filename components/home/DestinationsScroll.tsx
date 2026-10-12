@@ -22,7 +22,7 @@ export async function DestinationsScroll() {
           <h2 className="t-h2">{t("title")}</h2>
         </div>
         <Link href="/destinations" className="btn btn-inline">
-          {t("learnMore")}
+          {t("viewAll")}
         </Link>
       </Reveal>
 

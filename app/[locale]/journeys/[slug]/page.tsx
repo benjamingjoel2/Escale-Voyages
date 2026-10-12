@@ -15,6 +15,7 @@ import { getDestinations, getJourney, getJourneys } from "@/lib/content";
 import { lowestPrice } from "@/lib/journeys";
 import { formatXof } from "@/lib/currency";
 import { mediaSrc } from "@/lib/media";
+import { absoluteUrl, breadcrumbLd, ogImageFor, pageAlternates } from "@/lib/seo";
 import { site } from "@/lib/site";
 import { routing } from "@/i18n/routing";
 
@@ -32,10 +33,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const j = await getJourney(slug);
   if (!j) return {};
   const lang = locale as Lang;
+  const heroFile = mediaSrc(j.heroImage.file) ? j.heroImage.file : j.image.file;
   return {
     title: j.title[lang],
     description: j.summary[lang],
-    openGraph: { title: j.title[lang], description: j.pitch[lang] },
+    alternates: pageAlternates(locale, { pathname: "/journeys/[slug]", params: { slug } }),
+    openGraph: { title: j.title[lang], description: j.pitch[lang], images: ogImageFor(heroFile, j.title[lang]) },
   };
 }
 
@@ -91,6 +94,18 @@ export default async function JourneyPage({ params }: Props) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              breadcrumbLd([
+                { name: site.name, url: absoluteUrl(lang, "/") },
+                { name: tj("eyebrow"), url: absoluteUrl(lang, "/journeys") },
+                { name: j.title[lang], url: absoluteUrl(lang, { pathname: "/journeys/[slug]", params: { slug: j.slug } }) },
+              ]),
+            ),
+          }}
         />
 
         {/* Hero */}

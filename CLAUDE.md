@@ -1,6 +1,6 @@
 # Escale Voyages
 
-Premium tour agency website for Benin Republic, based in Cotonou. Next.js App Router, TypeScript, Tailwind v4, next-intl (FR/EN), Framer Motion, Lenis, Sanity (Phase 5), Vercel (live at https://escale-voyages.vercel.app).
+Premium tour agency website for Benin Republic, based in Cotonou. Next.js App Router, TypeScript, Tailwind v4, next-intl (FR/EN), Lenis (desktop only, loaded on demand), Sanity (Phase 5), Vercel (live at https://escale-voyages.vercel.app). No animation library: motion is CSS plus a few lines of requestAnimationFrame.
 
 ## Brand
 
@@ -21,7 +21,7 @@ Homepage section order: video hero → intro statement → season banner → jou
 
 ### Tokens (app/globals.css)
 
-- **Black site** (owner decision, October 2026). `ink` is always the foreground and `paper` always the ground, so write components with the tokens, never literal colours: ink `#F2F2F2` (off-white, all headings), charcoal `#A9A9AD` (body), paper `#000000` (true black), grey `#111111` (footer, large buttons), accent `#E4561F` (orange, hover only), lagoon `#3A97A6`, sand `#0C0C0C` (haze). Text on translucent and orange buttons is `--on-glass` / `--on-accent` (white). `text-white` is only for copy laid over photographs.
+- **Black site** (owner decision, October 2026). `ink` is always the foreground and `paper` always the ground, so write components with the tokens, never literal colours: ink `#F2F2F2` (off-white, all headings), charcoal `#A9A9AD` (body), paper `#000000` (true black), grey `#111111` (footer, large buttons), accent `#C94714` (orange for button fills and hovers; 4.8:1 with white text), accent-bright `#FF8A5B` (orange text on black, e.g. notices and errors), lagoon `#3A97A6`, sand `#0C0C0C` (haze). Text on translucent and orange buttons is `--on-glass` / `--on-accent` (white). `text-white` is only for copy laid over photographs.
 - Buttons: 40px, 2px radius, translucent ink glass; on hover turn accent and 5px radius. Large footer buttons are 56px grey. There is no "Watch film" button (removed on request).
 - Type: Oswald 300 uppercase for the giant hero word and route code (`font-condensed`), Instrument Serif italic for statements and quotes (`font-display`), Figtree for everything else (`font-sans`). Eyebrows are 11px uppercase, 0.12em tracking, 60% ink.
 - Haze (`.haze` utility) is the mist transition between the hero and the intro, fading into the black ground. Pure CSS.
@@ -34,12 +34,12 @@ Homepage section order: video hero → intro statement → season banner → jou
 
 ### Motion
 
-Slow and few. Hero parallax, staggered reveals on scroll (`Reveal`, CSS-driven, visible without JS and under reduced motion), 3% image scale on card hover, haze transitions. Lenis smooth scroll runs only on fine-pointer devices with motion allowed; touch devices get native scroll.
+Slow and few. Hero parallax (rAF in `HeroMedia`), staggered reveals on scroll (`Reveal`, CSS-driven, visible without JS and under reduced motion), 3% image scale on card hover, haze transitions. Lenis smooth scroll runs only on fine-pointer devices with motion allowed; touch devices get native scroll.
 
 ## Conventions
 
 - Routes live under `app/[locale]/`. Locale segment is the root param; `generateStaticParams` returns both locales. Use `Link`, `usePathname`, `redirect` from `@/i18n/navigation`, never from `next/link` or `next/navigation`, so localized pathnames (`/journeys` ↔ `/voyages`) work. Add new routes to `i18n/routing.ts` pathnames in both languages.
-- All copy goes through `messages/en.json` and `messages/fr.json`. Both languages are first-class: add keys to both files in the same change. Portuguese is wired to be added later (see `i18n/routing.ts`).
+- All copy goes through `messages/en.json` and `messages/fr.json`. Both languages are first-class: add keys to both files in the same change. Only the namespaces listed in `CLIENT_NAMESPACES` (`app/[locale]/layout.tsx`) reach the browser; add a namespace there when a `"use client"` component starts using it. Portuguese is wired to be added later (see `i18n/routing.ts`).
 - Server Components by default. `"use client"` only for motion, Lenis, menus, panels, filters.
 - `cacheComponents` is on. Anything reading request data (`searchParams`, headers) goes inside `<Suspense>`; cacheable fetches use `"use cache"` + `cacheLife` (see `lib/weather.ts`, `lib/time.ts`). Never call `new Date()` in a prerendered component.
 - Prices are stored in FCFA (XOF). Display with `formatXof` and an approximate conversion via `formatConverted` (`lib/currency.ts`). Converted figures always show "≈".

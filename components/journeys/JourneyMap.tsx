@@ -54,7 +54,7 @@ export function JourneyMap({ stops, destinations }: { stops: string[]; destinati
             <span className="text-xs tabular-nums text-ink/50">{String(i + 1).padStart(2, "0")}</span>
             <Link
               href={{ pathname: "/destinations/[slug]", params: { slug: p.slug } }}
-              className="text-[15px] font-medium text-ink hover:text-accent"
+              className="text-[15px] font-medium text-ink hover:text-accent-bright"
             >
               {p.name[locale]}
             </Link>
