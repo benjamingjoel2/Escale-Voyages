@@ -56,8 +56,8 @@ export const returnPage = {
     {
       q: { en: "Is this journey only for African Americans?", fr: "Ce voyage est-il réservé aux Afro-Américains ?" },
       a: {
-        en: "No. It is for anyone from the Americas, the Caribbean or Europe whose ancestry runs through this coast: Brazilian, Haitian, Cuban, Jamaican, French Caribbean and others. Our guides speak French, English and Portuguese.",
-        fr: "Non. Il s'adresse à toute personne des Amériques, des Caraïbes ou d'Europe dont les origines passent par cette côte : brésiliennes, haïtiennes, cubaines, jamaïcaines, antillaises et autres. Nos guides parlent français, anglais et portugais.",
+        en: "No. It is for anyone from the Americas, the Caribbean or Europe whose ancestry runs through this coast: Brazilian, Haitian, Cuban, Jamaican, French Caribbean and others. Our team works in French, English and Portuguese.",
+        fr: "Non. Il s'adresse à toute personne des Amériques, des Caraïbes ou d'Europe dont les origines passent par cette côte : brésiliennes, haïtiennes, cubaines, jamaïcaines, antillaises et autres. Notre équipe travaille en français, en anglais et en portugais.",
       },
     },
   ] as { q: L; a: L }[],

@@ -65,7 +65,7 @@ export type Journey = {
 
 const INCLUDED_COMMON: L<string[]> = {
   en: [
-    "Private guide throughout, English and French speaking",
+    "Private driver throughout, English and French speaking",
     "All road transport in an air-conditioned 4×4 with driver",
     "Accommodation as described, breakfast included",
     "All entry fees, permits and ceremony contributions",
@@ -73,7 +73,7 @@ const INCLUDED_COMMON: L<string[]> = {
     "24-hour WhatsApp line to our Cotonou office",
   ],
   fr: [
-    "Guide privé francophone et anglophone pendant tout le voyage",
+    "Chauffeur privé francophone et anglophone pendant tout le voyage",
     "Tous les transports routiers en 4×4 climatisé avec chauffeur",
     "Hébergement tel que décrit, petit-déjeuner inclus",
     "Droits d'entrée, permis et contributions aux cérémonies",
@@ -132,8 +132,8 @@ export const journeys: Journey[] = [
       fr: "Les palais et bas-reliefs d'Abomey, puis la route que le royaume a prise vers la mer.",
     },
     summary: {
-      en: "Seven days through the heart of the Kingdom of Dahomey: the palaces of Abomey, the sacred hills of Dassa, the royal court of Porto-Novo and the port of Ouidah, where the kingdom met the Atlantic. Told by guides whose families served the court.",
-      fr: "Sept jours au cœur du royaume du Dahomey : les palais d'Abomey, les collines sacrées de Dassa, la cour royale de Porto-Novo et le port de Ouidah, où le royaume a rencontré l'Atlantique. Racontés par des guides dont les familles ont servi la cour.",
+      en: "Seven days through the heart of the Kingdom of Dahomey: the palaces of Abomey, the sacred hills of Dassa, the royal court of Porto-Novo and the port of Ouidah, where the kingdom met the Atlantic. Told, at each palace, by the families who keep it.",
+      fr: "Sept jours au cœur du royaume du Dahomey : les palais d'Abomey, les collines sacrées de Dassa, la cour royale de Porto-Novo et le port de Ouidah, où le royaume a rencontré l'Atlantique. Racontés, à chaque palais, par les familles qui le gardent.",
     },
     season: { en: "Nov – Feb", fr: "Nov. – fév." },
     months: [11, 12, 1, 2],
@@ -226,7 +226,7 @@ export const journeys: Journey[] = [
       ],
     },
     itinerary: [
-      { day: 1, title: { en: "Arrive, and breathe", fr: "Arriver, respirer" }, body: { en: "Airport meeting, a quiet guesthouse in Ouidah, dinner with your guide and researcher to set the pace of the week.", fr: "Accueil à l'aéroport, maison d'hôtes paisible à Ouidah, dîner avec votre guide et notre chercheur pour poser le rythme de la semaine." }, stay: { en: "Ouidah", fr: "Ouidah" } },
+      { day: 1, title: { en: "Arrive, and breathe", fr: "Arriver, respirer" }, body: { en: "Airport meeting, a quiet guesthouse in Ouidah, dinner with our researcher to set the pace of the week.", fr: "Accueil à l'aéroport, maison d'hôtes paisible à Ouidah, dîner avec notre chercheur pour poser le rythme de la semaine." }, stay: { en: "Ouidah", fr: "Ouidah" } },
       { day: 2, title: { en: "The memorial route", fr: "La route mémorielle" }, body: { en: "The Portuguese fort and museum, then the Route des Esclaves on foot: the Tree of Forgetting, the Zomachi memorial, the Door of No Return.", fr: "Le fort portugais et son musée, puis la Route des Esclaves à pied : l'Arbre de l'Oubli, le mémorial Zomachi, la Porte du Non-Retour." }, stay: { en: "Ouidah", fr: "Ouidah" } },
       { day: 3, title: { en: "The keepers of memory", fr: "Les gardiens de la mémoire" }, body: { en: "A morning with a Vodun community that traces its lineage to the returnees from Brazil. Afternoon in the Afro-Brazilian houses of Ouidah and Porto-Novo.", fr: "Une matinée avec une communauté vodun qui fait remonter sa lignée aux retornados du Brésil. Après-midi dans les maisons afro-brésiliennes de Ouidah et de Porto-Novo." }, stay: { en: "Ouidah", fr: "Ouidah" } },
       { day: 4, title: { en: "Your line, where it leads", fr: "Votre lignée, là où elle mène" }, body: { en: "A day shaped by your records: a village in the interior, a family name, a shrine. Where no records exist, a day on the Abomey road with its history instead.", fr: "Une journée façonnée par vos archives : un village de l'intérieur, un nom de famille, un sanctuaire. En l'absence d'archives, une journée sur la route d'Abomey et son histoire." }, stay: { en: "Ouidah", fr: "Ouidah" } },
@@ -286,14 +286,14 @@ export const journeys: Journey[] = [
     heroImage: { file: "journey-pendjari-hero.jpg", width: 2800, height: 1600 },
     highlights: {
       en: [
-        "Three full days of game drives in Pendjari with a park-trained guide",
+        "Three full days of game drives in Pendjari with the park's own rangers",
         "A night inside a Tata Somba, hosted by the family",
         "Swimming at the Tanougou waterfalls",
         "The Atakora hills and the Koutammakou landscape",
         "Abomey and the Dassa hills on the way north",
       ],
       fr: [
-        "Trois journées complètes de safari dans la Pendjari avec un guide formé par le parc",
+        "Trois journées complètes de safari dans la Pendjari avec les écogardes du parc",
         "Une nuit dans un Tata Somba, chez l'habitant",
         "Baignade aux cascades de Tanougou",
         "Les collines de l'Atakora et le paysage du Koutammakou",
@@ -410,8 +410,8 @@ export const journeys: Journey[] = [
       fr: "Trois jours de cérémonies à Ouidah avec ceux à qui elles appartiennent, puis la côte pour reprendre souffle.",
     },
     summary: {
-      en: "Every January, Ouidah becomes the centre of the Vodun world for three days around the 10 January public holiday. We attend as guests of a temple, with a guide who explains what you are seeing and what you should not photograph. Then two days on the coast to let it settle.",
-      fr: "Chaque janvier, Ouidah devient pendant trois jours le centre du monde vodun autour du jour férié du 10 janvier. Nous y assistons comme invités d'un temple, avec un guide qui explique ce que vous voyez et ce qu'il ne faut pas photographier. Puis deux jours sur la côte pour laisser reposer.",
+      en: "Every January, Ouidah becomes the centre of the Vodun world for three days around the 10 January public holiday. We attend as guests of a temple, whose elders explain what you are seeing and what you should not photograph. Then two days on the coast to let it settle.",
+      fr: "Chaque janvier, Ouidah devient pendant trois jours le centre du monde vodun autour du jour férié du 10 janvier. Nous y assistons comme invités d'un temple, dont les anciens expliquent ce que vous voyez et ce qu'il ne faut pas photographier. Puis deux jours sur la côte pour laisser reposer.",
     },
     season: { en: "January", fr: "Janvier" },
     months: [1],
@@ -495,14 +495,14 @@ export const journeys: Journey[] = [
       en: [
         "Every region of the country in one itinerary, south to north and back",
         "Ganvié, Ouidah, Abomey, Kétou, Dassa, Parakou, the Atakora, Pendjari, the W",
-        "Four nights in the parks with park-trained guides",
+        "Four nights in the parks, driven by the parks' own rangers",
         "A night in a Tata Somba and a night on Lake Ahémé",
         "Internal flight back from the north when the schedule allows",
       ],
       fr: [
         "Toutes les régions du pays en un seul itinéraire, du sud au nord et retour",
         "Ganvié, Ouidah, Abomey, Kétou, Dassa, Parakou, l'Atakora, la Pendjari, le W",
-        "Quatre nuits dans les parcs avec des guides formés par les parcs",
+        "Quatre nuits dans les parcs, avec les écogardes des parcs",
         "Une nuit dans un Tata Somba et une nuit au bord du lac Ahémé",
         "Vol intérieur depuis le nord quand les horaires le permettent",
       ],

@@ -30,8 +30,8 @@ export const festivals: Festival[] = [
       fr: "Trois jours de janvier où Ouidah devient le centre du monde vodun.",
     },
     body: {
-      en: "Vodun Days grew out of the 10 January public holiday, Benin's national day of traditional religions, into a three-day festival of ceremonies, processions and concerts on the beach at Ouidah. The 2026 edition ran from 8 to 10 January and drew visitors from across West Africa, Brazil, Haiti and the United States. We attend as guests of a temple, with a guide who explains what you are seeing and what you should not photograph.",
-      fr: "Les Vodun Days sont nés du jour férié du 10 janvier, fête nationale des religions traditionnelles, pour devenir un festival de trois jours de cérémonies, de processions et de concerts sur la plage de Ouidah. L'édition 2026 s'est tenue du 8 au 10 janvier et a attiré des visiteurs de toute l'Afrique de l'Ouest, du Brésil, d'Haïti et des États-Unis. Nous y assistons en invités d'un temple, avec un guide qui explique ce que vous voyez et ce qu'il ne faut pas photographier.",
+      en: "Vodun Days grew out of the 10 January public holiday, Benin's national day of traditional religions, into a three-day festival of ceremonies, processions and concerts on the beach at Ouidah. The 2026 edition ran from 8 to 10 January and drew visitors from across West Africa, Brazil, Haiti and the United States. We attend as guests of a temple, whose elders explain what you are seeing and what you should not photograph.",
+      fr: "Les Vodun Days sont nés du jour férié du 10 janvier, fête nationale des religions traditionnelles, pour devenir un festival de trois jours de cérémonies, de processions et de concerts sur la plage de Ouidah. L'édition 2026 s'est tenue du 8 au 10 janvier et a attiré des visiteurs de toute l'Afrique de l'Ouest, du Brésil, d'Haïti et des États-Unis. Nous y assistons en invités d'un temple, dont les anciens expliquent ce que vous voyez et ce qu'il ne faut pas photographier.",
     },
     when: { en: "Every January, Ouidah", fr: "Chaque janvier, Ouidah" },
     nextStart: "2027-01-08",

@@ -83,12 +83,12 @@ export const stories: Story[] = [
       en: [
         "The West African lion is genetically distinct from its cousins in the east and south, closer in fact to the extinct Barbary lion of North Africa. It once ranged from Senegal to Nigeria. Today almost the whole population lives in the W-Arly-Pendjari complex shared by Benin, Burkina Faso and Niger.",
         "Pendjari is the best-protected part of it. Since 2017 the park has been managed in partnership with African Parks, rangers have been trained and equipped, and elephant and lion numbers have risen. It is also one of the last places to see the West African cheetah.",
-        "Visiting matters. Park fees and lodge jobs are what make conservation pay for the villages on the park edge. Our North to Pendjari journey spends three full days inside with park-trained guides, in the dry season when the animals come to the water.",
+        "Visiting matters. Park fees and lodge jobs are what make conservation pay for the villages on the park edge. Our North to Pendjari journey spends three full days inside with the park's rangers, in the dry season when the animals come to the water.",
       ],
       fr: [
         "Le lion d'Afrique de l'Ouest est génétiquement distinct de ses cousins de l'est et du sud, plus proche en fait du lion de l'Atlas disparu. Il occupait autrefois du Sénégal au Nigeria. Aujourd'hui, presque toute la population vit dans le complexe W-Arly-Pendjari partagé par le Bénin, le Burkina Faso et le Niger.",
         "La Pendjari en est la partie la mieux protégée. Depuis 2017, le parc est géré en partenariat avec African Parks, les écogardes ont été formés et équipés, et les effectifs d'éléphants et de lions ont augmenté. C'est aussi l'un des derniers endroits où voir le guépard d'Afrique de l'Ouest.",
-        "Venir compte. Les droits d'entrée et les emplois des lodges sont ce qui rend la conservation rentable pour les villages en bordure du parc. Notre voyage Vers le nord, la Pendjari passe trois journées complètes à l'intérieur avec des guides formés par le parc, en saison sèche, quand les animaux viennent à l'eau.",
+        "Venir compte. Les droits d'entrée et les emplois des lodges sont ce qui rend la conservation rentable pour les villages en bordure du parc. Notre voyage Vers le nord, la Pendjari passe trois journées complètes à l'intérieur avec les écogardes du parc, en saison sèche, quand les animaux viennent à l'eau.",
       ],
     },
     cover: { file: "journey-pendjari-hero.jpg", width: 1600, height: 1067 },
@@ -103,21 +103,21 @@ export const stories: Story[] = [
     slug: "how-to-behave-at-a-vodun-ceremony",
     title: { en: "How to behave at a Vodun ceremony", fr: "Comment se comporter à une cérémonie vodun" },
     excerpt: {
-      en: "Vodun is a religion, not a show. Seven things our guides tell every guest before the first temple.",
-      fr: "Le Vodun est une religion, pas un spectacle. Sept choses que nos guides disent à chaque voyageur avant le premier temple.",
+      en: "Vodun is a religion, not a show. Seven things we tell every guest before the first temple.",
+      fr: "Le Vodun est une religion, pas un spectacle. Sept choses que nous disons à chaque voyageur avant le premier temple.",
     },
     body: {
       en: [
-        "Ask before photographing anything, and accept the answer. Some ceremonies allow it, some allow it for part of the time, some do not. Your guide will ask for you.",
+        "Ask before photographing anything, and accept the answer. Some ceremonies allow it, some allow it for part of the time, some do not. Your host will ask for you.",
         "Dress with covered shoulders and knees. Women bring a scarf. Take off your shoes where others do. Do not step over offerings on the ground, and do not touch a shrine.",
         "Do not use the words \"voodoo\", \"magic\" or \"fetish\" with the people you meet. The religion is called Vodun; its priests are hounon and its deities are vodun. If you are offered a drink or food, take a little.",
-        "Stay as long as you are welcome and leave when your guide says. Nothing here is scheduled for you, and that is why it is worth seeing.",
+        "Stay as long as you are welcome and leave when your host says. Nothing here is scheduled for you, and that is why it is worth seeing.",
       ],
       fr: [
-        "Demandez avant de photographier quoi que ce soit, et acceptez la réponse. Certaines cérémonies le permettent, d'autres seulement par moments, d'autres pas du tout. Votre guide demandera pour vous.",
+        "Demandez avant de photographier quoi que ce soit, et acceptez la réponse. Certaines cérémonies le permettent, d'autres seulement par moments, d'autres pas du tout. Votre hôte demandera pour vous.",
         "Habillez-vous épaules et genoux couverts. Les femmes apportent un foulard. Déchaussez-vous là où les autres le font. N'enjambez pas les offrandes au sol et ne touchez pas un autel.",
         "N'utilisez pas les mots « vaudou », « magie » ou « fétiche » avec les gens que vous rencontrez. La religion s'appelle le Vodun ; ses prêtres sont des hounon et ses divinités des vodun. Si l'on vous offre à boire ou à manger, prenez-en un peu.",
-        "Restez tant que vous êtes bienvenu et partez quand votre guide le dit. Rien ici n'est programmé pour vous, et c'est précisément pour cela que ça vaut la peine.",
+        "Restez tant que vous êtes bienvenu et partez quand votre hôte le dit. Rien ici n'est programmé pour vous, et c'est précisément pour cela que ça vaut la peine.",
       ],
     },
     cover: { file: "journey-vodun-days.jpg", width: 1600, height: 1067 },

@@ -1,6 +1,11 @@
 import type { L } from "./journeys";
 
-/** Team and guides. All placeholders until the owner supplies real people. */
+/**
+ * The team. All placeholders until the owner supplies real people. Escale
+ * Voyages has no guides of its own: the agency plans and runs the journey,
+ * a driver travels with the group, and each place is explained by the
+ * people who live there. Keep roles honest to that.
+ */
 export type Person = {
   slug: string;
   name: string;
@@ -27,42 +32,42 @@ export const team: Person[] = [
     tone: "night",
   },
   {
-    slug: "guide-ouidah",
-    name: "[Guide name]",
-    role: { en: "Lead guide, heritage", fr: "Guide principal, mémoire" },
-    region: { en: "Ouidah and the coast", fr: "Ouidah et la côte" },
+    slug: "planner",
+    name: "[Name]",
+    role: { en: "Journey planning", fr: "Conception des voyages" },
+    region: { en: "Cotonou", fr: "Cotonou" },
     bio: {
-      en: "Placeholder. Historian from Ouidah, leads the Return and Vodun Days journeys, trained with the Ouidah museum. Replace with the real biography.",
-      fr: "Texte provisoire. Historien de Ouidah, mène les voyages Retour et Vodun Days, formé au musée de Ouidah. À remplacer.",
+      en: "Placeholder. Builds every day-by-day, books the rooms and the people who receive you, and writes the single itinerary document you travel with. Replace with the real biography.",
+      fr: "Texte provisoire. Construit chaque jour par jour, réserve les chambres et les personnes qui vous reçoivent, et rédige le document d'itinéraire unique avec lequel vous voyagez. À remplacer.",
     },
-    languages: ["FR", "EN", "Fon", "PT"],
-    image: { file: "team-guide-ouidah.jpg", width: 1200, height: 1500 },
+    languages: ["FR", "EN"],
+    image: { file: "team-planner.jpg", width: 1200, height: 1500 },
     tone: "lagoon",
   },
   {
-    slug: "guide-abomey",
-    name: "[Guide name]",
-    role: { en: "Guide, kingdoms and culture", fr: "Guide, royaumes et culture" },
-    region: { en: "Abomey, Kétou and the Collines", fr: "Abomey, Kétou et les Collines" },
+    slug: "guest-relations",
+    name: "[Name]",
+    role: { en: "Guest relations", fr: "Relations voyageurs" },
+    region: { en: "Cotonou, and on WhatsApp", fr: "Cotonou, et sur WhatsApp" },
     bio: {
-      en: "Placeholder. From a family of court artisans in Abomey; reads the bas-reliefs symbol by symbol. Replace with the real biography.",
-      fr: "Texte provisoire. Issu d'une famille d'artisans de la cour d'Abomey ; lit les bas-reliefs symbole par symbole. À remplacer.",
+      en: "Placeholder. The voice on the WhatsApp line before, during and after your journey; meets every arrival at the airport. Replace with the real biography.",
+      fr: "Texte provisoire. La voix de la ligne WhatsApp avant, pendant et après votre voyage ; accueille chaque arrivée à l'aéroport. À remplacer.",
     },
     languages: ["FR", "EN", "Fon", "Yoruba"],
-    image: { file: "team-guide-abomey.jpg", width: 1200, height: 1500 },
+    image: { file: "team-guest-relations.jpg", width: 1200, height: 1500 },
     tone: "accent",
   },
   {
-    slug: "guide-north",
-    name: "[Guide name]",
-    role: { en: "Guide, the north and the parks", fr: "Guide, le nord et les parcs" },
-    region: { en: "Natitingou, the Atakora, Pendjari", fr: "Natitingou, l'Atakora, la Pendjari" },
+    slug: "lead-driver",
+    name: "[Name]",
+    role: { en: "Lead driver", fr: "Chauffeur principal" },
+    region: { en: "The whole country", fr: "Tout le pays" },
     bio: {
-      en: "Placeholder. Park-trained guide from the Atakora, grew up in a Tata Somba, knows where the lions drink. Replace with the real biography.",
-      fr: "Texte provisoire. Guide formé par le parc, originaire de l'Atakora, a grandi dans un Tata Somba, sait où boivent les lions. À remplacer.",
+      en: "Placeholder. Has driven the Cotonou to Pendjari road more times than anyone on the team; knows every fuel stop and every good lunch between them. Replace with the real biography.",
+      fr: "Texte provisoire. A fait la route Cotonou–Pendjari plus souvent que quiconque dans l'équipe ; connaît chaque station et chaque bon déjeuner entre les deux. À remplacer.",
     },
-    languages: ["FR", "EN", "Ditammari", "Bariba"],
-    image: { file: "team-guide-north.jpg", width: 1200, height: 1500 },
+    languages: ["FR", "Fon", "Bariba"],
+    image: { file: "team-lead-driver.jpg", width: 1200, height: 1500 },
     tone: "savannah",
   },
 ];

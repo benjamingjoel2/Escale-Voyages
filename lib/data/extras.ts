@@ -12,8 +12,8 @@ export type Extra = {
 export const extras: Extra[] = [
   {
     id: "private-vehicle",
-    name: { en: "Private vehicle and guide", fr: "Véhicule et guide privés" },
-    description: { en: "Your own 4×4 and guide for the whole journey, whatever the group size.", fr: "Votre propre 4×4 et votre guide pour tout le voyage, quelle que soit la taille du groupe." },
+    name: { en: "Private vehicle and driver", fr: "Véhicule et chauffeur privés" },
+    description: { en: "Your own 4×4 and driver for the whole journey, whatever the group size.", fr: "Votre propre 4×4 et votre chauffeur pour tout le voyage, quelle que soit la taille du groupe." },
     priceXof: 350_000,
     perTraveller: false,
   },
