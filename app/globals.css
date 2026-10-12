@@ -20,8 +20,11 @@
   --paper: #000000;
   --grey: #111111;
   --line: rgba(242, 242, 242, 0.14);
-  --accent: #e4561f;
+  /* 4.8:1 with white text, so solid and hover buttons pass AA at 14px. */
+  --accent: #c94714;
   --accent-deep: #b9420f;
+  /* Orange for text on the black ground (7:1). */
+  --accent-bright: #ff8a5b;
   --lagoon: #3a97a6;
   --sand: #0c0c0c;
   --on-glass: #ffffff;
@@ -40,6 +43,7 @@
   --color-line: var(--line);
   --color-accent: var(--accent);
   --color-accent-deep: var(--accent-deep);
+  --color-accent-bright: var(--accent-bright);
   --color-lagoon: var(--lagoon);
   --color-sand: var(--sand);
   --color-whatsapp: var(--whatsapp);

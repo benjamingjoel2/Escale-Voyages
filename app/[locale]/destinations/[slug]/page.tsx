@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { absoluteUrl, breadcrumbLd, ogImageFor, pageAlternates } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Nav } from "@/components/layout/Nav";
@@ -25,7 +26,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const d = (await getDestinations()).find((x) => x.slug === slug);
   if (!d) return {};
   const lang = locale as "en" | "fr";
-  return { title: d.name[lang], description: d.pitch[lang] };
+  return {
+    title: d.name[lang],
+    description: d.pitch[lang],
+    alternates: pageAlternates(locale, { pathname: "/destinations/[slug]", params: { slug } }),
+    openGraph: { title: d.name[lang], description: d.pitch[lang], images: ogImageFor(d.image.file, d.name[lang]) },
+  };
 }
 
 export default async function DestinationPage({ params }: Props) {
@@ -60,6 +66,18 @@ export default async function DestinationPage({ params }: Props) {
       <Nav variant="overlay" />
       <main id="content" className="flex-1">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              breadcrumbLd([
+                { name: site.name, url: absoluteUrl(lang, "/") },
+                { name: t("metaTitle"), url: absoluteUrl(lang, "/destinations") },
+                { name: d.name[lang], url: absoluteUrl(lang, { pathname: "/destinations/[slug]", params: { slug: d.slug } }) },
+              ]),
+            ),
+          }}
+        />
         <PageHero
           eyebrow={td(`regions.${d.region}`)}
           title={d.name[lang]}

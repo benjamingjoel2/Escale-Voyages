@@ -1,8 +1,7 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { useMediaQuery, useSaveData } from "@/lib/hooks/useMediaQuery";
 
 type Props = {
@@ -13,33 +12,51 @@ type Props = {
 };
 
 /**
- * Hero media layer with a subtle parallax. The video only loads on
- * wide screens when the browser is not asking to save data; phones get
- * the poster. Until assets are commissioned it renders the toned gradient
- * with the slot label.
+ * Hero media layer with a subtle parallax (a few lines of rAF, no animation
+ * library). The video only loads on wide screens when the browser is not
+ * asking to save data; phones get the poster. Until assets are commissioned
+ * it renders the toned gradient with the slot label.
  */
 export function HeroMedia({ slotLabel, videoSrc, posterSrc }: Props) {
-  const ref = useRef<HTMLDivElement>(null);
-  const reduce = useReducedMotion();
+  const layer = useRef<HTMLDivElement>(null);
+  const reduce = useMediaQuery("(prefers-reduced-motion: reduce)");
   const wide = useMediaQuery("(min-width: 768px)");
   const saveData = useSaveData();
   const playVideo = Boolean(videoSrc) && wide && !saveData && !reduce;
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", reduce ? "0%" : "18%"]);
+  useEffect(() => {
+    const el = layer.current;
+    if (!el || reduce) return;
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      const height = el.parentElement?.offsetHeight || window.innerHeight;
+      const progress = Math.min(Math.max(window.scrollY / height, 0), 1);
+      el.style.transform = `translate3d(0, ${(progress * 18).toFixed(2)}%, 0)`;
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+      el.style.transform = "";
+    };
+  }, [reduce]);
 
   return (
-    <div ref={ref} className="absolute inset-0 -z-20 overflow-hidden">
-      <motion.div style={{ y }} className="absolute inset-0 tone-hero">
+    <div className="absolute inset-0 -z-20 overflow-hidden">
+      <div ref={layer} className="absolute inset-0 tone-hero will-change-transform">
         {posterSrc ? (
           <Image
             src={posterSrc}
             alt=""
             fill
             priority
+            fetchPriority="high"
+            quality={70}
             sizes="100vw"
             className="object-cover"
           />
@@ -62,7 +79,7 @@ export function HeroMedia({ slotLabel, videoSrc, posterSrc }: Props) {
             {slotLabel}
           </span>
         ) : null}
-      </motion.div>
+      </div>
     </div>
   );
 }

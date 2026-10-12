@@ -2,22 +2,24 @@ import type { Metadata, Viewport } from "next";
 import { Figtree, Instrument_Serif, Oswald } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { site } from "@/lib/site";
+import { ogLocale, organizationLd } from "@/lib/seo";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { CurrencyProvider } from "@/components/ui/Currency";
 import "../globals.css";
 
+// Latin covers French accents; latin-ext would double the font payload for glyphs the site never uses.
 const figtree = Figtree({
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin"],
   variable: "--font-figtree",
   display: "swap",
 });
 
 const instrument = Instrument_Serif({
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin"],
   weight: "400",
   style: ["normal", "italic"],
   variable: "--font-instrument",
@@ -25,8 +27,8 @@ const instrument = Instrument_Serif({
 });
 
 const oswald = Oswald({
-  subsets: ["latin", "latin-ext"],
-  weight: ["300", "400"],
+  subsets: ["latin"],
+  weight: "300",
   variable: "--font-oswald",
   display: "swap",
 });
@@ -41,6 +43,24 @@ export function generateStaticParams() {
 }
 
 export const viewport: Viewport = { themeColor: "#000000" };
+
+/**
+ * Message namespaces that Client Components read. Everything else stays on the
+ * server, which keeps the hydration payload small. Add a namespace here when a
+ * "use client" component starts using it.
+ */
+const CLIENT_NAMESPACES = [
+  "Nav",
+  "Footer",
+  "WhatsApp",
+  "Currency",
+  "Media",
+  "Filters",
+  "JourneysPage",
+  "Booking",
+  "Enquire",
+  "HowItWorks",
+] as const;
 
 export async function generateMetadata({
   params,
@@ -71,18 +91,10 @@ export async function generateMetadata({
       "tour",
       "voyage",
     ],
-    alternates: {
-      canonical: `/${locale}`,
-      languages: {
-        en: "/en",
-        fr: "/fr",
-        "x-default": "/en",
-      },
-    },
     openGraph: {
       type: "website",
       siteName: site.name,
-      locale: locale === "fr" ? "fr_BJ" : "en_GB",
+      locale: ogLocale(locale),
       title: t("homeTitle"),
       description: t("homeDescription"),
     },
@@ -94,6 +106,10 @@ export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
+  const messages = await getMessages();
+  const clientMessages = Object.fromEntries(
+    CLIENT_NAMESPACES.filter((k) => k in messages).map((k) => [k, messages[k]]),
+  );
 
   return (
     <html
@@ -108,7 +124,11 @@ export default async function LocaleLayout({ children, params }: Props) {
             __html: "document.documentElement.classList.add('js')",
           }}
         />
-        <NextIntlClientProvider>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd()) }}
+        />
+        <NextIntlClientProvider messages={clientMessages}>
           <CurrencyProvider>
             <SmoothScroll>{children}</SmoothScroll>
             <WhatsAppButton />

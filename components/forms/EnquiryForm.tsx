@@ -16,7 +16,7 @@ export function EnquiryForm({ journeys, defaultJourney = "", defaultMessage = ""
   const t = useTranslations("Enquire");
   const [state, action, pending] = useActionState<EnquiryState, FormData>(submitEnquiry, { status: "idle" });
   const err = (k: string) => state.errors?.[k as keyof NonNullable<EnquiryState["errors"]>];
-  const msg = (k: string) => (err(k) ? <span className="mt-1 block text-[12.5px] text-accent-deep">{t(err(k) === "invalidEmail" ? "invalidEmail" : "required")}</span> : null);
+  const msg = (k: string) => (err(k) ? <span className="mt-1 block text-[12.5px] text-accent-bright">{t(err(k) === "invalidEmail" ? "invalidEmail" : "required")}</span> : null);
 
   if (state.status === "success") {
     return (

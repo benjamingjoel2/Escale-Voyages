@@ -2,7 +2,7 @@
 
 Website for Escale Voyages, a premium tour agency in Cotonou covering the whole of Benin Republic. French and English, mobile-first, built to be fast on West African networks.
 
-Stack: Next.js (App Router, Cache Components), TypeScript, Tailwind CSS v4, next-intl, Framer Motion, Lenis, Sanity CMS, a payment abstraction (mock, FedaPay, KkiaPay, Stripe). Deploys on Vercel: `main` is live at https://escale-voyages.vercel.app and every pull request gets a preview deployment.
+Stack: Next.js (App Router, Cache Components), TypeScript, Tailwind CSS v4, next-intl, Lenis, Sanity CMS, a payment abstraction (mock, FedaPay, KkiaPay, Stripe). Deploys on Vercel: `main` is live at https://escale-voyages.vercel.app and every pull request gets a preview deployment.
 
 ## Run it
 
