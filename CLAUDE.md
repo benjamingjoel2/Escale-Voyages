@@ -1,6 +1,6 @@
 # Escale Voyages
 
-Premium tour agency website for Benin Republic, based in Cotonou. Next.js App Router, TypeScript, Tailwind v4, next-intl (FR/EN), Framer Motion, Lenis, Sanity (Phase 5), Vercel.
+Premium tour agency website for Benin Republic, based in Cotonou. Next.js App Router, TypeScript, Tailwind v4, next-intl (FR/EN), Framer Motion, Lenis, Sanity (Phase 5), Vercel (live at https://escale-voyages.vercel.app).
 
 ## Brand
 
@@ -85,7 +85,7 @@ After each phase: summarise what was built, what is left, what is needed from th
 
 **Owner rule: merge without asking.** When a change is built, verified and pushed, mark the PR ready and merge it yourself; never ask the owner to merge or wait for them to. Then restart the working branch from `main`.
 
-**Owner rule: after every build, give a preview.** Until the repo is connected to Vercel, that means rebuilding the static snapshot (`scripts/preview-snapshot.mjs` against `next start`) and republishing it to the existing preview link, then putting the link in the reply. Once Vercel is connected, the preview is the PR's deployment URL.
+**Owner rule: after every build, give a preview.** The repo is connected to Vercel (project `escale-voyages`, team `benjamin-sevo`, production branch `main`): every push to a branch gets a preview deployment and every merge to `main` goes live at https://escale-voyages.vercel.app. After a build, put the live URL (or the branch's preview URL) in the reply. `scripts/preview-snapshot.mjs` remains as a fallback static preview if Vercel is ever unavailable.
 
 ## Commands
 
