@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: s.title[lang],
     description: s.excerpt[lang],
     alternates: pageAlternates(locale, { pathname: "/stories/[slug]", params: { slug } }),
-    openGraph: { type: "article", publishedTime: s.publishedAt, title: s.title[lang], description: s.excerpt[lang], images: ogImageFor(s.cover.file, s.title[lang]) },
+    openGraph: { type: "article", publishedTime: s.publishedAt, title: s.title[lang], description: s.excerpt[lang], images: ogImageFor(locale, s.cover.file, s.title[lang]) },
   };
 }
 

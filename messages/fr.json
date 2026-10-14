@@ -2,7 +2,7 @@
   "Meta": {
     "siteName": "Escale Voyages",
     "homeTitle": "Escale Voyages · Voyages d'exception dans tout le Bénin",
-    "homeDescription": "Tout le Bénin, à votre rythme. Voyages privés et en petits groupes de la côte atlantique à la savane de la Pendjari : cités royales, Vodun vivant, villages lacustres, collines sacrées, pays des Tata Somba et faune sauvage. Basés à Cotonou."
+    "homeDescription": "Tout le Bénin, à votre rythme : voyages privés et en petits groupes, de la côte atlantique à la savane de la Pendjari, conçus et menés depuis Cotonou."
   },
   "Nav": {
     "journeys": "Voyages",
@@ -154,7 +154,7 @@
   },
   "JourneysPage": {
     "metaTitle": "Voyages",
-    "metaDescription": "Voyages privés et en petits groupes dans tout le Bénin : la côte et les lagunes, les royaumes du Dahomey, les Collines, l'Atakora et le pays des Tata Somba, la faune de la Pendjari et du W, les itinéraires Retour, les Vodun Days.",
+    "metaDescription": "Sept voyages privés et en petits groupes à travers le Bénin : côte et lagunes, royaumes du Dahomey, Collines, Atakora, Pendjari, Vodun Days et Retour.",
     "eyebrow": "Nos voyages",
     "title": "Choisissez votre entrée",
     "intro": "Sept façons d'entrer au Bénin, d'un long week-end sur la côte à deux semaines à travers tout le pays. Petits groupes de huit au plus, ou en privé à vos dates. Prix par personne en FCFA ; le montant en euros est indicatif.",
@@ -246,8 +246,8 @@
     "note": "Les dates des Vodun Days suivent le programme officiel et peuvent bouger d'un jour ou deux. Départs privés à toute date à partir de deux voyageurs."
   },
   "DestinationsPage": {
-    "metaTitle": "Destinations",
-    "metaDescription": "Quinze lieux à travers le Bénin, de la côte à la savane : Cotonou, Ouidah, Ganvié, Porto-Novo, Grand-Popo, Abomey, Kétou, les Collines, Parakou, l'Atakora, la Pendjari et le W.",
+    "metaTitle": "Destinations au Bénin",
+    "metaDescription": "Quinze lieux à travers le Bénin, de la côte à la savane : Cotonou, Ouidah, Ganvié, Porto-Novo, Abomey, Kétou, les Collines, Parakou, Atakora et Pendjari.",
     "eyebrow": "Nos destinations",
     "title": "De la côte à la savane",
     "intro": "Le Bénin est assez petit pour être traversé en deux jours et assez profond pour y passer un mois. Quinze lieux que nous connaissons bien, par région, du sud au nord.",
@@ -262,7 +262,7 @@
   },
   "ReturnPage": {
     "metaTitle": "Retour : voyages de mémoire pour la diaspora",
-    "metaDescription": "Voyages sur les traces des ancêtres à Ouidah, la Route des Esclaves et la Porte du Non-Retour, avec recherche d'archives, cérémonies à vos conditions et aide pratique pour les voyageurs de la diaspora.",
+    "metaDescription": "Voyages sur les traces des ancêtres à Ouidah, la Route des Esclaves et la Porte du Non-Retour, avec recherche d'archives et aide pratique pour la diaspora.",
     "howEyebrow": "Comment ça se passe",
     "howTitle": "Quatre temps, à votre rythme",
     "journeyEyebrow": "Le voyage",
@@ -294,7 +294,7 @@
   },
   "PracticalPage": {
     "metaTitle": "Infos pratiques",
-    "metaDescription": "Visas et e-visa, fièvre jaune et santé, argent et paiement mobile, quand partir, sécurité, venir et se déplacer, que mettre dans la valise, connexion. Vérifié et daté.",
+    "metaDescription": "Visas et e-visa, fièvre jaune et santé, argent et paiement mobile, quand partir, sécurité, déplacements et valise. Vérifié et daté.",
     "eyebrow": "Infos pratiques",
     "title": "Avant de partir",
     "intro": "Ce qu'il faut savoir, vérifié à la date indiquée sous chaque section. Les règles changent ; si quelque chose ici vous semble dépassé, dites-le-nous et nous corrigeons le jour même.",
@@ -316,7 +316,7 @@
   },
   "AboutPage": {
     "metaTitle": "À propos",
-    "metaDescription": "Escale Voyages est une agence de Cotonou pour tout le Bénin. Petits groupes, un chauffeur avec vous tout au long, et des voyages construits autour d'une histoire chacun.",
+    "metaDescription": "Escale Voyages est une agence de Cotonou pour tout le Bénin : petits groupes, un chauffeur avec vous, des voyages construits autour d'une histoire.",
     "eyebrow": "À propos",
     "title": "Tout le pays, raconté comme il se doit",
     "intro": "Escale Voyages est une agence de voyages basée à Cotonou. Nous emmenons petits groupes et voyageurs privés à travers tout le Bénin, de l'Atlantique au fleuve Niger, accueillis à chaque étape par ceux qui y vivent.",

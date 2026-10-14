@@ -24,12 +24,24 @@ export function pageAlternates(locale: string, href: Href): NonNullable<Metadata
   };
 }
 
-/** Open Graph image entry for a local media file, falling back to the default OG image when the file is not on disk. */
-export function ogImageFor(file: string | undefined, alt: string): NonNullable<Metadata["openGraph"]>["images"] {
+/**
+ * Open Graph image entry for a local media file. Falls back to the generated
+ * share image for the locale when the photo is not on disk, because a page
+ * that sets `openGraph` without images would otherwise ship none.
+ */
+export function ogImageFor(locale: string, file: string | undefined, alt: string): NonNullable<Metadata["openGraph"]>["images"] {
   if (file && file in media) {
     return [{ url: `/media/${file}`, width: media[file].width, height: media[file].height, alt }];
   }
-  return undefined;
+  return [{ url: `/${locale}/opengraph-image`, width: 1200, height: 630, alt: "Escale Voyages · Bénin" }];
+}
+
+/** Trims copy to a search-snippet length at a word boundary. */
+export function clip(text: string, max = 155) {
+  if (text.length <= max) return text;
+  const cut = text.slice(0, max - 1);
+  const end = Math.max(cut.lastIndexOf(". "), cut.lastIndexOf(", "), cut.lastIndexOf(" "));
+  return `${cut.slice(0, end > 60 ? end : cut.length).replace(/[,;:\s]+$/, "")}…`;
 }
 
 export function ogLocale(locale: string) {
