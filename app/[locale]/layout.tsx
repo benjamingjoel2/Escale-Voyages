@@ -98,6 +98,10 @@ export async function generateMetadata({
       title: t("homeTitle"),
       description: t("homeDescription"),
     },
+    twitter: { card: "summary_large_image" },
+    verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+      ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+      : undefined,
     robots: { index: true, follow: true },
   };
 }

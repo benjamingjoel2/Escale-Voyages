@@ -9,6 +9,9 @@ export const routing = defineRouting({
   locales: ["en", "fr"],
   defaultLocale: "en",
   localePrefix: "always",
+  // hreflang links are emitted per page in generateMetadata (lib/seo.ts); the
+  // header variant would point x-default at the unprefixed, redirecting path.
+  alternateLinks: false,
   pathnames: {
     "/": "/",
     "/journeys": { en: "/journeys", fr: "/voyages" },

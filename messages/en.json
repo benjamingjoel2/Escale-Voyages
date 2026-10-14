@@ -2,7 +2,7 @@
   "Meta": {
     "siteName": "Escale Voyages",
     "homeTitle": "Escale Voyages · Premium journeys through the whole of Benin",
-    "homeDescription": "The whole of Benin, at your pace. Small-group and private journeys from the Atlantic coast to the Pendjari savannah: royal cities, living Vodun, stilt towns, sacred hills, Tata Somba country and wildlife. Based in Cotonou."
+    "homeDescription": "The whole of Benin, at your pace: small-group and private journeys from the Atlantic coast to the Pendjari savannah, planned and run from Cotonou."
   },
   "Nav": {
     "journeys": "Journeys",
@@ -154,7 +154,7 @@
   },
   "JourneysPage": {
     "metaTitle": "Journeys",
-    "metaDescription": "Small-group and private journeys across the whole of Benin: the coast and lagoons, the Kingdoms of Dahomey, the Collines, the Atakora and Tata Somba country, Pendjari and W wildlife, Return heritage itineraries, Vodun Days.",
+    "metaDescription": "Seven small-group and private journeys across Benin: coast and lagoons, the Kingdoms of Dahomey, the Collines, the Atakora, Pendjari, Vodun Days and Return.",
     "eyebrow": "Our journeys",
     "title": "Choose your way in",
     "intro": "Seven ways into Benin, from a long weekend on the coast to two weeks across the whole country. Small groups of eight at most, or private on your own dates. Prices are per person in FCFA; the euro figure is approximate.",
@@ -246,8 +246,8 @@
     "note": "Dates for Vodun Days follow the official programme and may shift by a day or two. Private departures on any date from two travellers."
   },
   "DestinationsPage": {
-    "metaTitle": "Destinations",
-    "metaDescription": "Fifteen places across Benin, from the coast to the savannah: Cotonou, Ouidah, Ganvié, Porto-Novo, Grand-Popo, Abomey, Kétou, the Collines, Parakou, the Atakora, Pendjari and the W.",
+    "metaTitle": "Destinations in Benin",
+    "metaDescription": "Fifteen places across Benin, from the coast to the savannah: Cotonou, Ouidah, Ganvié, Porto-Novo, Abomey, Kétou, the Collines, Parakou, Atakora and Pendjari.",
     "eyebrow": "Our destinations",
     "title": "From the coast to the savannah",
     "intro": "Benin is small enough to cross in two days and deep enough to spend a month in. Fifteen places we know well, grouped by region, south to north.",
@@ -262,7 +262,7 @@
   },
   "ReturnPage": {
     "metaTitle": "Return: heritage journeys for the diaspora",
-    "metaDescription": "Ancestry-led journeys to Ouidah, the Route des Esclaves and the Door of No Return, with archival research, ceremonies on your terms and practical help for diaspora travellers.",
+    "metaDescription": "Ancestry-led journeys to Ouidah, the Route des Esclaves and the Door of No Return, with archival research and practical help for diaspora travellers.",
     "howEyebrow": "How it works",
     "howTitle": "Four parts, at your pace",
     "journeyEyebrow": "The journey",
@@ -294,7 +294,7 @@
   },
   "PracticalPage": {
     "metaTitle": "Practical information",
-    "metaDescription": "Visas and e-visa, yellow fever and health, money and mobile payments, best time to visit, safety, getting there and around, what to pack, connectivity. Checked and dated.",
+    "metaDescription": "Visas and e-visa, yellow fever and health, money and mobile payments, best time to visit, safety, getting around and what to pack. Checked and dated.",
     "eyebrow": "Practical information",
     "title": "Before you go",
     "intro": "What you need to know, checked on the date shown under each section. Rules change; if something here looks out of date, tell us and we will fix it the same day.",

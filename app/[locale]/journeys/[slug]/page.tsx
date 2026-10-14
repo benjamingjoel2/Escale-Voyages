@@ -15,7 +15,7 @@ import { getDestinations, getJourney, getJourneys } from "@/lib/content";
 import { lowestPrice } from "@/lib/journeys";
 import { formatXof } from "@/lib/currency";
 import { mediaSrc } from "@/lib/media";
-import { absoluteUrl, breadcrumbLd, ogImageFor, pageAlternates } from "@/lib/seo";
+import { absoluteUrl, breadcrumbLd, clip, ogImageFor, pageAlternates } from "@/lib/seo";
 import { site } from "@/lib/site";
 import { routing } from "@/i18n/routing";
 
@@ -34,11 +34,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!j) return {};
   const lang = locale as Lang;
   const heroFile = mediaSrc(j.heroImage.file) ? j.heroImage.file : j.image.file;
+  const title = lang === "fr" ? `${j.title.fr} : voyage de ${j.days} jours au Bénin` : `${j.title.en}: a ${j.days}-day journey in Benin`;
   return {
-    title: j.title[lang],
-    description: j.summary[lang],
+    title,
+    description: clip(j.summary[lang]),
     alternates: pageAlternates(locale, { pathname: "/journeys/[slug]", params: { slug } }),
-    openGraph: { title: j.title[lang], description: j.pitch[lang], images: ogImageFor(heroFile, j.title[lang]) },
+    openGraph: { title, description: j.pitch[lang], images: ogImageFor(locale, heroFile, j.title[lang]) },
   };
 }
 

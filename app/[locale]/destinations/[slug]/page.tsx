@@ -26,11 +26,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const d = (await getDestinations()).find((x) => x.slug === slug);
   if (!d) return {};
   const lang = locale as "en" | "fr";
+  const title = lang === "fr" ? `${d.name.fr}, Bénin` : `${d.name.en}, Benin`;
   return {
-    title: d.name[lang],
+    title,
     description: d.pitch[lang],
     alternates: pageAlternates(locale, { pathname: "/destinations/[slug]", params: { slug } }),
-    openGraph: { title: d.name[lang], description: d.pitch[lang], images: ogImageFor(d.image.file, d.name[lang]) },
+    openGraph: { title, description: d.pitch[lang], images: ogImageFor(locale, d.image.file, d.name[lang]) },
   };
 }
 
