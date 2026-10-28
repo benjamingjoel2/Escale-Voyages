@@ -32,8 +32,11 @@ export async function Footer() {
           </div>
           <div className="grid content-start gap-2">
             <p className="t-italic mb-1 text-xl">{t("trade")}</p>
-            <a className="text-sm opacity-65 hover:opacity-100" href={`mailto:${settings.tradeEmail}`}>{settings.tradeEmail}</a>
-            <a className="text-sm opacity-65 hover:opacity-100" href={`mailto:${settings.pressEmail}`}>{settings.pressEmail}</a>
+            {[settings.tradeEmail, settings.pressEmail]
+              .filter((e, i, all) => all.indexOf(e) === i)
+              .map((e) => (
+                <a key={e} className="text-sm opacity-65 hover:opacity-100" href={`mailto:${e}`}>{e}</a>
+              ))}
           </div>
           <div className="grid content-start gap-2">
             <p className="t-italic mb-1 text-xl">{t("journeys")}</p>
