@@ -10,10 +10,11 @@ export const site = {
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://escale-voyages.com").replace(/\/$/, ""),
   /** PLACEHOLDER: Benin numbers are 10 digits since 2024 and start with 01. */
   whatsappNumber: "2290100000000",
+  /** One inbox for now, in the owner's format: {brand}@tourground.com. Split into guest/trade/press later if wanted. */
   email: {
-    guest: "hello@escale-voyages.com",
-    trade: "trade@escale-voyages.com",
-    press: "press@escale-voyages.com",
+    guest: "escalevoyages@tourground.com",
+    trade: "escalevoyages@tourground.com",
+    press: "escalevoyages@tourground.com",
   },
   phone: "+229 01 00 00 00 00",
   social: {

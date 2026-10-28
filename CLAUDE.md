@@ -4,7 +4,7 @@ Premium tour agency website for Benin Republic, based in Cotonou. Next.js App Ro
 
 ## Brand
 
-- **Name**: Escale Voyages. Wordmark: "Escale" roman, "Voyages" italic, in the display serif. Handles and domain use `escalevoyages` / `escale-voyages` (domain to confirm with the owner).
+- **Name**: Escale Voyages. Wordmark: "Escale" roman, "Voyages" italic, in the display serif. Handles and domain use `escalevoyages` / `escale-voyages` (domain to confirm with the owner). Email addresses follow the owner's format `{brand}@tourground.com`: `escalevoyages@tourground.com` for guest, trade and press until they are split.
 - **Positioning**: the premium, modern way to experience **the whole of Benin**, from the Atlantic coast to the Niger river: the coast and lagoons, the Kingdoms of Dahomey, the Collines, the Bariba north, the Atakora and Tata Somba country, Pendjari and W wildlife, living Vodun, Return heritage journeys. Never frame the site around one place or one kingdom.
 - **Tagline**: "The whole of Benin, at your pace" / "Tout le Bénin, à votre rythme". Hero eyebrow: "West Africa's best-kept secret". The giant hero word is the destination, **Bénin**, as White Desert's is "Antarctica"; the brand sits in the nav.
 - **Voice**: confident, story-led, respectful of history and of Vodun as a living religion. Never exoticise it, never treat it as spectacle. We visit as guests.
