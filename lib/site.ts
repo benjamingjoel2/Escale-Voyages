@@ -4,10 +4,10 @@
 export const site = {
   name: "Escale Voyages",
   shortName: "Escale",
-  /** PLACEHOLDER: confirm the domain the owner registers. */
-  domain: "escale-voyages.com",
-  /** Canonical origin. Set NEXT_PUBLIC_SITE_URL on the host (Vercel: https://escale-voyages.vercel.app) until the domain is live. */
-  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://escale-voyages.com").replace(/\/$/, ""),
+  /** Brand subdomain of the owner's tourground.com, in the format {brand}.tourground.com. */
+  domain: "escalevoyages.tourground.com",
+  /** Canonical origin. NEXT_PUBLIC_SITE_URL is set on Vercel; the fallback keeps local builds correct. */
+  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://escalevoyages.tourground.com").replace(/\/$/, ""),
   /** PLACEHOLDER: Benin numbers are 10 digits since 2024 and start with 01. */
   whatsappNumber: "2290100000000",
   /** One inbox for now, in the owner's format: {brand}@tourground.com. Split into guest/trade/press later if wanted. */
