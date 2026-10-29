@@ -1,10 +1,10 @@
 # Escale Voyages
 
-Premium tour agency website for Benin Republic, based in Cotonou. Next.js App Router, TypeScript, Tailwind v4, next-intl (FR/EN), Lenis (desktop only, loaded on demand), Sanity (Phase 5), Vercel (live at https://escale-voyages.vercel.app). No animation library: motion is CSS plus a few lines of requestAnimationFrame.
+Premium tour agency website for Benin Republic, based in Cotonou. Next.js App Router, TypeScript, Tailwind v4, next-intl (FR/EN), Lenis (desktop only, loaded on demand), Sanity (Phase 5), Vercel (live at https://escalevoyages.tourground.com). No animation library: motion is CSS plus a few lines of requestAnimationFrame.
 
 ## Brand
 
-- **Name**: Escale Voyages. Wordmark: "Escale" roman, "Voyages" italic, in the display serif. Handles and domain use `escalevoyages` / `escale-voyages` (domain to confirm with the owner). Email addresses follow the owner's format `{brand}@tourground.com`: `escalevoyages@tourground.com` for guest, trade and press until they are split.
+- **Name**: Escale Voyages. Wordmark: "Escale" roman, "Voyages" italic, in the display serif. Handles use `escalevoyages`. The site lives on the owner's domain in the format `{brand}.tourground.com`: https://escalevoyages.tourground.com (tourground.com DNS is hosted on Vercel, so brand subdomains are added from the Vercel project, not GoDaddy). Email addresses follow the owner's format `{brand}@tourground.com`: `escalevoyages@tourground.com` for guest, trade and press until they are split.
 - **Positioning**: the premium, modern way to experience **the whole of Benin**, from the Atlantic coast to the Niger river: the coast and lagoons, the Kingdoms of Dahomey, the Collines, the Bariba north, the Atakora and Tata Somba country, Pendjari and W wildlife, living Vodun, Return heritage journeys. Never frame the site around one place or one kingdom.
 - **Tagline**: "The whole of Benin, at your pace" / "Tout le Bénin, à votre rythme". Hero eyebrow: "West Africa's best-kept secret". The giant hero word is the destination, **Bénin**, as White Desert's is "Antarctica"; the brand sits in the nav.
 - **Voice**: confident, story-led, respectful of history and of Vodun as a living religion. Never exoticise it, never treat it as spectacle. We visit as guests.
@@ -87,7 +87,7 @@ After each phase: summarise what was built, what is left, what is needed from th
 
 **Owner rule: merge without asking.** When a change is built, verified and pushed, mark the PR ready and merge it yourself; never ask the owner to merge or wait for them to. Then restart the working branch from `main`.
 
-**Owner rule: after every build, give a preview.** The repo is connected to Vercel (project `benin`, renamed by the owner from `escale-voyages`; team `benjamin-sevo`; production branch `main`; the `escale-voyages.vercel.app` domain stays attached): every push to a branch gets a preview deployment and every merge to `main` goes live at https://escale-voyages.vercel.app. After a build, put the live URL (or the branch's preview URL) in the reply. `scripts/preview-snapshot.mjs` remains as a fallback static preview if Vercel is ever unavailable.
+**Owner rule: after every build, give a preview.** The repo is connected to Vercel (project `benin`, renamed by the owner from `escale-voyages`; team `benjamin-sevo`; production branch `main`; `escale-voyages.vercel.app` 308-redirects to the custom domain): every push to a branch gets a preview deployment and every merge to `main` goes live at https://escalevoyages.tourground.com. After a build, put the live URL (or the branch's preview URL) in the reply. `scripts/preview-snapshot.mjs` remains as a fallback static preview if Vercel is ever unavailable.
 
 ## Commands
 
