@@ -4,12 +4,13 @@ import type { Journey } from "@/lib/data/journeys";
 import { formatXof } from "@/lib/currency";
 import { Approx } from "@/components/ui/Currency";
 import { MediaSlot } from "@/components/ui/MediaSlot";
+import type { Lang } from "@/lib/data/journeys";
 
 /** Portrait journey card: season top-left, coordinates, title, price, pitch. */
 export function JourneyCard({ journey: j, headingLevel = 3 }: { journey: Journey; headingLevel?: 2 | 3 }) {
   const Heading = headingLevel === 2 ? "h2" : "h3";
   const t = useTranslations("Journeys");
-  const locale = useLocale() as "en" | "fr";
+  const locale = useLocale() as Lang;
 
   return (
     <Link
@@ -38,7 +39,7 @@ export function JourneyCard({ journey: j, headingLevel = 3 }: { journey: Journey
             {j.title[locale]}
           </Heading>
           <p className="mt-1.5 text-sm font-semibold tabular-nums">
-            {formatXof(j.priceXof)}
+            {t("fromPrice", { amount: formatXof(j.priceXof) })}
             <span className="ml-1.5 font-normal opacity-80">
               <Approx xof={j.priceXof} /> · {t("days", { count: j.days })}
             </span>

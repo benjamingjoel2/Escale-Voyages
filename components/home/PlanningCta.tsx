@@ -1,6 +1,5 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { whatsappUrl } from "@/lib/site";
 import { Reveal } from "@/components/ui/Reveal";
 
 export function PlanningCta() {
@@ -15,14 +14,6 @@ export function PlanningCta() {
           <Link href="/enquire" className="btn btn-lg btn-solid !w-auto px-7">
             {t("enquire")}
           </Link>
-          <a
-            href={whatsappUrl("Hello Escale Voyages, I'd like to plan a journey.")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-lg !w-auto px-7"
-          >
-            {t("whatsapp")}
-          </a>
         </div>
       </Reveal>
     </section>

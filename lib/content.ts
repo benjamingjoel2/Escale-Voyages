@@ -7,7 +7,7 @@ import {
   siteSettingsQuery,
   staysQuery,
 } from "./sanity/queries";
-import { journeys as placeholderJourneys, type Journey } from "./data/journeys";
+import { journeys as placeholderJourneys, type Journey, type Lang } from "./data/journeys";
 import { destinations as placeholderDestinations, type Destination } from "./data/destinations";
 import { stays as placeholderStays, type Stay } from "./data/stays";
 import { site } from "./site";
@@ -86,26 +86,20 @@ export async function getStays(): Promise<Stay[]> {
 }
 
 export type SiteSettings = {
-  whatsappNumber: string;
-  phone: string;
   guestEmail: string;
   tradeEmail: string;
   pressEmail: string;
   founderName?: string;
-  founderRole?: Record<"en" | "fr", string>;
-  founderQuote?: Record<"en" | "fr", string>;
-  closingQuote?: Record<"en" | "fr", string>;
-  closingQuoteSource?: Record<"en" | "fr", string>;
-  social: { instagram?: string; tiktok?: string; youtube?: string; linkedin?: string };
+  founderRole?: Record<Lang, string>;
+  founderQuote?: Record<Lang, string>;
+  closingQuote?: Record<Lang, string>;
+  closingQuoteSource?: Record<Lang, string>;
 };
 
 const defaultSettings: SiteSettings = {
-  whatsappNumber: site.whatsappNumber,
-  phone: site.phone,
   guestEmail: site.email.guest,
   tradeEmail: site.email.trade,
   pressEmail: site.email.press,
-  social: { ...site.social },
 };
 
 export async function getSiteSettings(): Promise<SiteSettings> {
@@ -123,6 +117,5 @@ export async function getSiteSettings(): Promise<SiteSettings> {
   return {
     ...defaultSettings,
     ...Object.fromEntries(Object.entries(row).filter(([, v]) => v != null && v !== "")),
-    social: { ...defaultSettings.social, ...(row.social ?? {}) },
   };
 }

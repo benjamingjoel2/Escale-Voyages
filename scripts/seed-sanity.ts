@@ -27,7 +27,7 @@ const client = createClient({ projectId, dataset, token, apiVersion: "2026-10-01
 const mediaDir = path.join(process.cwd(), "public", "media");
 const assetCache = new Map<string, string>();
 
-async function uploadImage(file: string, alt: { en: string; fr: string }) {
+async function uploadImage(file: string, alt: Record<string, string>) {
   const full = path.join(mediaDir, file);
   if (!existsSync(full)) return undefined;
   let assetId = assetCache.get(file);
@@ -118,12 +118,9 @@ async function main() {
   await client.createIfNotExists({
     _id: "siteSettings",
     _type: "siteSettings",
-    whatsappNumber: site.whatsappNumber,
-    phone: site.phone,
     guestEmail: site.email.guest,
     tradeEmail: site.email.trade,
     pressEmail: site.email.press,
-    social: { ...site.social },
   });
   console.log("site settings");
   console.log("Done. Open /studio to review.");

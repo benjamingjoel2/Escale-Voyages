@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { PageHeader } from "@/components/pages/PageHero";
 import { EnquiryForm } from "@/components/forms/EnquiryForm";
 import { getDestinations, getJourneys } from "@/lib/content";
+import type { Lang } from "@/lib/data/journeys";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -19,14 +20,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return { title: t("metaTitle"), description: t("metaDescription"), alternates: pageAlternates(locale, "/enquire") };
 }
 
-async function Form({ searchParams, lang }: { searchParams: Props["searchParams"]; lang: "en" | "fr" }) {
+async function Form({ searchParams, lang }: { searchParams: Props["searchParams"]; lang: Lang }) {
   const [sp, journeys, destinations] = await Promise.all([searchParams, getJourneys(), getDestinations()]);
   const journey = typeof sp.journey === "string" ? sp.journey : "";
   const destSlug = typeof sp.destination === "string" ? sp.destination : "";
   const dest = destinations.find((d) => d.slug === destSlug);
-  const defaultMessage = dest
-    ? lang === "fr" ? `Je souhaite un voyage qui passe par ${dest.name.fr}.` : `I'd like a journey that includes ${dest.name.en}.`
-    : "";
+  const t = await getTranslations({ locale: lang, namespace: "Enquire" });
+  const defaultMessage = dest ? t("destinationMessage", { name: dest.name[lang] }) : "";
   return (
     <EnquiryForm
       journeys={journeys.map((j) => ({ slug: j.slug, title: j.title[lang] }))}
@@ -48,7 +48,7 @@ export default async function EnquirePage({ params, searchParams }: Props) {
         <PageHeader eyebrow={t("eyebrow")} title={t("title")} intro={t("intro")} />
         <section className="container-wide py-12 md:py-20">
           <Suspense fallback={<div className="h-[520px] max-w-[720px] animate-pulse rounded-[2px] bg-grey" />}>
-            <Form searchParams={searchParams} lang={locale as "en" | "fr"} />
+            <Form searchParams={searchParams} lang={locale as Lang} />
           </Suspense>
         </section>
       </main>

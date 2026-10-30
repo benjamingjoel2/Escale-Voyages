@@ -45,7 +45,7 @@ export function clip(text: string, max = 155) {
 }
 
 export function ogLocale(locale: string) {
-  return locale === "fr" ? "fr_BJ" : "en_GB";
+  return ({ en: "en_GB", fr: "fr_BJ", de: "de_DE", es: "es_ES" } as Record<string, string>)[locale] ?? "en_GB";
 }
 
 /** BreadcrumbList JSON-LD for a detail page. */
@@ -73,10 +73,13 @@ export function organizationLd() {
         name: site.name,
         url: site.url,
         email: site.email.guest,
-        telephone: site.phone,
-        address: { "@type": "PostalAddress", addressLocality: "Cotonou", addressCountry: "BJ" },
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: `${site.address.name}, ${site.address.street}`,
+          addressLocality: site.address.locality,
+          addressCountry: site.address.countryCode,
+        },
         areaServed: { "@type": "Country", name: "Benin" },
-        sameAs: Object.values(site.social),
       },
       {
         "@type": "WebSite",

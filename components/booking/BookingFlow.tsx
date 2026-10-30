@@ -9,6 +9,7 @@ import { DEPOSIT_RATE, MAX_TRAVELLERS } from "@/lib/bookings";
 import { formatXof } from "@/lib/currency";
 import { Approx } from "@/components/ui/Currency";
 import { Link } from "@/i18n/navigation";
+import type { Lang } from "@/lib/data/journeys";
 
 type Props = { journey: Journey; extras: Extra[]; defaultDeparture?: string; paymentsLive: boolean };
 
@@ -18,7 +19,7 @@ const field = "h-11 w-full rounded-[2px] border border-line bg-paper px-3 text-[
 export function BookingFlow({ journey, extras, defaultDeparture, paymentsLive }: Props) {
   const t = useTranslations("Booking");
   const te = useTranslations("Enquire");
-  const locale = useLocale() as "en" | "fr";
+  const locale = useLocale() as Lang;
   const format = useFormatter();
   const [step, setStep] = useState(0);
   const [departure, setDeparture] = useState<string>(defaultDeparture && journey.departures.some((d) => d.start === defaultDeparture) ? defaultDeparture : journey.departures[0]?.start ?? "private");
@@ -114,7 +115,7 @@ export function BookingFlow({ journey, extras, defaultDeparture, paymentsLive }:
               <label className="grid gap-1.5"><span className="eyebrow">{te("phone")}</span><input id="bk-phone" type="tel" value={contact.phone} onChange={(e) => setContact({ ...contact, phone: e.target.value })} className={field} autoComplete="tel" /></label>
               <div className="grid gap-1.5"><span className="eyebrow">{te("preferredContact")}</span>
                 <div className="flex flex-wrap gap-4 pt-2 text-[14px] text-ink">
-                  {(["email", "whatsapp", "call"] as const).map((v) => (
+                  {(["email", "call"] as const).map((v) => (
                     <label key={v} className="inline-flex items-center gap-2"><input type="radio" name="pc" checked={contact.preferredContact === v} onChange={() => setContact({ ...contact, preferredContact: v })} /> {te(`contact${v[0].toUpperCase()}${v.slice(1)}` as "contactEmail")}</label>
                   ))}
                 </div>

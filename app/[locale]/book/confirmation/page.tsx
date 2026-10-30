@@ -5,7 +5,6 @@ import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { PageHeader } from "@/components/pages/PageHero";
 import { Link } from "@/i18n/navigation";
-import { whatsappUrl } from "@/lib/site";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -37,8 +36,8 @@ async function Body({ searchParams }: { searchParams: Props["searchParams"] }) {
         </ol>
       </div>
       <div className="flex flex-wrap gap-2.5">
-        <Link href="/journeys" className="btn btn-lg !w-auto px-6">Journeys</Link>
-        <a href={whatsappUrl(`Hello Escale Voyages, about my booking ${ref}.`)} target="_blank" rel="noopener noreferrer" className="btn btn-lg btn-solid !w-auto px-6">WhatsApp</a>
+        <Link href="/journeys" className="btn btn-lg !w-auto px-6">{t("confirmJourneys")}</Link>
+        <Link href="/enquire" className="btn btn-lg btn-solid !w-auto px-6">{t("confirmContact")}</Link>
       </div>
     </div>
   );

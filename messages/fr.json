@@ -2,7 +2,9 @@
   "Meta": {
     "siteName": "Escale Voyages",
     "homeTitle": "Escale Voyages · Voyages d'exception dans tout le Bénin",
-    "homeDescription": "Tout le Bénin, à votre rythme : voyages privés et en petits groupes, de la côte atlantique à la savane de la Pendjari, conçus et menés depuis Cotonou."
+    "homeDescription": "Tout le Bénin, à votre rythme : voyages privés et en petits groupes, de la côte atlantique à la savane de la Pendjari, conçus et menés depuis Cotonou.",
+    "journeyTitle": "{title} : voyage de {days} jours au Bénin",
+    "destinationTitle": "{name}, Bénin"
   },
   "Nav": {
     "journeys": "Voyages",
@@ -17,7 +19,8 @@
     "menu": "Menu",
     "close": "Fermer",
     "language": "Langue",
-    "tagline": "Bénin"
+    "tagline": "Bénin",
+    "primary": "Navigation principale"
   },
   "Weather": {
     "city": "Cotonou",
@@ -29,7 +32,8 @@
     "tagline": "Tout le Bénin, à votre rythme",
     "datesPrices": "Dates & prix",
     "enquire": "Faire une demande",
-    "mediaSlot": "hero-loop.mp4 · 16:9 · ≤8s · ≤2 Mo · affiche hero-poster.jpg 2400×1350. Sur mobile, affiche seule."
+    "mediaSlot": "hero-loop.mp4 · 16:9 · ≤8s · ≤2 Mo · affiche hero-poster.jpg 2400×1350. Sur mobile, affiche seule.",
+    "label": "Introduction"
   },
   "Intro": {
     "eyebrow": "Escale Voyages · Cotonou",
@@ -42,7 +46,8 @@
     "eyebrow": "Notre saison",
     "title": "D'octobre à mars. Pistes sèches, ciel clair, lumière d'harmattan.",
     "body": "Les voyages ont lieu pendant la saison sèche, quand les lagunes sont calmes, que le nord est praticable et que les animaux de la Pendjari et du W se rassemblent aux points d'eau. En janvier, les Vodun Days animent Ouidah. Nous voyageons toute l'année sur la côte et dans le sud.",
-    "mediaSlot": "season-banner.jpg · 21:9 · 2800×1200"
+    "mediaSlot": "season-banner.jpg · 21:9 · 2800×1200",
+    "alt": "Un troupeau d'éléphants traverse la savane sèche du parc national de la Pendjari"
   },
   "Journeys": {
     "eyebrow": "Nos voyages",
@@ -51,13 +56,15 @@
     "viewAll": "Tous les voyages",
     "days": "{count, plural, one {# jour} other {# jours}}",
     "approx": "≈ {amount}",
-    "perPerson": "par personne"
+    "perPerson": "par personne",
+    "fromPrice": "À partir de {amount}"
   },
   "Founder": {
     "quote": "Tous ceux qui viennent au Bénin voient Ouidah et Ganvié. Presque personne ne voit Kétou, ni les Collines, ni le nord. Nous avons créé Escale Voyages pour que l'on voie tout le pays, et qu'on le voie bien.",
-    "name": "[Nom du fondateur]",
-    "role": "Fondateur, Escale Voyages · citation provisoire",
-    "mediaSlot": "founder-portrait.jpg · 3:2 · 2400×1600"
+    "name": "Le fondateur",
+    "role": "Escale Voyages, Cotonou",
+    "mediaSlot": "founder-portrait.jpg · 3:2 · 2400×1600",
+    "alt": "Deux voyageurs lisent ensemble sous un arbre, dans une cour de terre rouge"
   },
   "Destinations": {
     "viewAll": "Toutes les destinations",
@@ -98,32 +105,44 @@
     "title": "Pour celles et ceux dont l'histoire est passée par cette porte.",
     "body": "Itinéraires sur les traces des ancêtres, de la Route des Esclaves de Ouidah aux villages que désignent les archives. Aide pour les documents, les résultats ADN et la logistique discrète du retour. Notre voyage signature, conçu avec des voyageurs de la diaspora.",
     "cta": "Découvrir Retour",
-    "mediaSlot": "return-feature.jpg · 21:9 · 2800×1200"
+    "mediaSlot": "return-feature.jpg · 21:9 · 2800×1200",
+    "alt": "Une fresque de deux visages aux scarifications traditionnelles, vue depuis une voiture à Cotonou"
   },
   "Planning": {
     "title": "Commencez à préparer votre voyage",
-    "body": "Dites-nous quand vous pouvez partir et ce que vous cherchez. Une vraie personne vous répond sous un jour ouvré, par e-mail ou WhatsApp.",
-    "enquire": "Faire une demande",
-    "whatsapp": "Écrivez-nous sur WhatsApp"
+    "body": "Dites-nous quand vous pouvez partir et ce que vous cherchez. Une vraie personne vous répond par e-mail sous un jour ouvré.",
+    "enquire": "Faire une demande"
   },
   "HowItWorks": {
     "title": "Comment ça marche",
     "open": "Comment ça marche",
     "close": "Fermer",
     "steps": {
-      "1": { "title": "Consultation", "body": "Un appel ou une conversation WhatsApp pour comprendre ce que vous attendez du Bénin, vos dates et votre rythme." },
-      "2": { "title": "Confirmation", "body": "Vous confirmez vos dates par un acompte, en FCFA par mobile money ou en euros par carte." },
-      "3": { "title": "Préparation", "body": "Nous construisons le jour par jour, réservons les chambres et les personnes qui vous recevront, et envoyons un seul document d'itinéraire." },
-      "4": { "title": "Documents", "body": "E-visa, recommandations santé et assurance, avec notre liste de contrôle et nos rappels." },
-      "5": { "title": "Accueil", "body": "Nous vous attendons à l'aéroport de Cotonou. Un briefing sur l'argent, les usages et le protocole vodun autour du premier repas." },
-      "6": { "title": "Départ", "body": "Des photos, un récit écrit de votre voyage, et la porte laissée ouverte pour le prochain." }
+      "1": {
+        "title": "Consultation",
+        "body": "Un échange par e-mail ou par téléphone pour comprendre ce que vous attendez du Bénin, vos dates et votre rythme."
+      },
+      "2": {
+        "title": "Confirmation",
+        "body": "Vous confirmez vos dates par un acompte, en FCFA par mobile money ou en euros par carte."
+      },
+      "3": {
+        "title": "Préparation",
+        "body": "Nous construisons le jour par jour, réservons les chambres et les personnes qui vous recevront, et envoyons un seul document d'itinéraire."
+      },
+      "4": {
+        "title": "Documents",
+        "body": "E-visa, recommandations santé et assurance, avec notre liste de contrôle et nos rappels."
+      },
+      "5": {
+        "title": "Accueil",
+        "body": "Nous vous attendons à l'aéroport de Cotonou. Un briefing sur l'argent, les usages et le protocole vodun autour du premier repas."
+      },
+      "6": {
+        "title": "Départ",
+        "body": "Des photos, un récit écrit de votre voyage, et la porte laissée ouverte pour le prochain."
+      }
     }
-  },
-  "Trust": {
-    "licence": "Agence agréée · Ministère du Tourisme, Bénin",
-    "press": "Emplacement logo presse",
-    "reviews": "Note Tripadvisor",
-    "founded": "Fondée en 2026"
   },
   "Footer": {
     "guest": "Voyageurs",
@@ -131,8 +150,6 @@
     "journeys": "Voyages",
     "destinations": "Destinations",
     "benin": "Bénin",
-    "social": "Réseaux",
-    "whatsapp": "WhatsApp",
     "scheduleCall": "Prendre rendez-vous",
     "viewAll": "Tout voir",
     "practical": "Infos pratiques",
@@ -141,7 +158,6 @@
     "about": "À propos",
     "datesPrices": "Dates & prix",
     "enquire": "Faire une demande",
-    "newsletter": "Newsletter",
     "quote": "« Lentement, lentement, le caméléon atteint la cime de l'arbre. »",
     "quoteSource": "Proverbe fon",
     "footerLine": "Escale Voyages · Cotonou, Bénin · Tout le Bénin, à votre rythme",
@@ -150,7 +166,10 @@
     "bookingTerms": "Conditions de réservation",
     "privacy": "Confidentialité",
     "cookies": "Cookies",
-    "switchTo": "English"
+    "office": "Bureau",
+    "country": "République du Bénin",
+    "credits": "Crédits photo",
+    "allJourneys": "Tous les voyages"
   },
   "JourneysPage": {
     "metaTitle": "Voyages",
@@ -188,8 +207,18 @@
       "high": "Plus de 2 000 000 F"
     },
     "months": {
-      "1": "Janvier", "2": "Février", "3": "Mars", "4": "Avril", "5": "Mai", "6": "Juin",
-      "7": "Juillet", "8": "Août", "9": "Septembre", "10": "Octobre", "11": "Novembre", "12": "Décembre"
+      "1": "Janvier",
+      "2": "Février",
+      "3": "Mars",
+      "4": "Avril",
+      "5": "Mai",
+      "6": "Juin",
+      "7": "Juillet",
+      "8": "Août",
+      "9": "Septembre",
+      "10": "Octobre",
+      "11": "Novembre",
+      "12": "Décembre"
     }
   },
   "JourneyDetail": {
@@ -233,8 +262,6 @@
     "nextDepartures": "Prochains départs",
     "privateNote": "Départs privés à toute date, à partir de deux voyageurs.",
     "request": "Demander ce voyage",
-    "whatsapp": "Poser une question sur WhatsApp",
-    "whatsappMessage": "Bonjour Escale Voyages, je suis intéressé(e) par le voyage « {title} ».",
     "depositNote": "Un acompte de 30 % confirme vos dates, par mobile money en FCFA ou par carte en euros. Solde dû 45 jours avant le départ. Modifications gratuites jusqu'à 60 jours avant."
   },
   "DatesPrices": {
@@ -271,7 +298,8 @@
     "faqTitle": "Ce que la plupart demandent avant de venir",
     "cta": "Commencer la conversation",
     "ctaBody": "Écrivez-nous avec ce que vous savez, même peu. Nous répondons personnellement sous un jour ouvré.",
-    "mediaSlot": "return-door.jpg · 16:9 · 2800×1575"
+    "mediaSlot": "return-door.jpg · 16:9 · 2800×1575",
+    "heroAlt": "La Porte du Non-Retour sur la plage de Ouidah"
   },
   "FestivalsPage": {
     "metaTitle": "Festivals et événements",
@@ -323,35 +351,30 @@
     "whyEyebrow": "Pourquoi nous existons",
     "whyTitle": "Le Bénin mérite une agence sérieuse",
     "why1": "Tous ceux qui viennent au Bénin voient Ouidah et Ganvié. Presque personne ne voit Kétou, les Collines, l'Atakora ou le W. Le pays s'étire sur 700 kilomètres de la côte au Niger et la plupart des itinéraires s'arrêtent au kilomètre 150.",
-    "why2": "Nous avons créé Escale Voyages pour montrer tout cela, avec le niveau des meilleures agences du monde : voitures confortables, bonnes chambres, des hôtes qui connaissent l'histoire, une ligne WhatsApp qui répond, et des prix clairs en FCFA avant tout engagement.",
+    "why2": "Nous avons créé Escale Voyages pour montrer tout cela, avec le niveau des meilleures agences du monde : voitures confortables, bonnes chambres, des hôtes qui connaissent l'histoire, une équipe à Cotonou qui répond, et des prix clairs en FCFA avant tout engagement.",
     "how": "Comment nous travaillons",
     "howItems": "Groupes de huit au plus · Départs privés dès deux voyageurs · Un chauffeur avec vous tout au long, francophone et anglophone · Un seul document d'itinéraire, pas de surprise · Le Vodun visité en invités, jamais en spectacle · Acompte de 30 %, solde 45 jours avant",
-    "teamEyebrow": "L'équipe",
-    "teamTitle": "Des gens d'ici",
-    "languages": "Langues",
     "responsibleEyebrow": "Voyage responsable",
     "responsibleTitle": "Où va l'argent",
     "responsible1": "Les droits d'entrée financent les écogardes de la Pendjari et du W. Les contributions aux cérémonies vont aux temples qui nous reçoivent. Chauffeurs et hôtes sont payés aux tarifs professionnels de Cotonou, et nous réservons des lodges familiaux partout où ils atteignent notre niveau.",
     "responsible2": "Nous ne visitons pas d'orphelinats, n'organisons pas de photos de personnes sans leur accord, et ne vendons pas le Vodun en spectacle.",
     "mediaSlot": "about-hero.jpg · 16:9 · 2800×1575",
-    "teamSlot": "Portrait · 4:5 · 1200×1500"
+    "heroAlt": "Des amis dansent dans le salon d'une maison d'hôtes, des tableaux aux murs"
   },
   "LegalPage": {
-    "updated": "Dernière mise à jour le {date}",
-    "draft": "Projet à faire relire par un juriste avant le lancement."
+    "updated": "Dernière mise à jour le {date}"
   },
   "Enquire": {
     "metaTitle": "Demande",
-    "metaDescription": "Dites-nous quand vous pouvez partir et ce que vous cherchez. Une vraie personne vous répond sous un jour ouvré, par e-mail ou WhatsApp.",
+    "metaDescription": "Dites-nous quand vous pouvez partir et ce que vous cherchez. Une vraie personne vous répond par e-mail sous un jour ouvré.",
     "eyebrow": "Demande",
     "title": "Parlez-nous de votre voyage",
-    "intro": "Quelques détails et une vraie personne vous répond sous un jour ouvré. Vous préférez parler ? Utilisez WhatsApp ou demandez un appel.",
+    "intro": "Quelques détails et une vraie personne vous répond sous un jour ouvré. Vous préférez parler ? Demandez un appel.",
     "name": "Votre nom",
     "email": "E-mail",
-    "phone": "Téléphone ou numéro WhatsApp",
+    "phone": "Téléphone (facultatif)",
     "preferredContact": "Comment vous répondre ?",
     "contactEmail": "E-mail",
-    "contactWhatsapp": "WhatsApp",
     "contactCall": "Appelez-moi",
     "journey": "Voyage qui vous intéresse",
     "journeyAny": "Pas encore décidé",
@@ -364,12 +387,12 @@
     "submit": "Envoyer la demande",
     "sending": "Envoi…",
     "successTitle": "Merci. C'est bien reçu.",
-    "successBody": "Une vraie personne vous répondra sous un jour ouvré à l'adresse indiquée. Si c'est urgent, écrivez-nous sur WhatsApp en indiquant votre nom.",
+    "successBody": "Une vraie personne vous répondra sous un jour ouvré à l'adresse indiquée. Si c'est urgent, écrivez à escalevoyages@tourground.com en indiquant votre nom.",
     "errorTitle": "Nous n'avons pas pu envoyer la demande.",
-    "errorBody": "Vérifiez les champs signalés, ou écrivez-nous sur WhatsApp.",
+    "errorBody": "Vérifiez les champs signalés, ou écrivez-nous à escalevoyages@tourground.com.",
     "required": "Obligatoire",
     "invalidEmail": "Entrez une adresse e-mail valide",
-    "whatsappCta": "Ou écrivez-nous sur WhatsApp"
+    "destinationMessage": "Je souhaite un voyage qui passe par {name}."
   },
   "Booking": {
     "metaTitle": "Réserver",
@@ -419,17 +442,26 @@
     "confirmNext": "La suite",
     "confirmSteps": "Nous confirmons les disponibilités avec les hôtels et les parcs · Vous recevez le document d'itinéraire · La liste e-visa et santé suit · Solde dû 45 jours avant le départ",
     "errorTitle": "Une erreur s'est produite.",
-    "errorBody": "Votre demande n'a pas été enregistrée. Réessayez ou écrivez-nous sur WhatsApp."
+    "errorBody": "Votre demande n'a pas été enregistrée. Réessayez ou écrivez-nous à escalevoyages@tourground.com.",
+    "confirmContact": "Nous contacter",
+    "confirmJourneys": "Voyages"
   },
   "Currency": {
     "label": "Afficher les prix en",
     "approx": "Les montants convertis sont indicatifs ; vous payez en FCFA ou en euros."
   },
-  "WhatsApp": {
-    "label": "Discuter sur WhatsApp",
-    "message": "Bonjour Escale Voyages, je regarde {page} et j'aimerais en savoir plus."
-  },
   "Media": {
     "placeholder": "Emplacement"
+  },
+  "Emails": {
+    "enquirySubject": "Votre demande à Escale Voyages",
+    "enquiryBody": "Bonjour {name},\n\nMerci pour votre demande. Une vraie personne vous répond sous un jour ouvré.\n\nVotre message :\n{summary}\n\nEscale Voyages, Cotonou",
+    "bookingSubject": "Votre demande de réservation {reference}",
+    "bookingBody": "Bonjour {name},\n\nNous avons bien reçu votre demande.\n\n{lines}\n\nNous confirmons sous un jour ouvré.\n\nEscale Voyages, Cotonou"
+  },
+  "NotFound": {
+    "title": "Cette page n'est pas sur la carte.",
+    "body": "L'adresse a peut-être changé ou n'a jamais existé. Repartez de l'entrée.",
+    "back": "Retour à Escale Voyages"
   }
 }

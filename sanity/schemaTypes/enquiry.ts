@@ -3,8 +3,8 @@ import { defineField, defineType } from "sanity";
 const contactFields = [
   defineField({ name: "name", title: "Name", type: "string", validation: (r) => r.required() }),
   defineField({ name: "email", title: "Email", type: "string", validation: (r) => r.required().email() }),
-  defineField({ name: "phone", title: "Phone / WhatsApp", type: "string" }),
-  defineField({ name: "preferredContact", title: "Preferred contact", type: "string", options: { list: ["email", "whatsapp", "call"] } }),
+  defineField({ name: "phone", title: "Phone", type: "string" }),
+  defineField({ name: "preferredContact", title: "Preferred contact", type: "string", options: { list: ["email", "call"] } }),
   defineField({ name: "locale", title: "Language", type: "string", options: { list: ["en", "fr"] } }),
   defineField({ name: "receivedAt", title: "Received", type: "datetime", readOnly: true }),
   defineField({

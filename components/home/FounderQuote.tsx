@@ -11,7 +11,7 @@ export function FounderQuote() {
         <MediaSlot
           label={t("mediaSlot")}
           file="founder-portrait.jpg"
-          alt="Two travellers reading together under a tree in a red-earth courtyard"
+          alt={t("alt")}
           sizes="(min-width: 1320px) 1224px, 100vw"
           tone="indigo"
           className="min-h-[360px] rounded-[2px] md:min-h-[480px]"

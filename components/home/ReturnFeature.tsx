@@ -12,7 +12,7 @@ export function ReturnFeature() {
         <MediaSlot
           label={t("mediaSlot")}
           file="return-feature.jpg"
-          alt="A mural of two faces with traditional scarification marks, seen from a car window in Cotonou"
+          alt={t("alt")}
           sizes="(min-width: 1320px) 1224px, 100vw"
           tone="indigo"
           labelPosition="top-right"

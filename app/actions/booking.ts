@@ -2,8 +2,8 @@
 
 import { z } from "zod";
 import { redirect as externalRedirect } from "next/navigation";
-import { getLocale } from "next-intl/server";
-import { redirect } from "@/i18n/navigation";
+import { getLocale, getTranslations } from "next-intl/server";
+import { getPathname, redirect } from "@/i18n/navigation";
 import { getJourneys, getSiteSettings } from "@/lib/content";
 import { writeClient } from "@/lib/sanity/write";
 import { sendEmail } from "@/lib/email";
@@ -11,6 +11,7 @@ import { getProvider } from "@/lib/payments";
 import { newReference, quote } from "@/lib/bookings";
 import { formatXof, convertFromXof } from "@/lib/currency";
 import { site } from "@/lib/site";
+import type { Lang } from "@/lib/data/journeys";
 
 const schema = z.object({
   journey: z.string().min(1),
@@ -21,7 +22,7 @@ const schema = z.object({
   name: z.string().trim().min(2).max(120),
   email: z.email(),
   phone: z.string().trim().max(40).optional().or(z.literal("")),
-  preferredContact: z.enum(["email", "whatsapp", "call"]).default("email"),
+  preferredContact: z.enum(["email", "call"]).default("email"),
   mode: z.enum(["pay", "call"]),
   method: z.enum(["momo", "card"]).optional(),
   website: z.string().max(0).optional(),
@@ -41,7 +42,8 @@ export async function submitBooking(_prev: BookingState, formData: FormData): Pr
     return { status: "error", errors };
   }
   const d = parsed.data;
-  const locale = (await getLocale()) as "en" | "fr";
+  const locale = (await getLocale()) as Lang;
+  const te = await getTranslations({ locale, namespace: "Emails" });
   if (d.website) redirect({ href: { pathname: "/book/confirmation", query: { ref: "EV-TEST", status: "call" } }, locale });
 
   const [journeys, settings] = await Promise.all([getJourneys(), getSiteSettings()]);
@@ -86,7 +88,7 @@ export async function submitBooking(_prev: BookingState, formData: FormData): Pr
       const provider = getProvider(method);
       const currency = method === "card" ? "EUR" : "XOF";
       const amount = method === "card" ? Math.round(convertFromXof(q.depositXof, "EUR") * 100) / 100 : q.depositXof;
-      const returnUrl = `${site.url}/${locale}/${locale === "fr" ? "reserver" : "book"}/confirmation?ref=${reference}`;
+      const returnUrl = `${site.url}${getPathname({ locale, href: "/book/confirmation" })}?ref=${reference}`;
       const result = await provider.createDeposit({
         reference,
         amount,
@@ -120,10 +122,8 @@ export async function submitBooking(_prev: BookingState, formData: FormData): Pr
       sendEmail({ to: settings.guestEmail, subject: `Booking request ${reference} · ${journey.title.en}`, text: lines, replyTo: d.email }),
       sendEmail({
         to: d.email,
-        subject: locale === "fr" ? `Votre demande de réservation ${reference}` : `Your booking request ${reference}`,
-        text: locale === "fr"
-          ? `Bonjour ${d.name},\n\nNous avons bien reçu votre demande.\n\n${lines}\n\nNous confirmons sous un jour ouvré.\n\nEscale Voyages, Cotonou`
-          : `Hello ${d.name},\n\nWe have your booking request.\n\n${lines}\n\nWe confirm within one working day.\n\nEscale Voyages, Cotonou`,
+        subject: te("bookingSubject", { reference }),
+        text: te("bookingBody", { name: d.name, lines }),
       }),
     ]);
   } catch (err) {

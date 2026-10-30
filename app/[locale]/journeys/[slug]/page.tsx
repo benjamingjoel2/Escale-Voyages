@@ -34,7 +34,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!j) return {};
   const lang = locale as Lang;
   const heroFile = mediaSrc(j.heroImage.file) ? j.heroImage.file : j.image.file;
-  const title = lang === "fr" ? `${j.title.fr} : voyage de ${j.days} jours au Bénin` : `${j.title.en}: a ${j.days}-day journey in Benin`;
+  const tm = await getTranslations({ locale, namespace: "Meta" });
+  const title = tm("journeyTitle", { title: j.title[lang], days: j.days });
   return {
     title,
     description: clip(j.summary[lang]),
@@ -60,9 +61,11 @@ export default async function JourneyPage({ params }: Props) {
 
   const lang = locale as Lang;
   const from = lowestPrice(j);
+  // Only photographs we actually have; uncommissioned frames are left out rather than shown as blanks.
+  const gallery = j.gallery.filter((g) => g.src || mediaSrc(g.file));
   const related = journeys.filter((x) => x.slug !== j.slug).slice(0, 3);
-  const altOf = (alt: Lang extends never ? never : { en: string; fr: string } | string | undefined, fallback: string) =>
-    typeof alt === "object" ? alt[lang] : (alt ?? fallback);
+  const altOf = (alt: Partial<Record<Lang, string>> | string | undefined, fallback: string) =>
+    typeof alt === "object" ? (alt[lang] ?? alt.en ?? fallback) : (alt ?? fallback);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -234,11 +237,11 @@ export default async function JourneyPage({ params }: Props) {
             </Reveal>
 
             {/* Gallery */}
-            {j.gallery.length ? (
+            {gallery.length ? (
               <Reveal className="grid gap-6">
                 <span className="eyebrow">{t("gallery")}</span>
                 <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
-                  {j.gallery.map((g, i) => (
+                  {gallery.map((g, i) => (
                     <MediaSlot
                       key={`${g.file}-${i}`}
                       label={`${g.file} · ${g.width}×${g.height}`}

@@ -10,6 +10,7 @@ import { getJourney, getJourneys } from "@/lib/content";
 import { routing } from "@/i18n/routing";
 import { extras } from "@/lib/data/extras";
 import { paymentsLive } from "@/lib/payments";
+import type { Lang } from "@/lib/data/journeys";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -24,7 +25,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   const [t, j] = await Promise.all([getTranslations({ locale, namespace: "Booking" }), getJourney(slug)]);
-  return { title: j ? `${t("metaTitle")} · ${j.title[locale as "en" | "fr"]}` : t("metaTitle"), robots: { index: false } };
+  return { title: j ? `${t("metaTitle")} · ${j.title[locale as Lang]}` : t("metaTitle"), robots: { index: false } };
 }
 
 async function Flow({ slug, searchParams }: { slug: string; searchParams: Props["searchParams"] }) {
@@ -36,7 +37,7 @@ async function Flow({ slug, searchParams }: { slug: string; searchParams: Props[
 export default async function BookPage({ params, searchParams }: Props) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  const lang = locale as "en" | "fr";
+  const lang = locale as Lang;
   const [t, j] = await Promise.all([getTranslations("Booking"), getJourney(slug)]);
   if (!j) notFound();
 

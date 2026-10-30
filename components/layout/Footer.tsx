@@ -1,10 +1,11 @@
 import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { getDestinations, getJourneys, getSiteSettings } from "@/lib/content";
-import { whatsappUrl } from "@/lib/site";
+import { addressLine } from "@/lib/site";
 import { getCurrentYear } from "@/lib/time";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { CurrencySwitcher } from "@/components/ui/Currency";
+import type { Lang } from "@/lib/data/journeys";
 
 export async function Footer() {
   const [t, rawLocale, year, journeys, destinations, settings] = await Promise.all([
@@ -15,7 +16,7 @@ export async function Footer() {
     getDestinations(),
     getSiteSettings(),
   ]);
-  const locale = rawLocale as "en" | "fr";
+  const locale = rawLocale as Lang;
   const closingQuote = settings.closingQuote?.[locale] ?? t("quote");
   const closingSource = settings.closingQuoteSource?.[locale] ?? t("quoteSource");
 
@@ -26,8 +27,6 @@ export async function Footer() {
           <div className="grid content-start gap-2">
             <p className="t-italic mb-1 text-xl">{t("guest")}</p>
             <a className="text-sm opacity-65 hover:opacity-100" href={`mailto:${settings.guestEmail}`}>{settings.guestEmail}</a>
-            <a className="text-sm opacity-65 hover:opacity-100" href={`tel:${settings.phone.replace(/\s/g, "")}`}>{settings.phone}</a>
-            <a className="text-sm opacity-65 hover:opacity-100" href={whatsappUrl("Hello Escale Voyages")} target="_blank" rel="noopener noreferrer">{t("whatsapp")}</a>
             <Link className="text-sm opacity-65 hover:opacity-100" href="/enquire">{t("scheduleCall")}</Link>
           </div>
           <div className="grid content-start gap-2">
@@ -74,18 +73,15 @@ export async function Footer() {
             <CurrencySwitcher className="mt-2" />
           </div>
           <div className="grid content-start gap-2">
-            <p className="t-italic mb-1 text-xl">{t("social")}</p>
-            {settings.social.instagram ? <a className="text-sm opacity-65 hover:opacity-100" href={settings.social.instagram} target="_blank" rel="noopener noreferrer">Instagram</a> : null}
-            {settings.social.tiktok ? <a className="text-sm opacity-65 hover:opacity-100" href={settings.social.tiktok} target="_blank" rel="noopener noreferrer">TikTok</a> : null}
-            {settings.social.youtube ? <a className="text-sm opacity-65 hover:opacity-100" href={settings.social.youtube} target="_blank" rel="noopener noreferrer">YouTube</a> : null}
-            {settings.social.linkedin ? <a className="text-sm opacity-65 hover:opacity-100" href={settings.social.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a> : null}
+            <p className="t-italic mb-1 text-xl">{t("office")}</p>
+            <address className="text-sm not-italic opacity-65">{addressLine}<br />{t("country")}</address>
           </div>
         </div>
 
         <div className="mt-10 grid gap-2 md:grid-cols-3">
           <Link href="/dates-prices" className="btn btn-lg bg-paper">{t("datesPrices")}</Link>
           <Link href="/enquire" className="btn btn-lg btn-solid">{t("enquire")}</Link>
-          <a href="#newsletter" className="btn btn-lg bg-paper">{t("newsletter")}</a>
+          <Link href="/journeys" className="btn btn-lg bg-paper">{t("allJourneys")}</Link>
         </div>
 
         <div className="mt-16 grid gap-3 md:mt-20">
@@ -101,6 +97,7 @@ export async function Footer() {
             <Link href={{ pathname: "/legal/[page]", params: { page: "booking-terms" } }}>{t("bookingTerms")}</Link>
             <Link href={{ pathname: "/legal/[page]", params: { page: "privacy" } }}>{t("privacy")}</Link>
             <Link href={{ pathname: "/legal/[page]", params: { page: "cookies" } }}>{t("cookies")}</Link>
+            <Link href={{ pathname: "/legal/[page]", params: { page: "credits" } }}>{t("credits")}</Link>
           </div>
         </div>
       </div>

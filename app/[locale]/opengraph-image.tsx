@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
+import { getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 
 export const alt = "Escale Voyages · Bénin";
@@ -14,7 +15,8 @@ export function generateStaticParams() {
 /** Default share image: the hero photograph under the giant destination word. */
 export default async function OpenGraphImage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const tagline = locale === "fr" ? "Tout le Bénin, à votre rythme" : "The whole of Benin, at your pace";
+  const t = await getTranslations({ locale, namespace: "Hero" });
+  const tagline = t("tagline");
   const photo = await readFile(path.join(process.cwd(), "public", "media", "hero-poster.jpg"));
   const src = `data:image/jpeg;base64,${photo.toString("base64")}`;
 
@@ -29,7 +31,7 @@ export default async function OpenGraphImage({ params }: { params: Promise<{ loc
           <span style={{ fontSize: 14, letterSpacing: 3, marginLeft: 10, opacity: 0.8 }}>BENIN</span>
         </div>
         <div style={{ position: "absolute", left: 64, bottom: 56, display: "flex", flexDirection: "column", gap: 8 }}>
-          <span style={{ fontSize: 16, letterSpacing: 4, opacity: 0.8 }}>{locale === "fr" ? "LE SECRET LE MIEUX GARDÉ D'AFRIQUE DE L'OUEST" : "WEST AFRICA'S BEST-KEPT SECRET"}</span>
+          <span style={{ fontSize: 16, letterSpacing: 4, opacity: 0.8 }}>{t("eyebrow").toUpperCase()}</span>
           <span style={{ fontSize: 200, lineHeight: 0.9, letterSpacing: -4, fontWeight: 300 }}>BÉNIN</span>
           <span style={{ fontSize: 34, fontStyle: "italic", opacity: 0.95 }}>{tagline}</span>
         </div>

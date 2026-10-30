@@ -1,10 +1,9 @@
-import { useFormatter, useLocale, useTranslations } from "next-intl";
+import { useFormatter, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import type { Journey } from "@/lib/data/journeys";
 import { formatXof } from "@/lib/currency";
 import { Approx } from "@/components/ui/Currency";
 import { lowestPrice } from "@/lib/journeys";
-import { whatsappUrl } from "@/lib/site";
 
 /**
  * Sticky booking panel for the journey detail page. On phones it collapses
@@ -13,11 +12,9 @@ import { whatsappUrl } from "@/lib/site";
 export function BookingPanel({ journey: j }: { journey: Journey }) {
   const t = useTranslations("JourneyDetail");
   const tj = useTranslations("Journeys");
-  const locale = useLocale() as "en" | "fr";
   const format = useFormatter();
   const from = lowestPrice(j);
   const next = j.departures.slice(0, 3);
-  const wa = whatsappUrl(t("whatsappMessage", { title: j.title[locale] }));
 
   return (
     <>
@@ -61,9 +58,6 @@ export function BookingPanel({ journey: j }: { journey: Journey }) {
           >
             {t("request")}
           </Link>
-          <a href={wa} target="_blank" rel="noopener noreferrer" className="btn btn-lg">
-            {t("whatsapp")}
-          </a>
         </div>
         <p className="mt-4 text-[12px] leading-relaxed text-charcoal">{t("depositNote")}</p>
       </aside>

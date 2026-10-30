@@ -74,7 +74,7 @@ export const staysQuery = defineQuery(`
 
 export const siteSettingsQuery = defineQuery(`
   *[_type == "siteSettings"][0] {
-    whatsappNumber, phone, guestEmail, tradeEmail, pressEmail,
-    founderName, founderRole, founderQuote, closingQuote, closingQuoteSource, social
+    guestEmail, tradeEmail, pressEmail,
+    founderName, founderRole, founderQuote, closingQuote, closingQuoteSource
   }
 `);

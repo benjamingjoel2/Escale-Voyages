@@ -4,6 +4,7 @@ import { getDestinations } from "@/lib/content";
 import { MediaSlot } from "@/components/ui/MediaSlot";
 import { Reveal } from "@/components/ui/Reveal";
 import { AutoScroll } from "@/components/ui/AutoScroll";
+import type { Lang } from "@/lib/data/journeys";
 
 /** Horizontal strip of every destination, coast to north, drifting on its own and looping. */
 export async function DestinationsScroll() {
@@ -12,7 +13,7 @@ export async function DestinationsScroll() {
     getLocale(),
     getDestinations(),
   ]);
-  const locale = rawLocale as "en" | "fr";
+  const locale = rawLocale as Lang;
 
   return (
     <section id="destinations" className="container-wide py-16 md:py-28">
