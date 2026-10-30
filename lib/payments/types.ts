@@ -1,3 +1,4 @@
+import type { Lang } from "@/lib/data/journeys";
 /**
  * Payment abstraction. Local customers pay deposits in FCFA by mobile money
  * (FedaPay or KkiaPay); international customers pay in euros by card
@@ -19,7 +20,7 @@ export type DepositRequest = {
   description: string;
   /** Where the provider sends the customer after a hosted checkout. */
   returnUrl: string;
-  locale: "en" | "fr";
+  locale: Lang;
 };
 
 export type DepositResult = {

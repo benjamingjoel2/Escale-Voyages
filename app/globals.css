@@ -29,7 +29,6 @@
   --sand: #0c0c0c;
   --on-glass: #ffffff;
   --on-accent: #ffffff;
-  --whatsapp: #25d366;
 }
 
 @theme inline {
@@ -46,7 +45,6 @@
   --color-accent-bright: var(--accent-bright);
   --color-lagoon: var(--lagoon);
   --color-sand: var(--sand);
-  --color-whatsapp: var(--whatsapp);
 
   --font-sans: var(--font-figtree), system-ui, -apple-system, "Segoe UI",
     sans-serif;

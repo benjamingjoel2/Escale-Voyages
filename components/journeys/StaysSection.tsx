@@ -11,8 +11,8 @@ export async function StaysSection({ slugs }: { slugs: string[] }) {
   const lang = locale as Lang;
   const stays = slugs.map((s) => all.find((x) => x.slug === s)).filter((x) => x !== undefined);
   if (!stays.length) return null;
-  const altOf = (alt: { en: string; fr: string } | string | undefined, fallback: string) =>
-    typeof alt === "object" ? alt[lang] : (alt ?? fallback);
+  const altOf = (alt: Partial<Record<Lang, string>> | string | undefined, fallback: string) =>
+    typeof alt === "object" ? (alt[lang] ?? alt.en ?? fallback) : (alt ?? fallback);
 
   return (
     <Reveal className="grid gap-6">

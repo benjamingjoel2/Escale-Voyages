@@ -13,6 +13,7 @@ import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { getDestinations, getJourneys } from "@/lib/content";
 import { site } from "@/lib/site";
+import type { Lang } from "@/lib/data/journeys";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
@@ -25,8 +26,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   const d = (await getDestinations()).find((x) => x.slug === slug);
   if (!d) return {};
-  const lang = locale as "en" | "fr";
-  const title = lang === "fr" ? `${d.name.fr}, Bénin` : `${d.name.en}, Benin`;
+  const lang = locale as Lang;
+  const tm = await getTranslations({ locale, namespace: "Meta" });
+  const title = tm("destinationTitle", { name: d.name[lang] });
   return {
     title,
     description: d.pitch[lang],
@@ -38,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function DestinationPage({ params }: Props) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  const lang = locale as "en" | "fr";
+  const lang = locale as Lang;
   const [t, td, destinations, journeys] = await Promise.all([
     getTranslations("DestinationsPage"),
     getTranslations("Destinations"),

@@ -7,6 +7,7 @@ import { PageHeader } from "@/components/pages/PageHero";
 import { PlanningCta } from "@/components/home/PlanningCta";
 import { Reveal } from "@/components/ui/Reveal";
 import { glance, practical } from "@/lib/data/practical";
+import type { Lang } from "@/lib/data/journeys";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -19,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function PracticalPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const lang = locale as "en" | "fr";
+  const lang = locale as Lang;
   const [t, format] = await Promise.all([getTranslations("PracticalPage"), getFormatter()]);
 
   const faqLd = {

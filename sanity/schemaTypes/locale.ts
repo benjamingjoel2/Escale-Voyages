@@ -1,17 +1,19 @@
 import { defineField, defineType } from "sanity";
 
 /**
- * Bilingual field objects. Both languages are required so the site never
+ * Multilingual field objects. Every language is required so the site never
  * shows an empty string in one locale. Add `pt` here when Portuguese lands.
  */
 const languages = [
   { id: "en", title: "English" },
   { id: "fr", title: "Français" },
+  { id: "de", title: "Deutsch" },
+  { id: "es", title: "Español" },
 ] as const;
 
 export const localeString = defineType({
   name: "localeString",
-  title: "Text (EN/FR)",
+  title: "Text (EN/FR/DE/ES)",
   type: "object",
   options: { collapsible: false },
   fields: languages.map((l) =>
@@ -26,7 +28,7 @@ export const localeString = defineType({
 
 export const localeText = defineType({
   name: "localeText",
-  title: "Paragraph (EN/FR)",
+  title: "Paragraph (EN/FR/DE/ES)",
   type: "object",
   fields: languages.map((l) =>
     defineField({
@@ -41,7 +43,7 @@ export const localeText = defineType({
 
 export const localeStringList = defineType({
   name: "localeStringList",
-  title: "List (EN/FR)",
+  title: "List (EN/FR/DE/ES)",
   type: "object",
   fields: languages.map((l) =>
     defineField({
@@ -56,7 +58,7 @@ export const localeStringList = defineType({
 
 export const localeBlock = defineType({
   name: "localeBlock",
-  title: "Rich text (EN/FR)",
+  title: "Rich text (EN/FR/DE/ES)",
   type: "object",
   fields: languages.map((l) =>
     defineField({
@@ -77,7 +79,7 @@ export const imageWithAlt = defineType({
   fields: [
     defineField({
       name: "alt",
-      title: "Alt text (EN/FR)",
+      title: "Alt text (EN/FR/DE/ES)",
       type: "localeString",
       validation: (r) => r.required(),
     }),

@@ -6,8 +6,6 @@ export const siteSettings = defineType({
   title: "Site settings",
   type: "document",
   fields: [
-    defineField({ name: "whatsappNumber", title: "WhatsApp number", type: "string", description: "International format without + or spaces, e.g. 2290100000000.", validation: (r) => r.required().regex(/^\d{8,15}$/) }),
-    defineField({ name: "phone", title: "Phone (display)", type: "string" }),
     defineField({ name: "guestEmail", title: "Guest enquiries email", type: "string", validation: (r) => r.email() }),
     defineField({ name: "tradeEmail", title: "Trade enquiries email", type: "string", validation: (r) => r.email() }),
     defineField({ name: "pressEmail", title: "Press email", type: "string", validation: (r) => r.email() }),
@@ -17,17 +15,6 @@ export const siteSettings = defineType({
     defineField({ name: "founderPortrait", title: "Founder portrait (3:2)", type: "imageWithAlt" }),
     defineField({ name: "closingQuote", title: "Closing quote (footer)", type: "localeText" }),
     defineField({ name: "closingQuoteSource", title: "Closing quote source", type: "localeString" }),
-    defineField({
-      name: "social",
-      title: "Social links",
-      type: "object",
-      fields: [
-        defineField({ name: "instagram", title: "Instagram", type: "url" }),
-        defineField({ name: "tiktok", title: "TikTok", type: "url" }),
-        defineField({ name: "youtube", title: "YouTube", type: "url" }),
-        defineField({ name: "linkedin", title: "LinkedIn", type: "url" }),
-      ],
-    }),
     defineField({
       name: "trust",
       title: "Trust row",

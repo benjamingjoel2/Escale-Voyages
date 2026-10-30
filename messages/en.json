@@ -2,7 +2,9 @@
   "Meta": {
     "siteName": "Escale Voyages",
     "homeTitle": "Escale Voyages · Premium journeys through the whole of Benin",
-    "homeDescription": "The whole of Benin, at your pace: small-group and private journeys from the Atlantic coast to the Pendjari savannah, planned and run from Cotonou."
+    "homeDescription": "The whole of Benin, at your pace: small-group and private journeys from the Atlantic coast to the Pendjari savannah, planned and run from Cotonou.",
+    "journeyTitle": "{title}: a {days}-day journey in Benin",
+    "destinationTitle": "{name}, Benin"
   },
   "Nav": {
     "journeys": "Journeys",
@@ -17,7 +19,8 @@
     "menu": "Menu",
     "close": "Close",
     "language": "Language",
-    "tagline": "Benin"
+    "tagline": "Benin",
+    "primary": "Primary"
   },
   "Weather": {
     "city": "Cotonou",
@@ -29,7 +32,8 @@
     "tagline": "The whole of Benin, at your pace",
     "datesPrices": "Dates & prices",
     "enquire": "Enquire now",
-    "mediaSlot": "hero-loop.mp4 · 16:9 · ≤8s · ≤2 MB · poster hero-poster.jpg 2400×1350. Mobile shows the poster only."
+    "mediaSlot": "hero-loop.mp4 · 16:9 · ≤8s · ≤2 MB · poster hero-poster.jpg 2400×1350. Mobile shows the poster only.",
+    "label": "Introduction"
   },
   "Intro": {
     "eyebrow": "Escale Voyages · Cotonou",
@@ -42,7 +46,8 @@
     "eyebrow": "Our season",
     "title": "October to March. Dry roads, clear skies, harmattan light.",
     "body": "Journeys run through the dry season, when the lagoons are calm, the north is passable and the animals of Pendjari and the W gather at the waterholes. January brings Vodun Days to Ouidah. We travel year round on the coast and in the south.",
-    "mediaSlot": "season-banner.jpg · 21:9 · 2800×1200"
+    "mediaSlot": "season-banner.jpg · 21:9 · 2800×1200",
+    "alt": "A herd of elephants crossing dry grassland in Pendjari National Park"
   },
   "Journeys": {
     "eyebrow": "Our journeys",
@@ -51,13 +56,15 @@
     "viewAll": "View all journeys",
     "days": "{count, plural, one {# day} other {# days}}",
     "approx": "≈ {amount}",
-    "perPerson": "per person"
+    "perPerson": "per person",
+    "fromPrice": "From {amount}"
   },
   "Founder": {
     "quote": "Everyone who comes to Benin sees Ouidah and Ganvié. Almost nobody sees Kétou, or the Collines, or the north. We started Escale Voyages so that people would see the whole country, and see it well.",
-    "name": "[Founder name]",
-    "role": "Founder, Escale Voyages · quote placeholder",
-    "mediaSlot": "founder-portrait.jpg · 3:2 · 2400×1600"
+    "name": "The founder",
+    "role": "Escale Voyages, Cotonou",
+    "mediaSlot": "founder-portrait.jpg · 3:2 · 2400×1600",
+    "alt": "Two travellers reading together under a tree in a red-earth courtyard"
   },
   "Destinations": {
     "viewAll": "All destinations",
@@ -98,32 +105,44 @@
     "title": "For those whose story passed through this gate.",
     "body": "Ancestry-led itineraries from Ouidah's Route des Esclaves to the villages the records point to. Help with documents, DNA results, and the quiet logistics of coming back. Our signature journey, built with diaspora travellers.",
     "cta": "Explore Return",
-    "mediaSlot": "return-feature.jpg · 21:9 · 2800×1200"
+    "mediaSlot": "return-feature.jpg · 21:9 · 2800×1200",
+    "alt": "A mural of two faces with traditional scarification marks, seen from a car window in Cotonou"
   },
   "Planning": {
     "title": "Start planning your journey",
-    "body": "Tell us when you can travel and what you are looking for. A real person replies within one working day, by email or WhatsApp.",
-    "enquire": "Enquire now",
-    "whatsapp": "WhatsApp us"
+    "body": "Tell us when you can travel and what you are looking for. A real person replies by email within one working day.",
+    "enquire": "Enquire now"
   },
   "HowItWorks": {
     "title": "How it works",
     "open": "How it works",
     "close": "Close",
     "steps": {
-      "1": { "title": "Consultation", "body": "A call or WhatsApp conversation to understand what you want from Benin, your dates and your pace." },
-      "2": { "title": "Confirmation", "body": "You confirm dates with a deposit, in FCFA by mobile money or in euros by card." },
-      "3": { "title": "Planning", "body": "We build the day-by-day, book the rooms and the people who will receive you, and send a single itinerary document." },
-      "4": { "title": "Documents", "body": "E-visa, health recommendations and insurance, with our checklist and reminders." },
-      "5": { "title": "Arrival briefing", "body": "We meet you at Cotonou airport. A briefing on money, etiquette and Vodun protocol over your first meal." },
-      "6": { "title": "Departure", "body": "Photos, a written account of your journey, and the door left open for the next one." }
+      "1": {
+        "title": "Consultation",
+        "body": "A conversation by email or on a call to understand what you want from Benin, your dates and your pace."
+      },
+      "2": {
+        "title": "Confirmation",
+        "body": "You confirm dates with a deposit, in FCFA by mobile money or in euros by card."
+      },
+      "3": {
+        "title": "Planning",
+        "body": "We build the day-by-day, book the rooms and the people who will receive you, and send a single itinerary document."
+      },
+      "4": {
+        "title": "Documents",
+        "body": "E-visa, health recommendations and insurance, with our checklist and reminders."
+      },
+      "5": {
+        "title": "Arrival briefing",
+        "body": "We meet you at Cotonou airport. A briefing on money, etiquette and Vodun protocol over your first meal."
+      },
+      "6": {
+        "title": "Departure",
+        "body": "Photos, a written account of your journey, and the door left open for the next one."
+      }
     }
-  },
-  "Trust": {
-    "licence": "Licensed tour operator · Ministry of Tourism, Benin",
-    "press": "Press logo slot",
-    "reviews": "Tripadvisor rating",
-    "founded": "Est. 2026"
   },
   "Footer": {
     "guest": "Guest enquiries",
@@ -131,8 +150,6 @@
     "journeys": "Journeys",
     "destinations": "Destinations",
     "benin": "Benin",
-    "social": "Social",
-    "whatsapp": "WhatsApp",
     "scheduleCall": "Schedule a call",
     "viewAll": "View all",
     "practical": "Practical information",
@@ -141,7 +158,6 @@
     "about": "About",
     "datesPrices": "Dates & prices",
     "enquire": "Enquire now",
-    "newsletter": "Newsletter signup",
     "quote": "“Slowly, slowly, the chameleon reaches the top of the tree.”",
     "quoteSource": "Fon proverb",
     "footerLine": "Escale Voyages · Cotonou, Benin · The whole of Benin, at your pace",
@@ -150,7 +166,10 @@
     "bookingTerms": "Booking terms",
     "privacy": "Privacy",
     "cookies": "Cookies",
-    "switchTo": "Français"
+    "office": "Office",
+    "country": "Republic of Benin",
+    "credits": "Photo credits",
+    "allJourneys": "All journeys"
   },
   "JourneysPage": {
     "metaTitle": "Journeys",
@@ -188,8 +207,18 @@
       "high": "Over 2 000 000 F"
     },
     "months": {
-      "1": "January", "2": "February", "3": "March", "4": "April", "5": "May", "6": "June",
-      "7": "July", "8": "August", "9": "September", "10": "October", "11": "November", "12": "December"
+      "1": "January",
+      "2": "February",
+      "3": "March",
+      "4": "April",
+      "5": "May",
+      "6": "June",
+      "7": "July",
+      "8": "August",
+      "9": "September",
+      "10": "October",
+      "11": "November",
+      "12": "December"
     }
   },
   "JourneyDetail": {
@@ -233,8 +262,6 @@
     "nextDepartures": "Next departures",
     "privateNote": "Private departures on any date, from two travellers.",
     "request": "Request this journey",
-    "whatsapp": "Ask on WhatsApp",
-    "whatsappMessage": "Hello Escale Voyages, I'm interested in the journey \"{title}\".",
     "depositNote": "A 30% deposit confirms your dates, by mobile money in FCFA or by card in euros. Balance due 45 days before departure. Free changes up to 60 days before."
   },
   "DatesPrices": {
@@ -271,7 +298,8 @@
     "faqTitle": "Asked by most people before they come",
     "cta": "Start a conversation",
     "ctaBody": "Write to us with what you know, however little. We reply personally within one working day.",
-    "mediaSlot": "return-door.jpg · 16:9 · 2800×1575"
+    "mediaSlot": "return-door.jpg · 16:9 · 2800×1575",
+    "heroAlt": "The Door of No Return on the beach at Ouidah"
   },
   "FestivalsPage": {
     "metaTitle": "Festivals and events",
@@ -323,35 +351,30 @@
     "whyEyebrow": "Why we exist",
     "whyTitle": "Benin deserves a serious operator",
     "why1": "Everyone who comes to Benin sees Ouidah and Ganvié. Almost nobody sees Kétou, the Collines, the Atakora or the W. The country runs 700 kilometres from the coast to the Niger and most itineraries stop at kilometre 150.",
-    "why2": "We built Escale Voyages to show all of it, at a standard that matches the best operators anywhere: comfortable cars, good rooms, hosts who know the history, a WhatsApp line that answers, and prices that are clear in FCFA before you commit.",
+    "why2": "We built Escale Voyages to show all of it, at a standard that matches the best operators anywhere: comfortable cars, good rooms, hosts who know the history, a Cotonou team that answers, and prices that are clear in FCFA before you commit.",
     "how": "How we work",
     "howItems": "Groups of eight at most · Private departures from two travellers · A driver with you throughout, French and English speaking · One itinerary document, no surprises · Vodun visited as guests, never as a show · 30% deposit, balance 45 days before",
-    "teamEyebrow": "The team",
-    "teamTitle": "People who belong here",
-    "languages": "Languages",
     "responsibleEyebrow": "Responsible travel",
     "responsibleTitle": "What the money does",
     "responsible1": "Park fees fund rangers in Pendjari and the W. Ceremony contributions go to the temples that receive us. Drivers and hosts are paid at Cotonou professional rates, and we book family-run lodges wherever they meet our standard.",
     "responsible2": "We do not visit orphanages, do not arrange photographs of people without their consent, and do not sell Vodun as a spectacle.",
     "mediaSlot": "about-hero.jpg · 16:9 · 2800×1575",
-    "teamSlot": "Portrait · 4:5 · 1200×1500"
+    "heroAlt": "Friends dancing in the living room of a guesthouse, paintings on the wall"
   },
   "LegalPage": {
-    "updated": "Last updated {date}",
-    "draft": "Draft for legal review before launch."
+    "updated": "Last updated {date}"
   },
   "Enquire": {
     "metaTitle": "Enquire",
-    "metaDescription": "Tell us when you can travel and what you are looking for. A real person replies within one working day, by email or WhatsApp.",
+    "metaDescription": "Tell us when you can travel and what you are looking for. A real person replies by email within one working day.",
     "eyebrow": "Enquire",
     "title": "Tell us about your journey",
-    "intro": "A few details and a real person replies within one working day. Prefer to talk? Use WhatsApp or ask for a call.",
+    "intro": "A few details and a real person replies within one working day. Prefer to talk? Ask for a call.",
     "name": "Your name",
     "email": "Email",
-    "phone": "Phone or WhatsApp number",
+    "phone": "Phone (optional)",
     "preferredContact": "How should we reply?",
     "contactEmail": "Email",
-    "contactWhatsapp": "WhatsApp",
     "contactCall": "Call me",
     "journey": "Journey of interest",
     "journeyAny": "Not sure yet",
@@ -364,12 +387,12 @@
     "submit": "Send enquiry",
     "sending": "Sending…",
     "successTitle": "Thank you. We have it.",
-    "successBody": "A real person will reply within one working day to the address you gave. If it is urgent, WhatsApp us and mention your name.",
+    "successBody": "A real person will reply within one working day to the address you gave. If it is urgent, write to escalevoyages@tourground.com and mention your name.",
     "errorTitle": "We could not send that.",
-    "errorBody": "Please check the highlighted fields, or write to us on WhatsApp.",
+    "errorBody": "Please check the highlighted fields, or write to us at escalevoyages@tourground.com.",
     "required": "Required",
     "invalidEmail": "Enter a valid email address",
-    "whatsappCta": "Or write on WhatsApp"
+    "destinationMessage": "I'd like a journey that includes {name}."
   },
   "Booking": {
     "metaTitle": "Book",
@@ -419,17 +442,26 @@
     "confirmNext": "What happens next",
     "confirmSteps": "We confirm availability with hotels and parks · You receive the itinerary document · The e-visa and health checklist follows · Balance due 45 days before departure",
     "errorTitle": "Something went wrong.",
-    "errorBody": "Your request was not saved. Please try again or write to us on WhatsApp."
+    "errorBody": "Your request was not saved. Please try again or write to us at escalevoyages@tourground.com.",
+    "confirmContact": "Contact us",
+    "confirmJourneys": "Journeys"
   },
   "Currency": {
     "label": "Show prices in",
     "approx": "Converted figures are approximate; you pay in FCFA or euros."
   },
-  "WhatsApp": {
-    "label": "Chat on WhatsApp",
-    "message": "Hello Escale Voyages, I'm looking at {page} and would like to know more."
-  },
   "Media": {
     "placeholder": "Placeholder"
+  },
+  "Emails": {
+    "enquirySubject": "Your enquiry to Escale Voyages",
+    "enquiryBody": "Hello {name},\n\nThank you for your enquiry. A real person will reply within one working day.\n\nWhat you sent:\n{summary}\n\nEscale Voyages, Cotonou",
+    "bookingSubject": "Your booking request {reference}",
+    "bookingBody": "Hello {name},\n\nWe have your booking request.\n\n{lines}\n\nWe confirm within one working day.\n\nEscale Voyages, Cotonou"
+  },
+  "NotFound": {
+    "title": "This page is not on the map.",
+    "body": "The address may have changed or never existed. Start again from the front door.",
+    "back": "Back to Escale Voyages"
   }
 }

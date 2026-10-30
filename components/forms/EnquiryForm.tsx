@@ -3,7 +3,6 @@
 import { useActionState } from "react";
 import { useTranslations } from "next-intl";
 import { submitEnquiry, type EnquiryState } from "@/app/actions/enquiry";
-import { whatsappUrl } from "@/lib/site";
 
 type JourneyOption = { slug: string; title: string };
 
@@ -23,7 +22,6 @@ export function EnquiryForm({ journeys, defaultJourney = "", defaultMessage = ""
       <div className="grid max-w-[60ch] gap-3 rounded-[2px] border border-line p-6" role="status">
         <h2 className="t-h2 text-[28px]">{t("successTitle")}</h2>
         <p className="t-body">{t("successBody")}</p>
-        <a href={whatsappUrl("Hello Escale Voyages, I just sent an enquiry.")} target="_blank" rel="noopener noreferrer" className="btn btn-inline w-max">WhatsApp</a>
       </div>
     );
   }
@@ -41,11 +39,11 @@ export function EnquiryForm({ journeys, defaultJourney = "", defaultMessage = ""
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="grid gap-1.5"><span className="eyebrow">{t("name")}</span><input id="enq-name" name="name" required className={field} autoComplete="name" />{msg("name")}</label>
         <label className="grid gap-1.5"><span className="eyebrow">{t("email")}</span><input id="enq-email" name="email" type="email" required className={field} autoComplete="email" />{msg("email")}</label>
-        <label className="grid gap-1.5"><span className="eyebrow">{t("phone")}</span><input id="enq-phone" name="phone" type="tel" className={field} autoComplete="tel" placeholder="+229 …" /></label>
+        <label className="grid gap-1.5"><span className="eyebrow">{t("phone")}</span><input id="enq-phone" name="phone" type="tel" className={field} autoComplete="tel" /></label>
         <div className="grid gap-1.5">
           <span className="eyebrow">{t("preferredContact")}</span>
           <div className="flex flex-wrap gap-4 pt-2 text-[14px] text-ink">
-            {(["email", "whatsapp", "call"] as const).map((v) => (
+            {(["email", "call"] as const).map((v) => (
               <label key={v} className="inline-flex items-center gap-2"><input type="radio" name="preferredContact" value={v} defaultChecked={v === "email"} /> {t(`contact${v[0].toUpperCase()}${v.slice(1)}` as "contactEmail")}</label>
             ))}
           </div>
@@ -64,7 +62,6 @@ export function EnquiryForm({ journeys, defaultJourney = "", defaultMessage = ""
       <label className="flex items-start gap-3 text-[14px] text-ink"><input type="checkbox" name="consent" required className="mt-1" /> <span>{t("consent")}{msg("consent")}</span></label>
       <div className="flex flex-wrap items-center gap-3">
         <button type="submit" disabled={pending} className="btn btn-lg btn-solid !w-auto px-7 disabled:opacity-60">{pending ? t("sending") : t("submit")}</button>
-        <a href={whatsappUrl("Hello Escale Voyages, I'd like to plan a journey.")} target="_blank" rel="noopener noreferrer" className="text-[13px] font-semibold text-ink hover:text-accent">{t("whatsappCta")}</a>
       </div>
     </form>
   );

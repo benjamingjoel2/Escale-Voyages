@@ -31,7 +31,7 @@ export function Nav({ variant = "overlay" }: Props) {
       }`}
     >
       <nav
-        aria-label="Primary"
+        aria-label={t("primary")}
         className="container-wide flex items-center justify-between gap-4 py-4 md:py-5"
       >
         <Link

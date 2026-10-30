@@ -9,6 +9,7 @@ import { MediaSlot } from "@/components/ui/MediaSlot";
 import { Link } from "@/i18n/navigation";
 import { getDestinations } from "@/lib/content";
 import { REGIONS } from "@/lib/data/destinations";
+import type { Lang } from "@/lib/data/journeys";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -21,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function DestinationsPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const lang = locale as "en" | "fr";
+  const lang = locale as Lang;
   const [t, td, destinations] = await Promise.all([
     getTranslations("DestinationsPage"),
     getTranslations("Destinations"),

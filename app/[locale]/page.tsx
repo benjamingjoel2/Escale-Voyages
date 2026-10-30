@@ -14,7 +14,6 @@ import { RouteSection } from "@/components/home/RouteSection";
 import { ReturnFeature } from "@/components/home/ReturnFeature";
 import { PlanningCta } from "@/components/home/PlanningCta";
 import { HowItWorks } from "@/components/home/HowItWorks";
-import { TrustRow } from "@/components/home/TrustRow";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -43,7 +42,6 @@ export default async function HomePage({ params }: Props) {
         <ReturnFeature />
         <PlanningCta />
         <HowItWorks />
-        <TrustRow />
       </main>
       <Footer />
     </>

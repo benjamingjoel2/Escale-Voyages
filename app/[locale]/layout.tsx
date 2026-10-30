@@ -7,7 +7,6 @@ import { routing } from "@/i18n/routing";
 import { site } from "@/lib/site";
 import { ogLocale, organizationLd } from "@/lib/seo";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
-import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { CurrencyProvider } from "@/components/ui/Currency";
 import "../globals.css";
 
@@ -52,7 +51,6 @@ export const viewport: Viewport = { themeColor: "#000000" };
 const CLIENT_NAMESPACES = [
   "Nav",
   "Footer",
-  "WhatsApp",
   "Currency",
   "Media",
   "Filters",
@@ -135,7 +133,6 @@ export default async function LocaleLayout({ children, params }: Props) {
         <NextIntlClientProvider messages={clientMessages}>
           <CurrencyProvider>
             <SmoothScroll>{children}</SmoothScroll>
-            <WhatsAppButton />
           </CurrencyProvider>
         </NextIntlClientProvider>
       </body>

@@ -9,7 +9,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Link } from "@/i18n/navigation";
 import { getJourneys } from "@/lib/content";
 import { returnPage } from "@/lib/data/returnPage";
-import { whatsappUrl } from "@/lib/site";
+import type { Lang } from "@/lib/data/journeys";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ReturnRoute({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const lang = locale as "en" | "fr";
+  const lang = locale as Lang;
   const [t, journeys] = await Promise.all([getTranslations("ReturnPage"), getJourneys()]);
   const journey = journeys.find((j) => j.slug === "return");
   const others = journeys.filter((j) => j.type === "heritage" || j.slug === "the-twelve-kings").filter((j) => j.slug !== "return").slice(0, 2);
@@ -36,7 +36,7 @@ export default async function ReturnRoute({ params }: Props) {
           title={returnPage.title[lang]}
           intro={returnPage.intro[lang]}
           file="return-door.jpg"
-          alt="The Door of No Return on the beach at Ouidah"
+          alt={t("heroAlt")}
           label={t("mediaSlot")}
           tone="indigo"
         />
@@ -94,7 +94,6 @@ export default async function ReturnRoute({ params }: Props) {
             <p className="t-body">{t("ctaBody")}</p>
             <div className="mt-2 flex flex-wrap gap-2.5">
               <Link href={{ pathname: "/enquire", query: { journey: "return" } }} className="btn btn-lg btn-solid !w-auto px-7">{t("cta")}</Link>
-              <a href={whatsappUrl("Hello Escale Voyages, I'm interested in the Return journey.")} target="_blank" rel="noopener noreferrer" className="btn btn-lg !w-auto px-7">WhatsApp</a>
             </div>
           </Reveal>
         </section>

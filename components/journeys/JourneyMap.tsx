@@ -1,6 +1,7 @@
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import type { Destination } from "@/lib/data/destinations";
+import type { Lang } from "@/lib/data/journeys";
 
 /**
  * Schematic route map: destinations plotted by real latitude and longitude
@@ -9,7 +10,7 @@ import type { Destination } from "@/lib/data/destinations";
  */
 export function JourneyMap({ stops, destinations }: { stops: string[]; destinations: Destination[] }) {
   const t = useTranslations("JourneyDetail");
-  const locale = useLocale() as "en" | "fr";
+  const locale = useLocale() as Lang;
   const points = stops
     .map((slug) => destinations.find((d) => d.slug === slug))
     .filter((d): d is NonNullable<typeof d> => Boolean(d));

@@ -8,6 +8,7 @@ import { MediaSlot } from "@/components/ui/MediaSlot";
 import { Reveal } from "@/components/ui/Reveal";
 import { Link } from "@/i18n/navigation";
 import { stories } from "@/lib/data/stories";
+import type { Lang } from "@/lib/data/journeys";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -20,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function StoriesPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const lang = locale as "en" | "fr";
+  const lang = locale as Lang;
   const [t, format] = await Promise.all([getTranslations("StoriesPage"), getFormatter()]);
   const sorted = [...stories].sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
 

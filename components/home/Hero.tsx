@@ -12,7 +12,7 @@ export function Hero() {
 
   return (
     <section
-      aria-label="Hero"
+      aria-label={t("label")}
       className="relative isolate grid min-h-svh grid-rows-[auto_1fr_auto] overflow-hidden text-white"
     >
       <HeroMedia slotLabel={t("mediaSlot")} posterSrc={mediaSrc("hero-poster.jpg")} />

@@ -3,6 +3,7 @@ import { Link } from "@/i18n/navigation";
 import type { Departure, Journey } from "@/lib/data/journeys";
 import { formatXof } from "@/lib/currency";
 import { Approx } from "@/components/ui/Currency";
+import type { Lang } from "@/lib/data/journeys";
 
 type Row = Departure & { journey?: Journey };
 
@@ -15,7 +16,7 @@ type Props = {
 export function DeparturesTable({ rows, showJourney = false }: Props) {
   const t = useTranslations("JourneyDetail");
   const tj = useTranslations("Journeys");
-  const locale = useLocale() as "en" | "fr";
+  const locale = useLocale() as Lang;
   const format = useFormatter();
 
   return (
@@ -55,7 +56,7 @@ export function DeparturesTable({ rows, showJourney = false }: Props) {
                 </td>
                 <td className="py-4 pr-4">{tj("days", { count: days })}</td>
                 <td className="py-4 pr-4 tabular-nums">
-                  <span className="font-medium text-ink">{formatXof(d.priceXof)}</span>
+                  <span className="font-medium text-ink">{tj("fromPrice", { amount: formatXof(d.priceXof) })}</span>
                   <Approx xof={d.priceXof} className="ml-1.5 text-charcoal" />
                 </td>
                 <td className="py-4 pr-4">

@@ -12,6 +12,7 @@ import { routing } from "@/i18n/routing";
 import { getDestinations, getJourneys } from "@/lib/content";
 import { stories } from "@/lib/data/stories";
 import { site } from "@/lib/site";
+import type { Lang } from "@/lib/data/journeys";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
@@ -23,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   const s = stories.find((x) => x.slug === slug);
   if (!s) return {};
-  const lang = locale as "en" | "fr";
+  const lang = locale as Lang;
   return {
     title: s.title[lang],
     description: s.excerpt[lang],
@@ -35,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function StoryPage({ params }: Props) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  const lang = locale as "en" | "fr";
+  const lang = locale as Lang;
   const s = stories.find((x) => x.slug === slug);
   if (!s) notFound();
   const [t, format, journeys, destinations] = await Promise.all([

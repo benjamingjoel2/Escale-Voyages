@@ -1,16 +1,17 @@
 "use server";
 
 import { z } from "zod";
-import { getLocale } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { writeClient } from "@/lib/sanity/write";
 import { sendEmail } from "@/lib/email";
 import { getJourneys, getSiteSettings } from "@/lib/content";
+import type { Lang } from "@/lib/data/journeys";
 
 const schema = z.object({
   name: z.string().trim().min(2).max(120),
   email: z.email(),
   phone: z.string().trim().max(40).optional().or(z.literal("")),
-  preferredContact: z.enum(["email", "whatsapp", "call"]),
+  preferredContact: z.enum(["email", "call"]),
   journey: z.string().trim().max(80).optional().or(z.literal("")),
   travelDates: z.string().trim().max(160).optional().or(z.literal("")),
   travellers: z.coerce.number().int().min(1).max(40).optional(),
@@ -37,7 +38,8 @@ export async function submitEnquiry(_prev: EnquiryState, formData: FormData): Pr
   }
   const d = parsed.data;
   if (d.website) return { status: "success" }; // bot: pretend
-  const locale = (await getLocale()) as "en" | "fr";
+  const locale = (await getLocale()) as Lang;
+  const te = await getTranslations({ locale, namespace: "Emails" });
   const [journeys, settings] = await Promise.all([getJourneys(), getSiteSettings()]);
   const journey = journeys.find((j) => j.slug === d.journey);
   const receivedAt = new Date().toISOString();
@@ -75,10 +77,8 @@ export async function submitEnquiry(_prev: EnquiryState, formData: FormData): Pr
       sendEmail({ to: settings.guestEmail, subject: `New enquiry from ${d.name}`, text: summary, replyTo: d.email }),
       sendEmail({
         to: d.email,
-        subject: locale === "fr" ? "Votre demande à Escale Voyages" : "Your enquiry to Escale Voyages",
-        text: locale === "fr"
-          ? `Bonjour ${d.name},\n\nMerci pour votre demande. Une vraie personne vous répond sous un jour ouvré.\n\nVotre message :\n${summary}\n\nEscale Voyages, Cotonou`
-          : `Hello ${d.name},\n\nThank you for your enquiry. A real person will reply within one working day.\n\nWhat you sent:\n${summary}\n\nEscale Voyages, Cotonou`,
+        subject: te("enquirySubject"),
+        text: te("enquiryBody", { name: d.name, summary }),
       }),
     ]);
     return { status: "success" };
