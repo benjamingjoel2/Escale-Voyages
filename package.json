@@ -3,14 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "tsx scripts/og/build.tsx",
     "dev": "next dev",
+    "prebuild": "tsx scripts/og/build.tsx",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "seed": "tsx scripts/seed-sanity.ts",
-    "media": "node scripts/media-manifest.mjs"
+    "media": "node scripts/media-manifest.mjs",
+    "cf-build": "node --import ./scripts/cf-keep-names.mjs node_modules/@opennextjs/cloudflare/dist/cli/index.js build",
+    "preview": "npm run cf-build && opennextjs-cloudflare preview",
+    "deploy": "npm run cf-build && opennextjs-cloudflare deploy",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
+    "@opennextjs/cloudflare": "^1.20.15",
     "@sanity/image-url": "^2.1.1",
     "@sanity/vision": "^6.18.0",
     "lenis": "^1.3.26",
@@ -35,6 +42,7 @@
     "lighthouse": "^13.5.0",
     "tailwindcss": "^4",
     "tsx": "^4.23.15",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.156.0"
   }
 }

@@ -5,7 +5,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { site } from "@/lib/site";
-import { ogLocale, organizationLd } from "@/lib/seo";
+import { ogImageFor, ogLocale, organizationLd } from "@/lib/seo";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { CurrencyProvider } from "@/components/ui/Currency";
 import "../globals.css";
@@ -95,6 +95,7 @@ export async function generateMetadata({
       locale: ogLocale(locale),
       title: t("homeTitle"),
       description: t("homeDescription"),
+      images: ogImageFor(locale, undefined, site.name),
     },
     twitter: { card: "summary_large_image" },
     verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION

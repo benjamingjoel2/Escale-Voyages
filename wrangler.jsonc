@@ -1,0 +1,35 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	// Cloudflare Workers deployment via the OpenNext adapter (@opennextjs/cloudflare).
+	// Vercel ignores this file; "next build" is unchanged.
+	"name": "escale-voyages",
+	"main": "cloudflare/worker.mjs",
+	"compatibility_date": "2026-10-23",
+	"compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+	"assets": {
+		"directory": ".open-next/assets",
+		"binding": "ASSETS"
+	},
+	"services": [
+		{
+			// Self-reference service binding; the service name must match the worker name.
+			"binding": "WORKER_SELF_REFERENCE",
+			"service": "escale-voyages"
+		}
+	],
+	"r2_buckets": [
+		{
+			// Incremental (ISR / "use cache") cache. Create the bucket before the first deploy:
+			//   npx wrangler r2 bucket create escale-voyages-opennext-cache
+			"binding": "NEXT_INC_CACHE_R2_BUCKET",
+			"bucket_name": "escale-voyages-opennext-cache"
+		}
+	],
+	"images": {
+		// Cloudflare Images binding used by next/image optimisation on Workers.
+		"binding": "IMAGES"
+	},
+	"observability": {
+		"enabled": true
+	}
+}
