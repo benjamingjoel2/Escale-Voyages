@@ -6,6 +6,12 @@ const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
+  experimental: {
+    // Cloudflare Workers caps zlib's maxOutputLength at 128 MiB and Next.js
+    // decompresses the PPR resume data with a limit of 5x this value (default
+    // 100mb -> 500 MiB, which throws on Workers). Real states here are ~60 KB.
+    maxPostponedStateSize: "25mb",
+  },
   turbopack: {
     rules: {
       "*.css": {

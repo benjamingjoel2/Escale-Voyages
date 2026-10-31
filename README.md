@@ -46,3 +46,18 @@ See `CLAUDE.md` for the brand, design system and conventions.
 ## Media
 
 Photographs in `public/media` are freely licensed stand-ins from Wikimedia Commons, credited in `public/media/CREDITS.md`, until commissioned photography replaces them. Any slot without a file renders a labelled placeholder showing the filename and dimensions to shoot. The hero expects `hero-loop.mp4` (16:9, under 8 s and 2 MB) with `hero-poster.jpg` at 2400×1350.
+
+## Cloudflare Workers (OpenNext)
+
+The site also builds for Cloudflare Workers with [`@opennextjs/cloudflare`](https://opennext.js.org/cloudflare). Vercel is unaffected: it ignores `wrangler.jsonc`, `open-next.config.ts` and `public/_headers`, and `npm run build` is unchanged.
+
+```
+npm run cf-build   # next build + OpenNext bundle into .open-next/
+npm run preview    # build, fill the local R2 cache, serve on workerd (wrangler dev)
+npm run deploy     # build + deploy the "escale-voyages" Worker (needs Cloudflare auth)
+```
+
+- Before the first deploy, create the cache bucket: `npx wrangler r2 bucket create escale-voyages-opennext-cache`. `deploy` uploads the prerendered pages into it.
+- Runtime env vars (`RESEND_API_KEY`, `SANITY_*`, payment keys, `NEXT_PUBLIC_SITE_URL`) go in the Worker's settings or `wrangler secret put`; `NEXT_PUBLIC_*` must also be set at build time.
+- `next/image` is optimised through the Workers `IMAGES` binding.
+- **Known limitation (Next 16.4 + Cache Components on workerd):** pages that were prerendered at build are served from the R2 cache, but rendering a page *at request time* currently hangs on workerd (cache miss, ISR regeneration, and the dynamic holes of partially prerendered pages such as `/enquire?journey=…` and the journey filters, which then fall back to client rendering). There is also no tag cache yet, so the Sanity revalidate webhook does not refresh pages on Workers. Keep Vercel as production until this is resolved upstream.

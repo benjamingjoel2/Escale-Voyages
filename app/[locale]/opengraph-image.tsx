@@ -12,12 +12,31 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
+/**
+ * Reads the hero poster from `public/`. On Vercel and in `next build` the file
+ * is on disk; on Cloudflare Workers there is no filesystem, so it falls back to
+ * the static assets binding (see wrangler.jsonc).
+ */
+async function readHeroPoster(): Promise<Buffer> {
+  try {
+    return await readFile(path.join(process.cwd(), "public", "media", "hero-poster.jpg"));
+  } catch (error) {
+    const { getCloudflareContext } = await import("@opennextjs/cloudflare");
+    const { env } = await getCloudflareContext({ async: true });
+    const assets = (env as { ASSETS?: { fetch: (input: string) => Promise<Response> } }).ASSETS;
+    if (!assets) throw error;
+    const res = await assets.fetch("https://assets.local/media/hero-poster.jpg");
+    if (!res.ok) throw error;
+    return Buffer.from(await res.arrayBuffer());
+  }
+}
+
 /** Default share image: the hero photograph under the giant destination word. */
 export default async function OpenGraphImage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Hero" });
   const tagline = t("tagline");
-  const photo = await readFile(path.join(process.cwd(), "public", "media", "hero-poster.jpg"));
+  const photo = await readHeroPoster();
   const src = `data:image/jpeg;base64,${photo.toString("base64")}`;
 
   return new ImageResponse(
