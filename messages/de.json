@@ -32,7 +32,7 @@
     "tagline": "Ganz Benin, in Ihrem Tempo",
     "datesPrices": "Termine & Preise",
     "enquire": "Jetzt anfragen",
-    "mediaSlot": "hero-loop.mp4 · 16:9 · ≤8s · ≤2 MB · poster hero-poster.jpg 2400×1350. Mobile shows the poster only.",
+    "mediaSlot": "hero-loop.mp4 · 16:9 · ≤8 s · ≤2 MB · Posterbild hero-poster.jpg 2400×1350. Auf dem Handy nur das Posterbild.",
     "label": "Einführung"
   },
   "Intro": {
@@ -98,7 +98,7 @@
     "tempLabel": "Trockenzeit, Dez. – Feb.",
     "tempValue": "25–35 °C",
     "tempNote": "Pendjari",
-    "mapSlot": "Commissioned line-art map of Benin, SVG"
+    "mapSlot": "Linienkarte von Benin, in Auftrag, SVG"
   },
   "Return": {
     "eyebrow": "Rückkehr · Return",
