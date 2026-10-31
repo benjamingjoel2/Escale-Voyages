@@ -17,13 +17,21 @@
 			"service": "escale-voyages"
 		}
 	],
-	"r2_buckets": [
+	"kv_namespaces": [
 		{
-			// Incremental (ISR / "use cache") cache. Create the bucket before the first deploy:
-			//   npx wrangler r2 bucket create escale-voyages-opennext-cache
-			"binding": "NEXT_INC_CACHE_R2_BUCKET",
-			"bucket_name": "escale-voyages-opennext-cache"
+			// Incremental (ISR / "use cache") cache.
+			"binding": "NEXT_INC_CACHE_KV",
+			"id": "f4c32c9549f74fb9983616fef826c397"
 		}
+	],
+	"durable_objects": {
+		"bindings": [
+			// Tag cache for revalidateTag (Sanity publish webhook).
+			{ "name": "NEXT_TAG_CACHE_DO_SHARDED", "class_name": "DOShardedTagCache" }
+		]
+	},
+	"migrations": [
+		{ "tag": "v1", "new_sqlite_classes": ["DOShardedTagCache"] }
 	],
 	"images": {
 		// Cloudflare Images binding used by next/image optimisation on Workers.

@@ -53,11 +53,11 @@ The site also builds for Cloudflare Workers with [`@opennextjs/cloudflare`](http
 
 ```
 npm run cf-build   # next build + OpenNext bundle into .open-next/
-npm run preview    # build, fill the local R2 cache, serve on workerd (wrangler dev)
+npm run preview    # build, fill the local KV cache, serve on workerd (wrangler dev)
 npm run deploy     # build + deploy the "escale-voyages" Worker (needs Cloudflare auth)
 ```
 
-- Before the first deploy, create the cache bucket: `npx wrangler r2 bucket create escale-voyages-opennext-cache`. `deploy` uploads the prerendered pages into it.
+- The incremental cache is the Workers KV namespace `escale-voyages-opennext-cache` (id in `wrangler.jsonc`); `deploy` uploads the prerendered pages into it. The tag cache is a Durable Object in the same Worker (`DOShardedTagCache`), so the Sanity revalidate webhook works on Workers. No R2 or D1 needed.
 - Runtime env vars (`RESEND_API_KEY`, `SANITY_*`, payment keys, `NEXT_PUBLIC_SITE_URL`) go in the Worker's settings or `wrangler secret put`; `NEXT_PUBLIC_*` must also be set at build time.
 - `next/image` is optimised through the Workers `IMAGES` binding.
 - `wrangler.jsonc` points `main` at `cloudflare/worker.mjs`, which loads `cloudflare/next-immediates.mjs` and then the generated `.open-next/worker.js`. **Why:** with Cache Components, Next renders a page at request time in sequential timer tasks and relies on Node's `process.nextTick` ordering to finish React's `setImmediate` work before the next task. workerd runs `nextTick` as a plain microtask, so the render was aborted half done and the request hung ("Worker's code had hung") on every cache miss, ISR regeneration and dynamic hole (`/enquire?journey=…`, journey filters). The shim gives Next a `setImmediate` that runs before pending timers, which is what Next's own patch does on Node.
