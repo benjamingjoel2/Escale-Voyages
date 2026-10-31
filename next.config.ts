@@ -20,6 +20,11 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  async redirects() {
+    // The default share image used to be the /{locale}/opengraph-image route; it is
+    // now a static file rendered at build time (scripts/og/build.tsx).
+    return [{ source: "/:locale(en|fr|de|es)/opengraph-image", destination: "/og/:locale.png", permanent: true }];
+  },
   images: {
     formats: ["image/avif", "image/webp"],
     deviceSizes: [360, 414, 640, 768, 1024, 1280, 1536, 1920],

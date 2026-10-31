@@ -25,15 +25,16 @@ export function pageAlternates(locale: string, href: Href): NonNullable<Metadata
 }
 
 /**
- * Open Graph image entry for a local media file. Falls back to the generated
- * share image for the locale when the photo is not on disk, because a page
- * that sets `openGraph` without images would otherwise ship none.
+ * Open Graph image entry for a local media file. Falls back to the locale's
+ * default share image (public/og/{locale}.png, rendered at build time by
+ * scripts/og/build.tsx) when the photo is not on disk, because a page that sets
+ * `openGraph` without images would otherwise ship none.
  */
 export function ogImageFor(locale: string, file: string | undefined, alt: string): NonNullable<Metadata["openGraph"]>["images"] {
   if (file && file in media) {
     return [{ url: `/media/${file}`, width: media[file].width, height: media[file].height, alt }];
   }
-  return [{ url: `/${locale}/opengraph-image`, width: 1200, height: 630, alt: "Escale Voyages · Bénin" }];
+  return [{ url: `/og/${locale}.png`, width: 1200, height: 630, alt: "Escale Voyages · Bénin" }];
 }
 
 /** Trims copy to a search-snippet length at a word boundary. */
