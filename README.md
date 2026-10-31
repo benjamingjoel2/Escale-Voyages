@@ -1,6 +1,6 @@
 # Escale Voyages
 
-Website for Escale Voyages, a premium tour agency in Cotonou covering the whole of Benin Republic. French and English, mobile-first, built to be fast on West African networks.
+Website for Escale Voyages, a premium tour agency in Cotonou covering the whole of Benin Republic. English, French, German and Spanish, mobile-first, built to be fast on West African networks.
 
 Stack: Next.js (App Router, Cache Components), TypeScript, Tailwind CSS v4, next-intl, Lenis, Sanity CMS, a payment abstraction (mock, FedaPay, KkiaPay, Stripe). Deploys on Vercel: `main` is live at https://escalevoyages.tourground.com (https://escale-voyages.vercel.app redirects there) and every pull request gets a preview deployment.
 
@@ -28,7 +28,7 @@ The site runs on placeholder content in `lib/data` until Sanity is configured. T
 | Path | What |
 | --- | --- |
 | `app/[locale]/` | Routes. The locale segment is the root param. |
-| `components/layout/` | Nav, footer, mobile menu, locale switcher, WhatsApp button, smooth scroll, weather. |
+| `components/layout/` | Nav, footer, mobile menu, locale switcher (EN · FR · DE · ES), smooth scroll, weather. |
 | `components/home/` | Homepage sections in page order. |
 | `components/journeys/` | Journey card, filters, booking panel, route map, departures table. |
 | `components/booking/`, `components/forms/` | Booking flow and enquiry form (client), backed by server actions in `app/actions/`. |

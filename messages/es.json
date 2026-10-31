@@ -32,7 +32,7 @@
     "tagline": "Todo Benín, a su ritmo",
     "datesPrices": "Fechas y precios",
     "enquire": "Consultar ahora",
-    "mediaSlot": "hero-loop.mp4 · 16:9 · ≤8s · ≤2 MB · poster hero-poster.jpg 2400×1350. Mobile shows the poster only.",
+    "mediaSlot": "hero-loop.mp4 · 16:9 · ≤8 s · ≤2 MB · imagen de portada hero-poster.jpg 2400×1350. En el móvil, solo la imagen de portada.",
     "label": "Introducción"
   },
   "Intro": {
@@ -98,7 +98,7 @@
     "tempLabel": "Estación seca, dic. – feb.",
     "tempValue": "25–35 °C",
     "tempNote": "Pendjari",
-    "mapSlot": "Commissioned line-art map of Benin, SVG"
+    "mapSlot": "Mapa de líneas de Benín, por encargar, SVG"
   },
   "Return": {
     "eyebrow": "Retorno · Return",
