@@ -50,3 +50,7 @@ cloudflare-env.d.ts
 
 # Share images rendered at build time (scripts/og/build.tsx)
 /public/og/
+
+# Cloudflare Pages build output
+/dist-pages
+/.cf-bundle

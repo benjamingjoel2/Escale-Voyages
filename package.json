@@ -14,7 +14,8 @@
     "cf-build": "node --import ./scripts/cf-keep-names.mjs node_modules/@opennextjs/cloudflare/dist/cli/index.js build",
     "preview": "npm run cf-build && opennextjs-cloudflare preview",
     "deploy": "npm run cf-build && opennextjs-cloudflare deploy",
-    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
+    "cf-pages": "CF_PAGES=1 node scripts/cf-pages.mjs"
   },
   "dependencies": {
     "@opennextjs/cloudflare": "^1.20.15",

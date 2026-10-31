@@ -1,19 +1,26 @@
-// OpenNext adapter config for Cloudflare Workers (see wrangler.jsonc).
-// Not used by "next build" or Vercel.
+// OpenNext adapter config for Cloudflare. Not used by "next build" or Vercel.
+//
+// Two targets:
+// - Workers (wrangler.jsonc): KV incremental cache, Durable Object tag cache and the
+//   memory queue, so ISR and the Sanity revalidate webhook work.
+// - Cloudflare Pages (`npm run cf-pages`, CF_PAGES=1 in the Pages build): Pages cannot
+//   host Durable Objects or a self-referencing service, so prerendered pages are served
+//   read-only from the static assets. Fine while content comes from lib/data; revisit
+//   when Sanity goes live (or move the site to Workers).
 import { defineCloudflareConfig } from "@opennextjs/cloudflare";
 import kvIncrementalCache from "@opennextjs/cloudflare/overrides/incremental-cache/kv-incremental-cache";
+import staticAssetsIncrementalCache from "@opennextjs/cloudflare/overrides/incremental-cache/static-assets-incremental-cache";
 import doShardedTagCache from "@opennextjs/cloudflare/overrides/tag-cache/do-sharded-tag-cache";
 import memoryQueue from "@opennextjs/cloudflare/overrides/queue/memory-queue";
 
-export default defineCloudflareConfig({
-  // Incremental (ISR / "use cache") cache in Workers KV (binding NEXT_INC_CACHE_KV).
-  // KV is available on every plan; no R2 needed.
-  incrementalCache: kvIncrementalCache,
-  // Tag cache in a Durable Object defined by this worker, so the Sanity revalidate
-  // webhook (revalidateTag) works on Workers. Needs no separate Cloudflare resource.
-  tagCache: doShardedTagCache({ baseShardSize: 4 }),
-  // ISR: stale pages (30 min revalidate) are regenerated in the background by
-  // calling the Worker itself through WORKER_SELF_REFERENCE. The default "dummy"
-  // queue throws, so pages would never refresh.
-  queue: memoryQueue,
-});
+const pages = Boolean(process.env.CF_PAGES);
+
+export default defineCloudflareConfig(
+  pages
+    ? { incrementalCache: staticAssetsIncrementalCache, enableCacheInterception: true }
+    : {
+        incrementalCache: kvIncrementalCache,
+        tagCache: doShardedTagCache({ baseShardSize: 4 }),
+        queue: memoryQueue,
+      },
+);
