@@ -97,8 +97,7 @@
     "timeNote": "en dos días",
     "tempLabel": "Estación seca, dic. – feb.",
     "tempValue": "25–35 °C",
-    "tempNote": "Pendjari",
-    "mapSlot": "Mapa de líneas de Benín, por encargar, SVG"
+    "tempNote": "Pendjari"
   },
   "Return": {
     "eyebrow": "Retorno · Return",
@@ -235,8 +234,6 @@
     "stay": "Noche en {place}",
     "mapEyebrow": "La ruta",
     "mapTitle": "Por dónde va",
-    "mapAlt": "Mapa esquemático de la ruta con cada parada situada según sus coordenadas",
-    "mapSlot": "Un mapa de líneas de Benín por encargo sustituirá este marco",
     "staysEyebrow": "Dónde se aloja",
     "staysTitle": "Noches por el camino",
     "staysIntro": "Elegidos por su ubicación y por quienes los llevan. Las habitaciones se confirman con sus fechas; le indicamos las casas exactas al reservar.",
