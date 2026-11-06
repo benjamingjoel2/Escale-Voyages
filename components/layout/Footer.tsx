@@ -24,20 +24,20 @@ export async function Footer() {
     <footer className="bg-grey text-ink">
       <div className="container-wide py-14 md:py-20">
         <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 lg:grid-cols-6">
-          <div className="grid content-start gap-2">
+          <div className="grid min-w-0 content-start gap-2">
             <p className="t-italic mb-1 text-xl">{t("guest")}</p>
-            <a className="text-sm opacity-65 hover:opacity-100" href={`mailto:${settings.guestEmail}`}>{settings.guestEmail}</a>
+            <a className="text-sm opacity-65 [overflow-wrap:anywhere] hover:opacity-100" href={`mailto:${settings.guestEmail}`}>{settings.guestEmail}</a>
             <Link className="text-sm opacity-65 hover:opacity-100" href="/enquire">{t("scheduleCall")}</Link>
           </div>
-          <div className="grid content-start gap-2">
+          <div className="grid min-w-0 content-start gap-2">
             <p className="t-italic mb-1 text-xl">{t("trade")}</p>
             {[settings.tradeEmail, settings.pressEmail]
               .filter((e, i, all) => all.indexOf(e) === i)
               .map((e) => (
-                <a key={e} className="text-sm opacity-65 hover:opacity-100" href={`mailto:${e}`}>{e}</a>
+                <a key={e} className="text-sm opacity-65 [overflow-wrap:anywhere] hover:opacity-100" href={`mailto:${e}`}>{e}</a>
               ))}
           </div>
-          <div className="grid content-start gap-2">
+          <div className="grid min-w-0 content-start gap-2">
             <p className="t-italic mb-1 text-xl">{t("journeys")}</p>
             {journeys.map((j) => (
               <Link
