@@ -3,56 +3,23 @@ import { Reveal } from "@/components/ui/Reveal";
 
 const stats = ["distance", "time", "temp"] as const;
 
+/** Cotonou to Pendjari: the route code as a small eyebrow, the road in words and three stats. No map illustrations (owner decision, 6 Nov 2026). */
 export function RouteSection() {
   const t = useTranslations("Route");
 
   return (
-    <section id="journey-map" className="container-wide py-10 md:py-16">
-      <Reveal>
-        <p className="font-condensed text-[clamp(56px,12vw,160px)] font-light uppercase leading-[0.95] tracking-[0.01em] text-ink/90">
-          {t("code")}
-        </p>
-      </Reveal>
-
-      <div className="mt-10 grid items-center gap-8 md:grid-cols-2 md:gap-14 lg:gap-20">
-        <Reveal>
-          <div
-            className="relative aspect-square max-w-full overflow-hidden rounded-[2px] bg-grey"
-            role="img"
-            aria-label={t("mapSlot")}
-          >
-            <svg viewBox="0 0 400 400" className="block h-full w-full">
-              <path
-                d="M250 372 C 200 330, 210 280, 190 230 C 170 180, 150 130, 140 60"
-                fill="none"
-                stroke="var(--ink)"
-                strokeWidth="1.5"
-                strokeDasharray="3 5"
-              />
-              <g fill="var(--ink)" fontFamily="var(--font-sans)" fontSize="10.5" letterSpacing=".06em">
-                <circle cx="250" cy="372" r="4" />
-                <text x="262" y="376">COTONOU · 6°22′N 2°25′E</text>
-                <circle cx="222" cy="318" r="2.5" opacity=".6" />
-                <text x="234" y="322" opacity=".6">OUIDAH · GANVIÉ</text>
-                <circle cx="196" cy="246" r="2.5" opacity=".6" />
-                <text x="208" y="250" opacity=".6">ABOMEY</text>
-                <circle cx="160" cy="140" r="2.5" opacity=".6" />
-                <text x="172" y="144" opacity=".6">NATITINGOU</text>
-                <circle cx="140" cy="60" r="4" fill="var(--accent)" />
-                <text x="152" y="64">PENDJARI · BATIA</text>
-              </g>
-              <text x="16" y="388" fontFamily="var(--font-sans)" fontSize="10" fill="var(--ink)" opacity=".6">
-                {t("mapSlot")}
-              </text>
-            </svg>
-          </div>
-        </Reveal>
-
-        <Reveal delay={0.1} className="grid gap-5">
-          <span className="eyebrow">{t("eyebrow")}</span>
+    <section id="route" className="container-wide py-10 md:py-16">
+      <div className="grid gap-8 md:grid-cols-2 md:gap-14 lg:gap-20">
+        <Reveal className="grid content-start gap-5">
+          <span className="eyebrow">
+            {t("code")} · {t("eyebrow")}
+          </span>
           <h2 className="t-h2">{t("title")}</h2>
           <p className="t-body">{t("body")}</p>
-          <dl className="mt-2 grid border-t border-line">
+        </Reveal>
+
+        <Reveal delay={0.1}>
+          <dl className="grid border-t border-line">
             {stats.map((s) => (
               <div
                 key={s}

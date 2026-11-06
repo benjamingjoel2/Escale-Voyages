@@ -97,8 +97,7 @@
     "timeNote": "over two days",
     "tempLabel": "Dry season, Dec – Feb",
     "tempValue": "25–35 °C",
-    "tempNote": "Pendjari",
-    "mapSlot": "Commissioned line-art map of Benin, SVG"
+    "tempNote": "Pendjari"
   },
   "Return": {
     "eyebrow": "Return · Retour",
@@ -235,8 +234,6 @@
     "stay": "Night in {place}",
     "mapEyebrow": "The route",
     "mapTitle": "Where you go",
-    "mapAlt": "Schematic map of the route with each stop plotted by its coordinates",
-    "mapSlot": "Commissioned line-art map of Benin replaces this frame",
     "staysEyebrow": "Where you stay",
     "staysTitle": "Nights along the way",
     "staysIntro": "Chosen for where they are and who runs them. Rooms are confirmed with your dates; we tell you the exact houses when you book.",

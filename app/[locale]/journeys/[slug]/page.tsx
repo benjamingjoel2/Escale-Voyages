@@ -6,7 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { MediaSlot } from "@/components/ui/MediaSlot";
 import { Reveal } from "@/components/ui/Reveal";
 import { BookingPanel } from "@/components/journeys/BookingPanel";
-import { JourneyMap } from "@/components/journeys/JourneyMap";
+import { JourneyStops } from "@/components/journeys/JourneyStops";
 import { DeparturesTable } from "@/components/journeys/DeparturesTable";
 import { JourneyCard } from "@/components/journeys/JourneyCard";
 import { StaysSection } from "@/components/journeys/StaysSection";
@@ -190,13 +190,13 @@ export default async function JourneyPage({ params }: Props) {
               </ol>
             </Reveal>
 
-            {/* Map */}
+            {/* Route */}
             <Reveal className="grid gap-6">
               <div className="grid gap-2.5">
                 <span className="eyebrow">{t("mapEyebrow")}</span>
                 <h2 className="t-h2">{t("mapTitle")}</h2>
               </div>
-              <JourneyMap stops={j.stops} destinations={destinations} />
+              <JourneyStops stops={j.stops} destinations={destinations} />
             </Reveal>
 
             {/* Where you stay */}

@@ -15,7 +15,9 @@ Premium tour agency website for Benin Republic, based in Cotonou. Next.js App Ro
 
 The site duplicates the **White Desert page grammar** (white-desert.com) with Escale Voyages content: structure, layout, section order, motion, palette and visual grammar. **Never** copy their assets, copy text or code.
 
-Homepage section order: video hero → intro statement → season banner → journey cards (price, season, duration, one-line pitch, coordinates) → founder quote → horizontal-scroll destination cards with region eyebrow and bracketed GPS coordinates → proverb → route code (COO – NAE) → journey map with three stats → Return feature → planning CTA → How it works (6 steps, slide-out panel) → trust row → footer with contact groups, link columns, three large buttons, closing quote, legal.
+Homepage section order: video hero → intro statement → season banner → journey cards (price, season, duration, one-line pitch, coordinates) → founder quote → horizontal-scroll destination cards with region eyebrow and bracketed GPS coordinates → proverb → route (COO – NAE as a small eyebrow, the road in words, three stats) → Return feature → planning CTA → How it works (6 steps, slide-out panel) → trust row → footer with contact groups, link columns, three large buttons, closing quote, legal.
+
+**No map illustrations** anywhere on the site (no drawn, SVG, outline or clickable maps of Benin or of a route, no map backgrounds), by owner decision of 6 Nov 2026. Journey pages list the stops in order with their coordinates instead.
 
 **Owner preference: content is left-aligned. No centred blocks. The page is wide: `container-wide` is fluid up to 1920px with a 2.5vw gutter, so wide monitors are filled edge to edge like the reference site.** Hero title sits bottom-left. Section headings, quotes and CTAs start at the left edge of the container.
 

@@ -6,7 +6,6 @@ import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { PageHero } from "@/components/pages/PageHero";
 import { JourneyCard } from "@/components/journeys/JourneyCard";
-import { JourneyMap } from "@/components/journeys/JourneyMap";
 import { MediaSlot } from "@/components/ui/MediaSlot";
 import { Reveal } from "@/components/ui/Reveal";
 import { Link } from "@/i18n/navigation";
@@ -114,9 +113,6 @@ export default async function DestinationPage({ params }: Props) {
               </Reveal>
             ) : null}
 
-            <Reveal className="grid gap-6">
-              <JourneyMap stops={[d.slug]} destinations={destinations} />
-            </Reveal>
           </div>
 
           <aside className="grid content-start gap-4 lg:col-span-4">
