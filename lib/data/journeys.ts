@@ -199,8 +199,8 @@ export const journeys: Journey[] = [
     faq: FAQ_COMMON,
     gallery: [
       { file: "kings-01.jpg", width: 1600, height: 1067, alt: { en: "Bas-relief on a palace wall in Abomey", fr: "Bas-relief sur un mur de palais à Abomey", de: "Flachrelief an einer Palastmauer in Abomey", es: "Bajorrelieve en un muro de palacio en Abomey" } },
-      { file: "kings-02.jpg", width: 1067, height: 1600, alt: { en: "Appliqué cloth being sewn", fr: "Tissu appliqué en cours de couture", de: "Applikationsstoff beim Nähen", es: "Tela de aplicaciones mientras se cose" } },
-      { file: "kings-03.jpg", width: 1600, height: 1067, alt: { en: "Dassa hills at sunrise", fr: "Collines de Dassa au lever du soleil", de: "Die Hügel von Dassa bei Sonnenaufgang", es: "Las colinas de Dassa al amanecer" } },
+      { file: "kings-02.jpg", width: 1067, height: 1600, alt: { en: "Appliqué caps and hangings for sale in Abomey", fr: "Bonnets et tentures en tissu appliqué à vendre à Abomey", de: "Mützen und Wandbehänge in Applikationstechnik, zum Verkauf in Abomey", es: "Gorros y tapices de tela aplicada a la venta en Abomey" } },
+      { file: "kings-03.jpg", width: 1600, height: 1067, alt: { en: "A palace building with its bas-reliefs, Abomey", fr: "Un bâtiment du palais et ses bas-reliefs, Abomey", de: "Ein Palastgebäude mit seinen Flachreliefs, Abomey", es: "Un edificio del palacio con sus bajorrelieves, Abomey" } },
       { file: "kings-04.jpg", width: 1500, height: 779, alt: { en: "A traveller before the Door of No Return, Ouidah", fr: "Une voyageuse devant la Porte du Non-Retour, Ouidah", de: "Eine Reisende vor dem Tor ohne Wiederkehr, Ouidah", es: "Una viajera ante la Puerta del No Retorno, Uidá" } },
     ],
   },
@@ -284,7 +284,7 @@ export const journeys: Journey[] = [
     ],
     gallery: [
       { file: "return-01.jpg", width: 1500, height: 838, alt: { en: "A mural of two faces with traditional scarification, seen from the car in Cotonou", fr: "Une fresque de deux visages aux scarifications traditionnelles, vue depuis la voiture à Cotonou", de: "Ein Wandbild zweier Gesichter mit traditionellen Schmucknarben, aus dem Auto gesehen in Cotonou", es: "Un mural de dos rostros con escarificaciones tradicionales, visto desde el coche en Cotonú" } },
-      { file: "return-02.jpg", width: 1067, height: 1600, alt: { en: "Zomachi memorial, Ouidah", fr: "Mémorial Zomachi, Ouidah", de: "Zomachi-Denkmal, Ouidah", es: "Memorial de Zomachi, Uidá" } },
+      { file: "return-02.jpg", width: 1067, height: 1600, alt: { en: "A pillar of the Zomachi memorial, Ouidah", fr: "Une stèle du mémorial Zomachi, Ouidah", de: "Eine Stele des Zomachi-Denkmals, Ouidah", es: "Una estela del memorial de Zomachi, Uidá" } },
       { file: "return-03.jpg", width: 993, height: 832, alt: { en: "A whitewashed Afro-Brazilian house with a balustraded balcony", fr: "Une maison afro-brésilienne blanchie à la chaux, au balcon à balustres", de: "Ein weiß getünchtes afro-brasilianisches Haus mit Balustradenbalkon", es: "Una casa afrobrasileña encalada con balcón de balaustrada" } },
       { file: "return-04.jpg", width: 1500, height: 774, alt: { en: "A street mural of a market crowd and Zangbeto figures, Cotonou", fr: "Une fresque murale d'une foule de marché et de Zangbéto, Cotonou", de: "Ein Straßenwandbild mit Marktmenge und Zangbeto-Figuren, Cotonou", es: "Un mural callejero con una multitud de mercado y figuras de zangbeto, Cotonú" } },
     ],
@@ -371,10 +371,10 @@ export const journeys: Journey[] = [
       ...FAQ_COMMON,
     ],
     gallery: [
-      { file: "pendjari-01.jpg", width: 1600, height: 1067, alt: { en: "Elephants at the Pendjari river", fr: "Éléphants à la rivière Pendjari", de: "Elefanten am Pendjari-Fluss", es: "Elefantes en el río Pendjari" } },
+      { file: "pendjari-01.jpg", width: 1600, height: 1067, alt: { en: "An elephant at the Mare Sacrée, Pendjari", fr: "Un éléphant à la Mare Sacrée, Pendjari", de: "Ein Elefant an der Mare Sacrée, Pendjari", es: "Un elefante en la Mare Sacrée, Pendjari" } },
       { file: "pendjari-02.jpg", width: 1067, height: 1600, alt: { en: "A Tata Somba house", fr: "Une maison Tata Somba", de: "Ein Tata-Somba-Haus", es: "Una casa tata somba" } },
       { file: "pendjari-03.jpg", width: 1600, height: 1067, alt: { en: "Tanougou waterfalls", fr: "Cascades de Tanougou", de: "Die Tanougou-Wasserfälle", es: "Las cascadas de Tanougou" } },
-      { file: "pendjari-04.jpg", width: 1600, height: 1067, alt: { en: "Atakora hills at dusk", fr: "Collines de l'Atakora au crépuscule", de: "Die Atakora-Berge in der Abenddämmerung", es: "Los montes del Atakora al anochecer" } },
+      { file: "pendjari-04.jpg", width: 1600, height: 1067, alt: { en: "The Atakora range at sunset", fr: "La chaîne de l'Atakora au coucher du soleil", de: "Die Atakora-Kette bei Sonnenuntergang", es: "La cordillera del Atakora al atardecer" } },
     ],
   },
   {
@@ -516,8 +516,8 @@ export const journeys: Journey[] = [
     ],
     gallery: [
       { file: "vodun-01.jpg", width: 1500, height: 809, alt: { en: "An Egungun masquerade in embroidered cloth, mask raised to the sky", fr: "Un masque Egungun en tissu brodé, le visage levé vers le ciel", de: "Eine Egungun-Maskerade in besticktem Stoff, die Maske zum Himmel erhoben", es: "Una mascarada egungun de tela bordada, con la máscara alzada hacia el cielo" } },
-      { file: "vodun-02.jpg", width: 1067, height: 1600, alt: { en: "Zangbeto masquerade", fr: "Mascarade Zangbéto", de: "Zangbeto-Maskerade", es: "Mascarada zangbeto" } },
-      { file: "vodun-03.jpg", width: 1600, height: 1067, alt: { en: "Offerings at a temple", fr: "Offrandes dans un temple", de: "Opfergaben an einem Tempel", es: "Ofrendas en un templo" } },
+      { file: "vodun-02.jpg", width: 1067, height: 1600, alt: { en: "A Zangbeto at Vodun Days, Ouidah", fr: "Un Zangbéto aux Vodun Days, Ouidah", de: "Ein Zangbeto bei den Vodun Days, Ouidah", es: "Un zangbeto en los Vodun Days, Uidá" } },
+      { file: "vodun-03.jpg", width: 1600, height: 1067, alt: { en: "The gate of the Temple of Pythons, Ouidah", fr: "Le portail du temple des Pythons, Ouidah", de: "Das Tor des Pythontempels, Ouidah", es: "La puerta del templo de las Pitones, Uidá" } },
     ],
   },
   {
@@ -607,7 +607,7 @@ export const journeys: Journey[] = [
     ],
     gallery: [
       { file: "grand-01.jpg", width: 1500, height: 836, alt: { en: "A Sunday crowd on the steps of an old church in the south", fr: "La foule du dimanche sur les marches d'une vieille église du sud", de: "Eine Sonntagsmenge auf den Stufen einer alten Kirche im Süden", es: "Una multitud de domingo en la escalinata de una antigua iglesia del sur" } },
-      { file: "grand-02.jpg", width: 1067, height: 1600, alt: { en: "Gèlèdé mask, Kétou", fr: "Masque Gèlèdé, Kétou", de: "Gèlèdé-Maske, Kétou", es: "Máscara gèlèdé, Kétou" } },
+      { file: "grand-02.jpg", width: 1067, height: 1600, alt: { en: "A Gèlèdé masked dancer, Kétou", fr: "Un danseur masqué Gèlèdé, Kétou", de: "Ein Gèlèdé-Maskentänzer, Kétou", es: "Un bailarín enmascarado gèlèdé, Kétou" } },
       { file: "grand-03.jpg", width: 1500, height: 1125, alt: { en: "The pool and terraces of a five-star hotel in Cotonou", fr: "La piscine et les terrasses d'un hôtel cinq étoiles à Cotonou", de: "Pool und Terrassen eines Fünf-Sterne-Hotels in Cotonou", es: "La piscina y las terrazas de un hotel de cinco estrellas en Cotonú" } },
       { file: "grand-04.jpg", width: 1500, height: 1000, alt: { en: "A herd of elephants in the dry grass of Pendjari", fr: "Un troupeau d'éléphants dans les herbes sèches de la Pendjari", de: "Eine Elefantenherde im trockenen Gras der Pendjari", es: "Una manada de elefantes en la hierba seca de la Pendjari" } },
     ],
@@ -671,9 +671,9 @@ export const journeys: Journey[] = [
     ],
     faq: FAQ_COMMON,
     gallery: [
-      { file: "collines-01.jpg", width: 1600, height: 1067, alt: { en: "The hills of Dassa-Zoumé", fr: "Les collines de Dassa-Zoumé", de: "Die Hügel von Dassa-Zoumé", es: "Las colinas de Dassa-Zoumé" } },
-      { file: "collines-02.jpg", width: 1067, height: 1600, alt: { en: "Yam stalls at Savalou", fr: "Étal d'ignames à Savalou", de: "Yamsstände in Savalou", es: "Puestos de ñame en Savalou" } },
-      { file: "collines-03.jpg", width: 1600, height: 1067, alt: { en: "Parakou market", fr: "Marché de Parakou", de: "Markt von Parakou", es: "Mercado de Parakou" } },
+      { file: "collines-01.jpg", width: 1600, height: 1067, alt: { en: "The Collines from the Kamaté hills, towards Dassa-Zoumé", fr: "Les Collines depuis les hauteurs de Kamaté, vers Dassa-Zoumé", de: "Die Collines von den Kamaté-Hügeln aus, Richtung Dassa-Zoumé", es: "Las Collines desde los cerros de Kamaté, hacia Dassa-Zoumé" } },
+      { file: "collines-02.jpg", width: 1067, height: 1600, alt: { en: "A street in Savalou under its hills", fr: "Une rue de Savalou au pied de ses collines", de: "Eine Straße in Savalou unter seinen Hügeln", es: "Una calle de Savalou al pie de sus colinas" } },
+      { file: "collines-03.jpg", width: 1600, height: 1067, alt: { en: "Arzèkè market, Parakou", fr: "Le marché Arzèkè, Parakou", de: "Der Arzèkè-Markt, Parakou", es: "El mercado Arzèkè, Parakou" } },
     ],
   },
 ];
