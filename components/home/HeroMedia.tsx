@@ -5,7 +5,8 @@ import Image from "next/image";
 import { useMediaQuery, useSaveData } from "@/lib/hooks/useMediaQuery";
 
 type Props = {
-  slotLabel: string;
+  /** Unused: kept so callers need not change. Without media the hero is a plain block. */
+  slotLabel?: string;
   /** Set once the real assets exist. */
   videoSrc?: string;
   posterSrc?: string;
@@ -17,7 +18,7 @@ type Props = {
  * asking to save data; phones get the poster. Until assets are commissioned
  * it renders the toned gradient with the slot label.
  */
-export function HeroMedia({ slotLabel, videoSrc, posterSrc }: Props) {
+export function HeroMedia({ videoSrc, posterSrc }: Props) {
   const layer = useRef<HTMLDivElement>(null);
   const reduce = useMediaQuery("(prefers-reduced-motion: reduce)");
   const wide = useMediaQuery("(min-width: 768px)");
@@ -73,11 +74,6 @@ export function HeroMedia({ slotLabel, videoSrc, posterSrc }: Props) {
           >
             <source src={videoSrc} type="video/mp4" />
           </video>
-        ) : null}
-        {!posterSrc && !videoSrc ? (
-          <span className="absolute right-4 top-24 z-10 max-w-[70vw] rounded-[3px] border border-dashed border-white/50 bg-black/25 px-3.5 py-2.5 text-right text-[11.5px] leading-snug md:right-12 md:top-28 md:max-w-[40vw]">
-            {slotLabel}
-          </span>
         ) : null}
       </div>
     </div>

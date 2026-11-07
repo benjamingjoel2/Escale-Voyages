@@ -8,6 +8,18 @@ export const media: Record<string, { width: number; height: number }> = {
     "width": 1500,
     "height": 763
   },
+  "collines-01.jpg": {
+    "width": 1600,
+    "height": 1067
+  },
+  "collines-02.jpg": {
+    "width": 1067,
+    "height": 1600
+  },
+  "collines-03.jpg": {
+    "width": 1600,
+    "height": 1067
+  },
   "dest-abomey.jpg": {
     "width": 1600,
     "height": 1064
@@ -48,6 +60,10 @@ export const media: Record<string, { width: number; height: number }> = {
     "width": 1600,
     "height": 1200
   },
+  "dest-parc-w.jpg": {
+    "width": 1600,
+    "height": 2000
+  },
   "dest-pendjari.jpg": {
     "width": 1600,
     "height": 1067
@@ -76,6 +92,10 @@ export const media: Record<string, { width: number; height: number }> = {
     "width": 1500,
     "height": 836
   },
+  "grand-02.jpg": {
+    "width": 1067,
+    "height": 1600
+  },
   "grand-03.jpg": {
     "width": 1500,
     "height": 1125
@@ -88,6 +108,10 @@ export const media: Record<string, { width: number; height: number }> = {
     "width": 1500,
     "height": 826
   },
+  "journey-collines-hero.jpg": {
+    "width": 2400,
+    "height": 1371
+  },
   "journey-collines.jpg": {
     "width": 1600,
     "height": 1200
@@ -99,6 +123,10 @@ export const media: Record<string, { width: number; height: number }> = {
   "journey-grand-tour.jpg": {
     "width": 1500,
     "height": 830
+  },
+  "journey-kings-hero.jpg": {
+    "width": 2400,
+    "height": 1371
   },
   "journey-kings.jpg": {
     "width": 1600,
@@ -136,6 +164,18 @@ export const media: Record<string, { width: number; height: number }> = {
     "width": 1500,
     "height": 809
   },
+  "kings-01.jpg": {
+    "width": 1600,
+    "height": 1067
+  },
+  "kings-02.jpg": {
+    "width": 1067,
+    "height": 1600
+  },
+  "kings-03.jpg": {
+    "width": 1600,
+    "height": 1067
+  },
   "kings-04.jpg": {
     "width": 1500,
     "height": 779
@@ -143,6 +183,10 @@ export const media: Record<string, { width: number; height: number }> = {
   "lagoon-01.jpg": {
     "width": 1500,
     "height": 814
+  },
+  "lagoon-02.jpg": {
+    "width": 1067,
+    "height": 1600
   },
   "lagoon-03.jpg": {
     "width": 1500,
@@ -156,9 +200,29 @@ export const media: Record<string, { width: number; height: number }> = {
     "width": 1500,
     "height": 838
   },
+  "pendjari-01.jpg": {
+    "width": 1600,
+    "height": 1067
+  },
+  "pendjari-02.jpg": {
+    "width": 1067,
+    "height": 1600
+  },
+  "pendjari-03.jpg": {
+    "width": 1600,
+    "height": 1067
+  },
+  "pendjari-04.jpg": {
+    "width": 1600,
+    "height": 1067
+  },
   "return-01.jpg": {
     "width": 1500,
     "height": 838
+  },
+  "return-02.jpg": {
+    "width": 1067,
+    "height": 1600
   },
   "return-03.jpg": {
     "width": 993,
@@ -219,6 +283,14 @@ export const media: Record<string, { width: number; height: number }> = {
   "vodun-01.jpg": {
     "width": 1500,
     "height": 809
+  },
+  "vodun-02.jpg": {
+    "width": 1067,
+    "height": 1600
+  },
+  "vodun-03.jpg": {
+    "width": 1600,
+    "height": 1067
   }
 };
 

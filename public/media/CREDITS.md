@@ -69,3 +69,23 @@ Not yet placed: three frames under 500 px wide (lagoon jetty at sunset, coconut 
 | dest-tanougou.jpg | [Chutes de Tanougou (2).jpg](https://commons.wikimedia.org/wiki/File:Chutes_de_Tanougou_(2).jpg) | Ji-Elle | CC BY-SA 4.0 |
 | journey-kings.jpg | [Abomey 2006 1.jpg](https://commons.wikimedia.org/wiki/File:Abomey_2006_1.jpg) | Joachim Huber | CC BY-SA 2.0 |
 | dest-koutammakou.jpg | [Tata-somba-Dorf.jpg](https://commons.wikimedia.org/wiki/File:Tata-somba-Dorf.jpg) | Dominik Schwarz | CC BY-SA 3.0 |
+| dest-parc-w.jpg | [La boule du monde, Chutes de koudou, Parc W, Benin.jpg](https://commons.wikimedia.org/wiki/File:La_boule_du_monde,_Chutes_de_koudou,_Parc_W,_Benin.jpg) | Juanlopezvillar | CC BY-SA 4.0 |
+| journey-kings-hero.jpg | [Royal Palaces of Abomey-133471.jpg](https://commons.wikimedia.org/wiki/File:Royal_Palaces_of_Abomey-133471.jpg) | Karalyn Monteil | CC BY-SA 3.0 IGO |
+| journey-collines-hero.jpg | [Viewpoint of Dassa-Zoumé from the Coline des Princes (April 2025).jpg](https://commons.wikimedia.org/wiki/File:Viewpoint_of_Dassa-Zoum%C3%A9_from_the_Coline_des_Princes_(April_2025).jpg) | Ch1pabeck | CC BY-SA 4.0 |
+| kings-01.jpg | [Royal Palaces of Abomey-133476.jpg](https://commons.wikimedia.org/wiki/File:Royal_Palaces_of_Abomey-133476.jpg) | Karalyn Monteil | CC BY-SA 3.0 IGO |
+| kings-02.jpg | [Abomey-Tissus appliqués.jpg](https://commons.wikimedia.org/wiki/File:Abomey-Tissus_appliqu%C3%A9s.jpg) | Ji-Elle | CC BY-SA 4.0 |
+| kings-03.jpg | [Royal Palaces of Abomey-133470.jpg](https://commons.wikimedia.org/wiki/File:Royal_Palaces_of_Abomey-133470.jpg) | Karalyn Monteil | CC BY-SA 3.0 IGO |
+| collines-01.jpg | [Vue de Dassa depuis la colline de Kamaté.jpg](https://commons.wikimedia.org/wiki/File:Vue_de_Dassa_depuis_la_colline_de_Kamat%C3%A9.jpg) | Padonou Dotou | CC BY-SA 4.0 |
+| collines-02.jpg | [Savalu Benin Africa.jpg](https://commons.wikimedia.org/wiki/File:Savalu_Benin_Africa.jpg) | Toluaye | Public domain |
+| collines-03.jpg | [DEGAN Gabin ( ARZEKE market).jpg](https://commons.wikimedia.org/wiki/File:DEGAN_Gabin_(_ARZEKE_market).jpg) | DEGAN Gabin | CC BY-SA 4.0 |
+| pendjari-01.jpg | [Parc national de la Pendjari-Eléphants à la Mare Sacrée.jpg](https://commons.wikimedia.org/wiki/File:Parc_national_de_la_Pendjari-El%C3%A9phants_%C3%A0_la_Mare_Sacr%C3%A9e.jpg) | Ji-Elle | CC BY-SA 4.0 |
+| pendjari-02.jpg | [Tata Somba 2.jpg](https://commons.wikimedia.org/wiki/File:Tata_Somba_2.jpg) | Dominik Schwarz | CC BY-SA 3.0 |
+| pendjari-03.jpg | [Chutes de Tanougou (3).jpg](https://commons.wikimedia.org/wiki/File:Chutes_de_Tanougou_(3).jpg) | Ji-Elle | CC BY-SA 4.0 |
+| pendjari-04.jpg | [Vue panoramique de la chaîne d'Atacora.jpg](https://commons.wikimedia.org/wiki/File:Vue_panoramique_de_la_cha%C3%AEne_d%27Atacora.jpg) | Abdoul-Azize BOUKARY | CC BY-SA 4.0 |
+| grand-02.jpg | [Gèlèdé masked dancer, Kétou, Benin.jpg](https://commons.wikimedia.org/wiki/File:G%C3%A8l%C3%A8d%C3%A9_masked_dancer,_K%C3%A9tou,_Benin.jpg) | Jonathanbwilson1 | CC BY-SA 4.0 |
+| lagoon-02.jpg | [Cours du Mono au Bénin (20).jpg](https://commons.wikimedia.org/wiki/File:Cours_du_Mono_au_B%C3%A9nin_(20).jpg) | Ji-Elle | CC BY-SA 4.0 |
+| return-02.jpg | [Les sept piliers de l'abolition de l'esclavage, Mémorial ZOMACHI-route des esclaves de Ouidah.jpg](https://commons.wikimedia.org/wiki/File:Les_sept_piliers_de_l%27abolition_de_l%27esclavage,_M%C3%A9morial_ZOMACHI-route_des_esclaves_de_Ouidah.jpg) | Yelouassi | CC BY-SA 4.0 |
+| vodun-02.jpg | [ZANGBETO 04.jpg](https://commons.wikimedia.org/wiki/File:ZANGBETO_04.jpg) | Blacklaine | CC BY-SA 4.0 |
+| vodun-03.jpg | [Temple des Pythons de Ouidah 02.jpg](https://commons.wikimedia.org/wiki/File:Temple_des_Pythons_de_Ouidah_02.jpg) | Gildaskiki | CC BY-SA 4.0 |
+
+Files added on 7 November 2026 (W National Park, the Abomey and Collines journey heroes, and every journey gallery frame) are cropped and resized from the originals linked above. Captions on the site describe what each photo actually shows: where no exact frame of the subject exists (for example yam stalls at Savalou), the nearest true photo of the same place is used and captioned as such.
